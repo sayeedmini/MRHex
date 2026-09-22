@@ -1,0 +1,56 @@
+literal	category	regex	rule
+no evidence of	definite_negated_existence	\bno evidence of\b	forward
+no sign of	definite_negated_existence	\bno signs? of\b	forward
+no indication of	definite_negated_existence	\bno indication of\b	forward
+no suggestion of	definite_negated_existence	\bno suggestion of\b	forward
+negative for	definite_negated_existence	\bnegative for\b	forward
+free of	definite_negated_existence	\bfree of\b	forward
+absence of	definite_negated_existence	\babsence of\b	forward
+denies	definite_negated_existence	\bdenies\b	forward
+denied	definite_negated_existence	\bdenied\b	forward
+rules out	definite_negated_existence	\brules out\b	forward
+ruled out	definite_negated_existence	\bruled out\b	forward
+rule out	definite_negated_existence	\brule out\b	forward
+unremarkable for	definite_negated_existence	\bunremarkable for\b	forward
+with no	definite_negated_existence	\bwith no\b	forward
+without any	definite_negated_existence	\bwithout any\b	forward
+without evidence of	definite_negated_existence	\bwithout evidence of\b	forward
+without signs of	definite_negated_existence	\bwithout signs? of\b	forward
+without	definite_negated_existence	\bwithout\b	forward
+no	definite_negated_existence	\bno\b	forward
+not seen	definite_negated_existence	\bnot seen\b	forward
+not identified	definite_negated_existence	\bnot identified\b	forward
+not visualized	definite_negated_existence	\bnot visualized\b	forward
+not detected	definite_negated_existence	\bnot detected\b	forward
+not present	definite_negated_existence	\bnot present\b	forward
+never had	definite_negated_existence	\bnever had\b	forward
+zero	definite_negated_existence	\bzero\b	forward
+was ruled out	definite_negated_existence	\bwas ruled out\b	backward
+is ruled out	definite_negated_existence	\bis ruled out\b	backward
+was negative	definite_negated_existence	\bwas negative\b	backward
+is negative	definite_negated_existence	\bis negative\b	backward
+unlikely	definite_negated_existence	\bunlikely\b	backward
+free	definite_negated_existence	\bfree\b	backward
+possible	probable_possible	\bpossible\b	forward
+possibly	probable_possible	\bpossibly\b	forward
+probable	probable_possible	\bprobable\b	forward
+probably	probable_possible	\bprobably\b	forward
+likely	probable_possible	\blikely\b	forward
+suspicious for	probable_possible	\bsuspicious for\b	forward
+suggestive of	probable_possible	\bsuggestive of\b	forward
+cannot rule out	probable_possible	\bcannot rule out\b	forward
+cannot exclude	probable_possible	\bcannot exclude\b	forward
+could represent	probable_possible	\bcould represent\b	forward
+may represent	probable_possible	\bmay represent\b	forward
+questionable	probable_possible	\bquestionable\b	forward
+differential includes	probable_possible	\bdifferential includes?\b	forward
+versus	probable_possible	\b(?:versus|vs\.?)\b	bidirectional
+history of	historical	\bhistory of\b	forward
+past history of	historical	\bpast history of\b	forward
+status post	historical	\b(?:status post|s/p)\b	forward
+prior	historical	\bprior\b	forward
+previous	historical	\bprevious\b	forward
+previously	historical	\bpreviously\b	forward
+resolved	historical	\bresolved\b	bidirectional
+resected	historical	\bresected\b	bidirectional
+post-operative	historical	\bpost-?operative\b	forward

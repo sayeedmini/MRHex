@@ -1,0 +1,63 @@
+schema_version: 1
+scope_id: official_mrrate_32_v1
+status: RELEASE_SCOPE
+description: 'Canonical pathology universe for the thesis redesign. This scope follows the official MR-RATE 32-label classification
+  set and is independent of the historical INCLUDE/DEFER development decisions used by the prior architecture.
+
+  '
+raw_schema_label_count: 37
+active_label_count: 32
+official_mrrate_removed_labels:
+- Cerebral infarction
+- Cerebral hemorrhage
+- Mastoiditis
+- Ventriculomegaly
+- Lipoma of brain
+active_labels:
+- Metastatic malignant neoplasm to brain
+- Intracranial meningioma
+- Demyelinating disease of central nervous system
+- Herniation of nucleus pulposus
+- Spinal cord compression
+- Lacunar infarct
+- Silent micro-hemorrhage of brain
+- Cavernous hemangioma
+- Subdural intracranial hemorrhage
+- Gliosis
+- Cerebral atrophy
+- Encephalomalacia
+- Arachnoid cyst
+- Empty sella syndrome
+- Intracranial aneurysm
+- Chiari malformation
+- Schwannoma
+- Cyst of pineal gland
+- Hemangioma of vertebral column
+- Rathke's pouch cyst
+- Cerebral edema
+- Spinal stenosis
+- Chronic mastoiditis
+- Cerebellar degeneration
+- Mega cisterna magna
+- Structure of cave of septum pellucidum
+- Hyperostosis of skull
+- Watershed infarct
+- Choroid plexus cyst
+- Foraminal Spinal Stenosis
+- Glioma
+- Pituitary adenoma
+historical_scope_policy:
+  prior_final170_cohorts_role: HISTORICAL_ONLY
+  prior_include_defer_status_is_authoritative: false
+  prior_development_codebook_role: HISTORICAL_ONLY
+development_reference_policy:
+  historical_development_reference: DUAL_LLM_CONSENSUS
+  deterministic_target: reproduce_dual_llm_consensus_on_held_out_cases
+  dual_llm_agreement_is_ground_truth: false
+source_provenance:
+  upstream_project: Forithmus/MR-RATE
+  upstream_component: contrastive-pretraining
+  note: 'The redesign follows the official MR-RATE 32-label classification scope. The original 37-column raw label schema
+    remains unchanged in data/processed/label_cols.json for provenance and data compatibility.
+
+    '

@@ -1,0 +1,745 @@
+{
+  "package_name": "MRHex_v1.0.0_Validation_Package",
+  "mrhex_version": "v1.0.0",
+  "tag": "mrhex-v1.0.0",
+  "freeze_commit": "e73fdb457b221db6cb9e8baf5fe7b8181907ff8a",
+  "package_updated_utc": "2026-09-22T12:56:11.021177+00:00",
+  "validation_cases_n": 2978,
+  "pathologies_count": 32,
+  "reference_agreement_counts": {
+    "total": 2978,
+    "cohort_a_4of4_unanimous": 2647,
+    "cohort_b_exact3of4_majority": 234,
+    "tied_non_majority": 97
+  },
+  "agreement_pattern_distribution": {
+    "4-0": 2647,
+    "3-1": 234,
+    "2-2": 43,
+    "2-1-1": 50,
+    "1-1-1-1": 4
+  },
+  "total_files_tracked": 144,
+  "files": [
+    {
+      "path": "baselines\\__init__.py",
+      "sha256": "fadefc8d48421ecb2f35c240cea0cc548103b1fa243fa8f5714705c02fb4940e",
+      "size_bytes": 26
+    },
+    {
+      "path": "baselines\\mappings\\assertion_to_mrrate.yaml",
+      "sha256": "81412ceb3b3d451620e6cd4eb0b1e10ea02aa2a4178777819f2fb5bc1a16ba20",
+      "size_bytes": 2804
+    },
+    {
+      "path": "baselines\\mappings\\concept_dictionary.json",
+      "sha256": "ac46aeb5b490f90d7bb900c68b18d904a9c31d3dc564dd3710df9ae9330cb47f",
+      "size_bytes": 22201
+    },
+    {
+      "path": "baselines\\mappings\\concept_dictionary.yaml",
+      "sha256": "2568bce3de4bb9856ba1b5e4f9166379fc12c5645f09de70538ec54fd0f63ddf",
+      "size_bytes": 18336
+    },
+    {
+      "path": "baselines\\medspacy\\__init__.py",
+      "sha256": "3f433cd3e3eff150e2bd6ec9692026d7c34b957d0cbeaf2e43929cc89fbccfb9",
+      "size_bytes": 80
+    },
+    {
+      "path": "baselines\\medspacy\\medspacy_baseline.py",
+      "sha256": "a13f0c318133dac9bf96961d8d5d9647ce18273fe844bf96c6f73d4a2508d829",
+      "size_bytes": 8035
+    },
+    {
+      "path": "baselines\\negex\\__init__.py",
+      "sha256": "23d10ffa23d619d0f7284606d52e3b712cb99878fb85584d39d25f9a94f76d94",
+      "size_bytes": 71
+    },
+    {
+      "path": "baselines\\negex\\negex_baseline.py",
+      "sha256": "5f99140e91c40dd1d36cd87e373c2d818d08cfcdb7e98b609e71e26e5d0a893e",
+      "size_bytes": 11196
+    },
+    {
+      "path": "baselines\\pycontext\\__init__.py",
+      "sha256": "6e747813bfda193526a5ecb196e424781ed3dafe5966cd829e6a8bac922b2a03",
+      "size_bytes": 83
+    },
+    {
+      "path": "baselines\\pycontext\\pycontext_baseline.py",
+      "sha256": "fbbe1ce7c97d04d14ff7d20c704c5b8167aaa166a9802ce52d0f47d955409767",
+      "size_bytes": 10321
+    },
+    {
+      "path": "baselines\\pycontext\\pycontext_modifiers.tsv",
+      "sha256": "ea64c0a2347694055b72e36e78d9a5e51c3ffdc38bd0ab252718de846c90ff01",
+      "size_bytes": 3226
+    },
+    {
+      "path": "configs\\final_deterministic_rules_v2.yaml",
+      "sha256": "24304783f5ab1cadbb95aaedee6db972f946844e1d912b31fa2604a69f1fea3e",
+      "size_bytes": 371650
+    },
+    {
+      "path": "configs\\final_pathology_codebook.yaml",
+      "sha256": "34f21b8daa87e4a22bd16fa33ccfcbdb9cc4d6507e672699c02cd3a674f68f38",
+      "size_bytes": 114867
+    },
+    {
+      "path": "configs\\mrhex_label_configuration.yaml",
+      "sha256": "eb6b66d8b0adba74647761d7374464d5c0077bef5a8b0cb21faf812169477645",
+      "size_bytes": 181582
+    },
+    {
+      "path": "configs\\official_mrrate_32_labels.yaml",
+      "sha256": "f2cc511577416d14b0ee2f7b18721d282e4c46af92e6ed715ebe1166801691d0",
+      "size_bytes": 1996
+    },
+    {
+      "path": "data\\validation_data\\README.md",
+      "sha256": "af4be6812e0fa8aa8c4d1b20259a92e7965de821e0eb58046facb6d9aa414419",
+      "size_bytes": 3203
+    },
+    {
+      "path": "data\\validation_data\\reference_outputs.csv",
+      "sha256": "8bfc1a6def210d897c5e0de56f9d48a7e19fee7637e773e0d0ab1c77bc3dafeb",
+      "size_bytes": 107725
+    },
+    {
+      "path": "data\\validation_data\\validation_input.csv",
+      "sha256": "67a159c7b4676769f0b27d944ed4bc07b25b95ea5a129dd6efb50add29195107",
+      "size_bytes": 5548754
+    },
+    {
+      "path": "docs\\FREEZE_RECORD.md",
+      "sha256": "0ec9a55c2929f71e2ca1c4a5891e91fca46838d0d6a19130746801d2f4b8b6d7",
+      "size_bytes": 1277
+    },
+    {
+      "path": "docs\\RELEASE_NOTES.md",
+      "sha256": "b44f8335c57c52ce184451387406ca75d73f50e8fd447ed7da072beac0180120",
+      "size_bytes": 806
+    },
+    {
+      "path": "docs\\VALIDATION_PROTOCOL.md",
+      "sha256": "5eae25de3285b2f0eafcc205a036475b27881a8c1148b841248c290b598adef9",
+      "size_bytes": 4757
+    },
+    {
+      "path": "evaluation\\baseline_state_mapping.md",
+      "sha256": "c3b04c7ab67c7261a5fe72699c68314b4093843fab3f457469c55da5d1dce358",
+      "size_bytes": 6194
+    },
+    {
+      "path": "evaluation\\semantic_affinity_matrix.csv",
+      "sha256": "156842ba6bccaadf4e82b3cee03717d909d37c9467f367dee9164fcaf9c66148",
+      "size_bytes": 186
+    },
+    {
+      "path": "mrhex\\__init__.py",
+      "sha256": "92766279b77cc06fd37ca7639c7ccb204fba02c9cb3f9603021accfccd7743ac",
+      "size_bytes": 221
+    },
+    {
+      "path": "mrhex\\classifier.py",
+      "sha256": "1a3f51f2c20411227ef3f00f90508efcf5f020db1dfc08388b74d07ee1a24fe9",
+      "size_bytes": 4945
+    },
+    {
+      "path": "mrhex\\config.py",
+      "sha256": "5357a63f41a313757a3a72ae1eb24cebf0113cb2d1a2e483272a4b7e5cd88814",
+      "size_bytes": 11451
+    },
+    {
+      "path": "mrhex\\engine\\__init__.py",
+      "sha256": "3e3fc91e8e87cf112f1c9d501dbe8b1103dd896b34fd5fc6c071ab4d9cfbc7f4",
+      "size_bytes": 16579
+    },
+    {
+      "path": "mrhex\\engine\\aggregation\\__init__.py",
+      "sha256": "eb1d837f2c95a0d8770b93a6b68b544c3224af1607e7f4da1d6763ca57892c77",
+      "size_bytes": 67
+    },
+    {
+      "path": "mrhex\\engine\\aggregation\\conflict.py",
+      "sha256": "fd9d4b3ec6be50f99993f8acf107bbb9b0639b6d8d118d4932eea196fbb86d4d",
+      "size_bytes": 20634
+    },
+    {
+      "path": "mrhex\\engine\\aggregation\\fallback.py",
+      "sha256": "d45ed3f6eb8ab624be6d313864d3fb3067c959f5cc8ff395cafb01060eac09c1",
+      "size_bytes": 7853
+    },
+    {
+      "path": "mrhex\\engine\\aggregation\\scope_compatibility.py",
+      "sha256": "95eb0fe21ecf0649b5b24a4770f0e9711317dd593dae8e06f4c2d564803b49c8",
+      "size_bytes": 5713
+    },
+    {
+      "path": "mrhex\\engine\\aggregation\\scoped.py",
+      "sha256": "cfd61b5bd0c7ee103bede6d1485103cf73d90dde21fcfb04db10874918350be3",
+      "size_bytes": 8156
+    },
+    {
+      "path": "mrhex\\engine\\alignment\\__init__.py",
+      "sha256": "035786d65e080de01e15dfb5ea1e1f88de0f09be752d91ca5304b49b3baa5366",
+      "size_bytes": 63
+    },
+    {
+      "path": "mrhex\\engine\\alignment\\anatomy.py",
+      "sha256": "04c262d93258a9d14635843c96f09995b24352854c859a6ed24b105e3f9c08c2",
+      "size_bytes": 16519
+    },
+    {
+      "path": "mrhex\\engine\\alignment\\scope.py",
+      "sha256": "064dca031ee9640c72fd9045f6270b7ede16763c58b3ae11253c1fb217df7dd4",
+      "size_bytes": 9861
+    },
+    {
+      "path": "mrhex\\engine\\alignment\\subtype.py",
+      "sha256": "90e042b9861d25f364ac25b561007a92b51a250bc3155084838ac2abf7f994cb",
+      "size_bytes": 5468
+    },
+    {
+      "path": "mrhex\\engine\\assertion\\__init__.py",
+      "sha256": "1afb9ffc99667f8bfaf7b41d5954cd67c53bcb1ed8aa3a0137adb56ffbdd8842",
+      "size_bytes": 46
+    },
+    {
+      "path": "mrhex\\engine\\assertion\\hedging.py",
+      "sha256": "2f107361273a79012d3ba61ccbb5c145c507b710b4726ce9de5269ce93d7092a",
+      "size_bytes": 16441
+    },
+    {
+      "path": "mrhex\\engine\\assertion\\modifiers.py",
+      "sha256": "05ba7a79a52e40321867357ec802c764264732c7f07f667d95355d774ad791da",
+      "size_bytes": 1386
+    },
+    {
+      "path": "mrhex\\engine\\assertion\\negation.py",
+      "sha256": "fc6799449fbf3e6b14f6f7781b3ecc072a495dd74aef683b925b065fc85b2cbb",
+      "size_bytes": 4928
+    },
+    {
+      "path": "mrhex\\engine\\assertion\\scoped_negation.py",
+      "sha256": "45628b8d345448fa2ba1de5f4cea49380f62f1989120be65f25ab956fbdaee3b",
+      "size_bytes": 5832
+    },
+    {
+      "path": "mrhex\\engine\\assertion\\temporality.py",
+      "sha256": "bda7a440212b0555b547b0d8b52912d1dd9ec2ec9e5dc6d9d52b2721b6456089",
+      "size_bytes": 18397
+    },
+    {
+      "path": "mrhex\\engine\\evaluator.py",
+      "sha256": "acbab2272ebe60ef43e88cabbc8fc26b0a6973d912c4e6589af82ca437109019",
+      "size_bytes": 2426
+    },
+    {
+      "path": "mrhex\\engine\\matching\\__init__.py",
+      "sha256": "7797327c8ecb7472116498b03dc927146996cf8e1e467af5f31ca84bf769f61b",
+      "size_bytes": 107
+    },
+    {
+      "path": "mrhex\\engine\\matching\\patterns.py",
+      "sha256": "93cef9fa7002301153ef1a67fcff97d9a4ebf35b51ade7ed45c1322f16bc4203",
+      "size_bytes": 1868
+    },
+    {
+      "path": "mrhex\\engine\\retrieval\\__init__.py",
+      "sha256": "65ceefdc983812869a9bb6845cc69e3989fb4e1c171404798bb5a97485faaf2a",
+      "size_bytes": 13
+    },
+    {
+      "path": "mrhex\\engine\\retrieval\\matcher.py",
+      "sha256": "1c8a0d079db869004e1e099baff2914ab479654480ca84b260a2624b4a01fd54",
+      "size_bytes": 7074
+    },
+    {
+      "path": "mrhex\\engine\\retrieval\\sections.py",
+      "sha256": "5c4611d1b13b5527ca30670be55d770058dd0e0d9db22cea62f3257ddd290f73",
+      "size_bytes": 3516
+    },
+    {
+      "path": "mrhex\\engine\\retrieval\\vocabulary.py",
+      "sha256": "2e0a84f3f9974f02c652d40d89f2fe1caf120a4304dd4033791f2dcf3d13351b",
+      "size_bytes": 975
+    },
+    {
+      "path": "mrhex\\engine\\safety_gate\\__init__.py",
+      "sha256": "7952b8aa261113efc2eba59b9ceec171971a90de54fdb3ee40d945b67564305e",
+      "size_bytes": 68
+    },
+    {
+      "path": "mrhex\\engine\\safety_gate\\gate.py",
+      "sha256": "35d591b646d2d69a4ae4e73d013f2d7a38e11340b425c7bf53956459684a4ddf",
+      "size_bytes": 15213
+    },
+    {
+      "path": "mrhex\\engine\\safety_gate\\output.py",
+      "sha256": "1c75a654eef90f3712fc9c4710659f08f471d0d1c929603f47a9228ca71f7d35",
+      "size_bytes": 6617
+    },
+    {
+      "path": "mrhex\\engine\\segmentation\\__init__.py",
+      "sha256": "204287fd40378ef535c9451a5c88e5361a4e96427171811053be692aaadbf927",
+      "size_bytes": 49
+    },
+    {
+      "path": "mrhex\\engine\\segmentation\\clauses.py",
+      "sha256": "845ccdeb9c8fe0f94f9b5d7dfd380400c638d4c13c45ad9e8d86e30d0c5525ca",
+      "size_bytes": 5603
+    },
+    {
+      "path": "mrhex\\engine\\segmentation\\sentences.py",
+      "sha256": "6c474655aab659b7ce725aa4e729589bad926ae8bb359f14447198bbe94013fb",
+      "size_bytes": 1983
+    },
+    {
+      "path": "mrhex\\engine\\selective.py",
+      "sha256": "03f78eeced80411b8c0bdc3bbf1fc8c55a3b97571f85f992886a25edd483ea26",
+      "size_bytes": 21951
+    },
+    {
+      "path": "mrhex\\engine\\types.py",
+      "sha256": "5a9ff6c05f551e71ab347c929eb3de684f162dda4183da3ff8b33da5ee998217",
+      "size_bytes": 15879
+    },
+    {
+      "path": "mrhex\\rules\\__init__.py",
+      "sha256": "77df485b9f04a681bdc1bcea05584cdadb350306ba722cf8a7b0059dbcfe46ac",
+      "size_bytes": 22
+    },
+    {
+      "path": "mrhex\\rules\\aneurysm.py",
+      "sha256": "9275587c7426e56ffef263b183f6d72b3e8e7edc97c94250f7d1d7ff21a2aa8b",
+      "size_bytes": 10893
+    },
+    {
+      "path": "mrhex\\rules\\arachnoid_cyst.py",
+      "sha256": "2334dce04588e1aa80c8798926e60152d9114af435c50745a7ebd5b17f915fe9",
+      "size_bytes": 2411
+    },
+    {
+      "path": "mrhex\\rules\\atrophy.py",
+      "sha256": "33faaad9c04c4181745f6b8e58ab0c81c20fc0b08cd3f80b3d2c52982507d505",
+      "size_bytes": 9618
+    },
+    {
+      "path": "mrhex\\rules\\cavernous_hemangioma.py",
+      "sha256": "1d166c1204b5d841b869574f30203e673222347946a00d8343f0beeaa67190ea",
+      "size_bytes": 4771
+    },
+    {
+      "path": "mrhex\\rules\\cerebellar_degeneration.py",
+      "sha256": "0a0dd56c9b8e21362c23d76f6e0e475196f322acc5cbf2aa9d7f29638a6a617e",
+      "size_bytes": 4753
+    },
+    {
+      "path": "mrhex\\rules\\cerebral_edema.py",
+      "sha256": "741f89ecb839cd562aed3a91e0ea4a80ebc3cd6cd75de402396b93e43cf1b2f0",
+      "size_bytes": 9650
+    },
+    {
+      "path": "mrhex\\rules\\chiari_malformation.py",
+      "sha256": "8a844c199966c71b46fc56326ef2503311a1f8ccc7a203b64dfd7aa55630c52e",
+      "size_bytes": 1641
+    },
+    {
+      "path": "mrhex\\rules\\choroid_plexus_cyst.py",
+      "sha256": "df274e093ccacff985b060542944a93576dc3089741a73bcaa8013ca25acc434",
+      "size_bytes": 3467
+    },
+    {
+      "path": "mrhex\\rules\\chronic_mastoiditis.py",
+      "sha256": "b16b8aad36a48d1283a9c5be05a1cef4591529b1fc92240c0f81aa4ba3c13eb2",
+      "size_bytes": 3053
+    },
+    {
+      "path": "mrhex\\rules\\demyelinating.py",
+      "sha256": "b6f272314b31d16212bd2280594b43b2ec6eb4f10d7f8293e9ca2862db89d139",
+      "size_bytes": 19411
+    },
+    {
+      "path": "mrhex\\rules\\empty_sella.py",
+      "sha256": "d01870521a1f4ac73483ccc7b53e6f59911ccef296271334a524e555f9d6eb49",
+      "size_bytes": 6524
+    },
+    {
+      "path": "mrhex\\rules\\encephalomalacia.py",
+      "sha256": "3fc8a799e8b96b85a57ce8a0b8f5516799e57a633c58b6da399cfa2c5a2f83c2",
+      "size_bytes": 10646
+    },
+    {
+      "path": "mrhex\\rules\\fallback.py",
+      "sha256": "da305417514e92e3aa548311bafdca4a3074a45ab2963c470a8280244b601f64",
+      "size_bytes": 32165
+    },
+    {
+      "path": "mrhex\\rules\\foraminal_stenosis.py",
+      "sha256": "28c1817864632a5d9bbb22cf5976365e62b79b86cef5290eb6554916aa14cf04",
+      "size_bytes": 3772
+    },
+    {
+      "path": "mrhex\\rules\\glioma.py",
+      "sha256": "d2ce4893d453e6c7c47a423350e7017094f1c91c04e67483b5c94ec47a90de9e",
+      "size_bytes": 6790
+    },
+    {
+      "path": "mrhex\\rules\\gliosis.py",
+      "sha256": "412bd85bcd671f74e7810cd0ec2f7c20229df671d6158fb6a57e7e96910ba2ca",
+      "size_bytes": 7796
+    },
+    {
+      "path": "mrhex\\rules\\herniation_nucleus_pulposus.py",
+      "sha256": "8354ba5784b4f44f931be895f04d1c12ef6132a23a0e561312ac0ccf6b5d674e",
+      "size_bytes": 4068
+    },
+    {
+      "path": "mrhex\\rules\\hyperostosis.py",
+      "sha256": "89e2c1cb3284b62f24f9b52aed9d29f089b32da873d9752e18cc970ff3b94968",
+      "size_bytes": 7251
+    },
+    {
+      "path": "mrhex\\rules\\lacunar_infarct.py",
+      "sha256": "bb9aa0c3c653dd78c087efa1799d63783464af6c68aafdf0ede1a6047552287e",
+      "size_bytes": 5499
+    },
+    {
+      "path": "mrhex\\rules\\mega_cisterna_magna.py",
+      "sha256": "3adbf11940381783ff3b40066bc3b4c2d14829e764a59ad50a5459bf8f412cb8",
+      "size_bytes": 2731
+    },
+    {
+      "path": "mrhex\\rules\\meningioma.py",
+      "sha256": "51feae24b2a1a889b75593eaaa23b9109fa809d5cb1b7e408dd93f20adbfab53",
+      "size_bytes": 6158
+    },
+    {
+      "path": "mrhex\\rules\\microhemorrhage.py",
+      "sha256": "e15f3dbf7e3c2a4633a5da02dbabc021b4acf2a4afb4b4aff8bba279eff4b562",
+      "size_bytes": 9154
+    },
+    {
+      "path": "mrhex\\rules\\pineal_cyst.py",
+      "sha256": "7787321c7635201c7c0145736917d850a90412d0400a2009ed5b37c898e6c190",
+      "size_bytes": 4533
+    },
+    {
+      "path": "mrhex\\rules\\pituitary_adenoma.py",
+      "sha256": "f9f4b2974f0057f6def30b2d6a2b5daeb54282da9ceb73a3625fb3365a882514",
+      "size_bytes": 12394
+    },
+    {
+      "path": "mrhex\\rules\\rathke_pouch_cyst.py",
+      "sha256": "8708ce79732a474da46c138f690555f830ca9eeb4ba465a841086a7d77c6022d",
+      "size_bytes": 2292
+    },
+    {
+      "path": "mrhex\\rules\\schwannoma.py",
+      "sha256": "e0260e9062f89d2f9817be8885e9ef2f9583e5a7b3e49435fc242b59ec3e7645",
+      "size_bytes": 2438
+    },
+    {
+      "path": "mrhex\\rules\\spinal_cord_compression.py",
+      "sha256": "b4784e949411b0f2f30c473e7256867a9ade7c3a60fcf5e51561b2178d4ccf80",
+      "size_bytes": 4318
+    },
+    {
+      "path": "mrhex\\rules\\spinal_stenosis.py",
+      "sha256": "0385da0ff0df5c719d7a8097d6c4ca3c1604328180408638c1ee6c0de3b21b2a",
+      "size_bytes": 5383
+    },
+    {
+      "path": "mrhex\\rules\\subdural_hemorrhage.py",
+      "sha256": "9a07b019146e47020528e32afd11a786e5f76c9defce9c11bfa6edcc0232342f",
+      "size_bytes": 4791
+    },
+    {
+      "path": "mrhex\\rules\\vertebral_hemangioma.py",
+      "sha256": "20eafa029c72a4528706ff0816b40816bff327d206e0a07b9a0c405401db0fea",
+      "size_bytes": 1288
+    },
+    {
+      "path": "mrhex\\rules\\watershed_infarct.py",
+      "sha256": "16542de382b602edb01d82ae2886012a148ae7ad800334ad58d97af66f477bd7",
+      "size_bytes": 4512
+    },
+    {
+      "path": "outputs\\context\\confusion_matrix_4of4_counts.csv",
+      "sha256": "4bffafa0ae2920c906a65f95e6d49a3e2faf8ce602b5c782c1b68227ed96bda7",
+      "size_bytes": 137
+    },
+    {
+      "path": "outputs\\context\\confusion_matrix_4of4_normalized.csv",
+      "sha256": "8339fc89eb65a9d4f62f52967ce4c20608f8438ff1953af6ab3d780000a3be00",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\context\\confusion_matrix_exact3of4_counts.csv",
+      "sha256": "495aca27fb191a4c7b02395ad9dc1ad7ab9fc1fe38a835bd5c616f318fd0adc8",
+      "size_bytes": 130
+    },
+    {
+      "path": "outputs\\context\\confusion_matrix_exact3of4_normalized.csv",
+      "sha256": "7f61896e263afe0283b84c8d45d1a4675d1066b5ff55d9ee9430fe28f9a3cec0",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\context\\metrics_4of4.json",
+      "sha256": "fb9d70f4571c0dc6c2c1de3a97889f014e3a3907c9d1cbbd37875f3f99a88795",
+      "size_bytes": 2414
+    },
+    {
+      "path": "outputs\\context\\metrics_exact3of4.json",
+      "sha256": "98fbcd0cfff185feae5984e876127b911b24fc9d9f29ed83538c7b9b1b0aaa5e",
+      "size_bytes": 2379
+    },
+    {
+      "path": "outputs\\context\\per_state_metrics_4of4.csv",
+      "sha256": "8a01209d2461916837e145d184bbf1d5640f9586703f2c792784825a0f24519a",
+      "size_bytes": 260
+    },
+    {
+      "path": "outputs\\context\\per_state_metrics_exact3of4.csv",
+      "sha256": "36a8bf87481f59779d075e01def018e638e4cbbcc1b1d3880cdf5f66df246d70",
+      "size_bytes": 250
+    },
+    {
+      "path": "outputs\\context\\predictions.csv",
+      "sha256": "434e42988a8446764ec120953c61bc93551c0dce052ccac1ac771a9c699f5319",
+      "size_bytes": 372115
+    },
+    {
+      "path": "outputs\\context\\sc_casc_all_cases.json",
+      "sha256": "a1f9be923761aa2c24beb4f013f7de572deaed22b1fcb2131ec040b6fc58ba8b",
+      "size_bytes": 140
+    },
+    {
+      "path": "outputs\\context\\sc_casc_case_scores.csv",
+      "sha256": "67c658fc0555a4c3ca5676dfceec8bd11def1f9da86605d879a2b1fd405ddab3",
+      "size_bytes": 246973
+    },
+    {
+      "path": "outputs\\medspacy\\confusion_matrix_4of4_counts.csv",
+      "sha256": "a8624194f22471c8c57eb0c4aa2a2aaffe504356fcdeafff162aed348ecf00bf",
+      "size_bytes": 136
+    },
+    {
+      "path": "outputs\\medspacy\\confusion_matrix_4of4_normalized.csv",
+      "sha256": "f30002a5363dd8f0b7cbfc7ec0ca10c5921e5c54e8d07b0f22358533257f5c24",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\medspacy\\confusion_matrix_exact3of4_counts.csv",
+      "sha256": "f1c6aac78e0f91dbc0987ad448f1941cc242e68c6f03a92285fb6c24ab71ef59",
+      "size_bytes": 129
+    },
+    {
+      "path": "outputs\\medspacy\\confusion_matrix_exact3of4_normalized.csv",
+      "sha256": "6ee22469d211b0b85567d7f21e0c1e39169d46fd87d747b475a2af984becdee0",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\medspacy\\metrics_4of4.json",
+      "sha256": "fe4c6cc245b7350a2be1b5a9c0c1e63c1f8a220ccd9dbfb1da237d2adadcd34d",
+      "size_bytes": 2392
+    },
+    {
+      "path": "outputs\\medspacy\\metrics_exact3of4.json",
+      "sha256": "7bc5411842ad5588f490831bd7e64e28daf36a11385fd8c9f617745dcbc8ed69",
+      "size_bytes": 2374
+    },
+    {
+      "path": "outputs\\medspacy\\per_state_metrics_4of4.csv",
+      "sha256": "474bd09a45c1d2b8bf37e6cb18f189fbc16a20e3118f7a9292bf07131e18ecb0",
+      "size_bytes": 259
+    },
+    {
+      "path": "outputs\\medspacy\\per_state_metrics_exact3of4.csv",
+      "sha256": "37f5035489dd8fd73076b8c98a7cf5e900457d5a8d024cce5b945b5efe399467",
+      "size_bytes": 249
+    },
+    {
+      "path": "outputs\\medspacy\\predictions.csv",
+      "sha256": "4735d68fd58dc3cbcbf486f754c47287d836e11088c3bf50bf8c511369b04ed6",
+      "size_bytes": 374126
+    },
+    {
+      "path": "outputs\\medspacy\\sc_casc_all_cases.json",
+      "sha256": "a0dd08cbbdfa346422ed381c4ae0097940ce4ce4f6f8de37c37c6bf775896339",
+      "size_bytes": 140
+    },
+    {
+      "path": "outputs\\medspacy\\sc_casc_case_scores.csv",
+      "sha256": "0d262f64f2ff39d620ca52c488ec396327acb72a305f174acdd8ff2679a7c7b8",
+      "size_bytes": 246962
+    },
+    {
+      "path": "outputs\\METHOD_COMPARISON.csv",
+      "sha256": "9781c70906aecf160a70f563147b6f310962d7b41d921919132894cc81620da4",
+      "size_bytes": 1109
+    },
+    {
+      "path": "outputs\\mrhex\\confusion_matrix_4of4_counts.csv",
+      "sha256": "c1da8f068fc30c9bc33ad7e42e03230544765e12c0c9f819eab4730a1267c5b6",
+      "size_bytes": 136
+    },
+    {
+      "path": "outputs\\mrhex\\confusion_matrix_4of4_normalized.csv",
+      "sha256": "7e74eecb6f31b68e46c5445c76e4c72061614681650681abc55e2ac24dd8cfde",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\mrhex\\confusion_matrix_exact3of4_counts.csv",
+      "sha256": "18d7eae830b996cd2243bcc4c43c92409a25da88bd3965c262c72c5a1c04b957",
+      "size_bytes": 130
+    },
+    {
+      "path": "outputs\\mrhex\\confusion_matrix_exact3of4_normalized.csv",
+      "sha256": "e306d9c26ff1a91902d41f974be4e28c35b8a6b774e2f4562784f1a2744c4c5a",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\mrhex\\metrics_4of4.json",
+      "sha256": "7f90918bc8c2f241592200c1318a97f9c71de3f62a2252c5b4a275154c281b6f",
+      "size_bytes": 2402
+    },
+    {
+      "path": "outputs\\mrhex\\metrics_exact3of4.json",
+      "sha256": "cf92e2c988937b3e82f51c48021e92137d61dcccdc5d316588d7fecfceb41e83",
+      "size_bytes": 2368
+    },
+    {
+      "path": "outputs\\mrhex\\per_state_metrics_4of4.csv",
+      "sha256": "86b52400171dcb5d8048ce7ced029f0396c21f0716b03644d92d8264046ebdbe",
+      "size_bytes": 259
+    },
+    {
+      "path": "outputs\\mrhex\\per_state_metrics_exact3of4.csv",
+      "sha256": "53f0c7273af89386f469063bb3fa9fa1b41e678ee7a11f4d6464d4af1a069afd",
+      "size_bytes": 251
+    },
+    {
+      "path": "outputs\\mrhex\\predictions.csv",
+      "sha256": "a60a5ca9e5595b5440517c1bdc2b23d500de37fabc14e14d1e9b3cb3a344e027",
+      "size_bytes": 260134
+    },
+    {
+      "path": "outputs\\mrhex\\sc_casc_all_cases.json",
+      "sha256": "47377bcd16a88463676af226be0a05b50119710a14ced145c0f8f967d9b44a26",
+      "size_bytes": 138
+    },
+    {
+      "path": "outputs\\mrhex\\sc_casc_case_scores.csv",
+      "sha256": "06ae45326e4fa752aa58948ac874c86ca259dde673988c6ff8ed6a2a3c2f5b8a",
+      "size_bytes": 247098
+    },
+    {
+      "path": "outputs\\mrhex_predictions.csv",
+      "sha256": "3c1e1835960356cee73b941dfa9df3c0f0f71dc1cb1d20c5b730c22c2bd62873",
+      "size_bytes": 219909
+    },
+    {
+      "path": "outputs\\negex\\confusion_matrix_4of4_counts.csv",
+      "sha256": "7944386c70491b0cec760f6db9d25e14c422cfddbf25f210f21e6d944099167c",
+      "size_bytes": 134
+    },
+    {
+      "path": "outputs\\negex\\confusion_matrix_4of4_normalized.csv",
+      "sha256": "32c93887b2ff90b52f0d4b84157dbaa7c80872e1a1c438f2147ab3b693a07fee",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\negex\\confusion_matrix_exact3of4_counts.csv",
+      "sha256": "b4079ba82947554feda865b17f13449ad6cb4e8c912aaebb32d148a25a1c6ff4",
+      "size_bytes": 129
+    },
+    {
+      "path": "outputs\\negex\\confusion_matrix_exact3of4_normalized.csv",
+      "sha256": "c6b3c05206a71ff2ebf9bc32acd762ed15fec2781923a354afbc90f06daab1e8",
+      "size_bytes": 305
+    },
+    {
+      "path": "outputs\\negex\\metrics_4of4.json",
+      "sha256": "d63259f38a49dae02d392da9389eda3e90e8c2f57b5b55c91e32ec71af4a4a51",
+      "size_bytes": 2371
+    },
+    {
+      "path": "outputs\\negex\\metrics_exact3of4.json",
+      "sha256": "fe158ebb0ee046d6235def437d01a19d7082459fdd1b40d258fab72a680fddda",
+      "size_bytes": 2349
+    },
+    {
+      "path": "outputs\\negex\\per_state_metrics_4of4.csv",
+      "sha256": "30fabf76a9e8ed1b19326da64aa30be8c20ba2580035704c25828ef8da9c1b4c",
+      "size_bytes": 257
+    },
+    {
+      "path": "outputs\\negex\\per_state_metrics_exact3of4.csv",
+      "sha256": "070a216f9d59fbafbc838b4014bfb9cfbc224b39db682edb61df62d5426e1b97",
+      "size_bytes": 249
+    },
+    {
+      "path": "outputs\\negex\\predictions.csv",
+      "sha256": "cc466779935d2392ab2b5ac6bc9cd33f5447732f842cc450d15983930d0ab8eb",
+      "size_bytes": 318219
+    },
+    {
+      "path": "outputs\\negex\\sc_casc_all_cases.json",
+      "sha256": "c90973c220e1a6d5c41db82e95117909435b89d462de84eb2946f9c95890aa1f",
+      "size_bytes": 138
+    },
+    {
+      "path": "outputs\\negex\\sc_casc_case_scores.csv",
+      "sha256": "a2426c80caae8ad8c92f58e48bbb18e302e86ec827d7b3f5cc3eab4498de3d65",
+      "size_bytes": 246939
+    },
+    {
+      "path": "outputs\\SC_CASC_COMPARISON.csv",
+      "sha256": "d9d55cc49706713ccd06828c8161e01bed04327661852541996770188958b62c",
+      "size_bytes": 213
+    },
+    {
+      "path": "outputs\\SC_CASC_SENSITIVITY.csv",
+      "sha256": "a0fd0781348cb46bc5f84933e070766ac01a9233b3c0f4da8501829f27ce87da",
+      "size_bytes": 471
+    },
+    {
+      "path": "outputs\\SUPERVISOR_COMPARISON.csv",
+      "sha256": "6d436663952b31f56e66d07f1d9ad6cc581dacbbe0c77f877e60efb9060b89cf",
+      "size_bytes": 723
+    },
+    {
+      "path": "README.md",
+      "sha256": "bb1b439e3b5cd2101c45a77fc7931212f6ed2438c6dfb13eaa465f10dda88d1e",
+      "size_bytes": 11131
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "7dae801aa98876c321cec8f6d82098e0c05e55d68e81bd87c6b3defe108ba730",
+      "size_bytes": 237
+    },
+    {
+      "path": "run_mrhex.py",
+      "sha256": "a573349e7b8d19b7125e5f5b8c7153e959c926f11648586b15fba39cac14866a",
+      "size_bytes": 3792
+    },
+    {
+      "path": "run_validation.py",
+      "sha256": "59eee228eb79558064727532fdba4cfb7c48b3227b7befbe5751a97279bde67a",
+      "size_bytes": 29445
+    },
+    {
+      "path": "verify_installation.py",
+      "sha256": "daab339713716f84db18f020983c5711d812553e67bea9408cfd48f8398a00cb",
+      "size_bytes": 12024
+    },
+    {
+      "path": "VERSION.txt",
+      "sha256": "8a7376a22ee901209c181229eb7e31e050faa1335733cca888e3848d2d35424e",
+      "size_bytes": 370
+    }
+  ]
+}

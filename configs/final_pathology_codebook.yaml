@@ -1,0 +1,2289 @@
+schema_version: 1
+codebook_id: final_pathology_codebook_v1
+status: LLM_ASSISTED_DEVELOPMENT
+authoritative_source: findings
+secondary_source: full_report
+reference_description: LLM-assisted report-text operationalization for MRHex development
+allowed_definition_status:
+- LLM_DEVELOPED
+- UNRESOLVED
+- DEFERRED
+allowed_primary_evaluation_inclusion:
+- INCLUDE
+- DEFER
+labels:
+- operational_definition: null
+  anatomical_scope: null
+  target_type: null
+  accepted_equivalents: []
+  ai_generated_accepted_equivalents: []
+  investigator_machine_variants: []
+  insufficient_evidence: []
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: null
+  special_cases: []
+  primary_evaluation_inclusion: DEFER
+  ai_generated: true
+  defer_reason: Excluded from prospective evaluation; not operationalized for this study
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Cerebral infarction
+  canonical_name: Cerebral infarction
+  repository_flagged_label: true
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is infarct
+  ai_generated_source_fields:
+    No.: 1
+    MR-RATE label: Cerebral infarction
+    Official MR-RATE positive phrase: There is infarct
+    INCLUDE / DEFER: DEFER
+    Plain-language meaning / operational definition: null
+    Anatomical scope: null
+    Accepted equivalent terms/descriptions: null
+    Related findings NOT sufficient alone: null
+    Included/excluded subtypes: null
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: null
+    Reason if DEFER: Excluded from prospective evaluation; not operationalized for this study
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: DEFERRED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies hemorrhage or hematoma within brain parenchyma.
+  anatomical_scope: Brain parenchyma, including cerebellum and brainstem.
+  target_type: null
+  accepted_equivalents:
+  - Intracerebral hemorrhage
+  - intraparenchymal hemorrhage
+  - intraparenchymal hematoma.
+  ai_generated_accepted_equivalents:
+  - Intracerebral hemorrhage
+  - intraparenchymal hemorrhage
+  - intraparenchymal hematoma.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Susceptibility/blooming, hemosiderin, hemorrhagic risk, or an extra-axial collection alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: Old resolved bleed or residual hemosiderin only = H. A persisting hematoma explicitly identified as present
+    = S, including an organizing/chronic hematoma.
+  clinical_history_rules: Old resolved bleed or residual hemosiderin only = H. A persisting hematoma explicitly identified
+    as present = S, including an organizing/chronic hematoma.
+  related_finding_rules: null
+  subtype_rules: Include parenchymal hemorrhagic contusion and explicitly hemorrhagic infarction. Exclude isolated subdural,
+    epidural, subarachnoid or intraventricular hemorrhage and isolated microbleeds.
+  special_cases:
+  - No acute hemorrhage does not exclude every chronic hematoma. Do not infer parenchymal bleeding from generic intracranial
+    hemorrhage without a compartment (NEI).
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Cerebral hemorrhage
+  canonical_name: Cerebral hemorrhage
+  repository_flagged_label: true
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is cerebral hemorrhage
+  ai_generated_source_fields:
+    No.: 2
+    MR-RATE label: Cerebral hemorrhage
+    Official MR-RATE positive phrase: There is cerebral hemorrhage
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies hemorrhage or hematoma within brain parenchyma.
+    Anatomical scope: Brain parenchyma, including cerebellum and brainstem.
+    Accepted equivalent terms/descriptions: Intracerebral hemorrhage; intraparenchymal hemorrhage; intraparenchymal hematoma.
+    Related findings NOT sufficient alone: Susceptibility/blooming, hemosiderin, hemorrhagic risk, or an extra-axial collection
+      alone.
+    Included/excluded subtypes: Include parenchymal hemorrhagic contusion and explicitly hemorrhagic infarction. Exclude isolated
+      subdural, epidural, subarachnoid or intraventricular hemorrhage and isolated microbleeds.
+    Special history/temporality rule: Old resolved bleed or residual hemosiderin only = H. A persisting hematoma explicitly
+      identified as present = S, including an organizing/chronic hematoma.
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: No acute hemorrhage does not exclude every chronic hematoma. Do not infer parenchymal
+      bleeding from generic intracranial hemorrhage without a compartment (NEI).
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies a secondary malignant tumor deposit in brain tissue.
+  anatomical_scope: Brain parenchyma.
+  target_type: null
+  accepted_equivalents:
+  - Brain metastasis/metastases
+  - intracerebral metastatic deposits
+  - secondary malignant brain deposits.
+  ai_generated_accepted_equivalents:
+  - Brain metastasis/metastases
+  - intracerebral metastatic deposits
+  - secondary malignant brain deposits.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Enhancing or ring-enhancing lesion, edema, multiple masses, or extracranial cancer history alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include solitary, multiple and hemorrhagic brain metastases. Exclude isolated skull, dural or leptomeningeal
+    metastasis without parenchymal deposits.
+  special_cases:
+  - Treated metastasis still explicitly present = S. Resection cavity or treatment effect alone does not prove residual tumor.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Metastatic malignant neoplasm to brain
+  canonical_name: Metastatic malignant neoplasm to brain
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is metastasis
+  ai_generated_source_fields:
+    No.: 3
+    MR-RATE label: Metastatic malignant neoplasm to brain
+    Official MR-RATE positive phrase: There is metastasis
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies a secondary malignant tumor deposit in brain tissue.
+    Anatomical scope: Brain parenchyma.
+    Accepted equivalent terms/descriptions: Brain metastasis/metastases; intracerebral metastatic deposits; secondary malignant
+      brain deposits.
+    Related findings NOT sufficient alone: Enhancing or ring-enhancing lesion, edema, multiple masses, or extracranial cancer
+      history alone.
+    Included/excluded subtypes: Include solitary, multiple and hemorrhagic brain metastases. Exclude isolated skull, dural
+      or leptomeningeal metastasis without parenchymal deposits.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Treated metastasis still explicitly present = S. Resection cavity or treatment effect
+      alone does not prove residual tumor.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies an intracranial meningioma.
+  anatomical_scope: Intracranial meninges and related intracranial tumor extent.
+  target_type: null
+  accepted_equivalents:
+  - Meningioma
+  - intracranial meningeal tumor explicitly termed meningioma.
+  ai_generated_accepted_equivalents:
+  - Meningioma
+  - intracranial meningeal tumor explicitly termed meningioma.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Dural tail, dural enhancement, extra-axial mass, calcification or adjacent hyperostosis alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include any expressly named meningioma grade or location within the cranium. Exclude spinal meningioma and
+    unspecified dural tumors.
+  special_cases:
+  - No tissue confirmation required for report-text support. Do not infer subtype or grade.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Intracranial meningioma
+  canonical_name: Intracranial meningioma
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is meningioma
+  ai_generated_source_fields:
+    No.: 4
+    MR-RATE label: Intracranial meningioma
+    Official MR-RATE positive phrase: There is meningioma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies an intracranial meningioma.
+    Anatomical scope: Intracranial meninges and related intracranial tumor extent.
+    Accepted equivalent terms/descriptions: Meningioma; intracranial meningeal tumor explicitly termed meningioma.
+    Related findings NOT sufficient alone: Dural tail, dural enhancement, extra-axial mass, calcification or adjacent hyperostosis
+      alone.
+    Included/excluded subtypes: Include any expressly named meningioma grade or location within the cranium. Exclude spinal
+      meningioma and unspecified dural tumors.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: No tissue confirmation required for report-text support. Do not infer subtype or grade.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies CNS demyelinating disease or lesions explicitly attributed to demyelination.
+  anatomical_scope: Brain and spinal cord.
+  target_type: null
+  accepted_equivalents:
+  - Demyelinating plaques
+  - demyelinating lesions
+  - CNS demyelination
+  - lesions of multiple sclerosis explicitly present.
+  ai_generated_accepted_equivalents:
+  - Demyelinating plaques
+  - demyelinating lesions
+  - CNS demyelination
+  - lesions of multiple sclerosis explicitly present.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Nonspecific white-matter hyperintensities, white-matter disease, small-vessel ischemic change or isolated T2 signal abnormality.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include explicitly inflammatory/acquired demyelinating lesions. Exclude peripheral neuropathy, isolated clinical
+    history of MS and unspecified dysmyelination.
+  special_cases:
+  - Nonenhancing or stable demyelinating plaques remain S. No active demyelination does not negate existing inactive plaques.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Demyelinating disease of central nervous system
+  canonical_name: Demyelinating disease of central nervous system
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is demyelinating plaques
+  ai_generated_source_fields:
+    No.: 5
+    MR-RATE label: Demyelinating disease of central nervous system
+    Official MR-RATE positive phrase: There is demyelinating plaques
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies CNS demyelinating disease or lesions explicitly attributed
+      to demyelination.
+    Anatomical scope: Brain and spinal cord.
+    Accepted equivalent terms/descriptions: Demyelinating plaques; demyelinating lesions; CNS demyelination; lesions of multiple
+      sclerosis explicitly present.
+    Related findings NOT sufficient alone: Nonspecific white-matter hyperintensities, white-matter disease, small-vessel ischemic
+      change or isolated T2 signal abnormality.
+    Included/excluded subtypes: Include explicitly inflammatory/acquired demyelinating lesions. Exclude peripheral neuropathy,
+      isolated clinical history of MS and unspecified dysmyelination.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Nonenhancing or stable demyelinating plaques remain S. No active demyelination does
+      not negate existing inactive plaques.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report describes a focal displaced intervertebral disc as herniated, protruded, extruded or sequestered.
+  anatomical_scope: Cervical, thoracic and lumbar intervertebral discs.
+  target_type: null
+  accepted_equivalents:
+  - Disc/disk herniation
+  - herniated nucleus pulposus
+  - disc protrusion
+  - disc extrusion
+  - sequestered disc fragment
+  - prolapsed intervertebral disc.
+  ai_generated_accepted_equivalents:
+  - Disc/disk herniation
+  - herniated nucleus pulposus
+  - disc protrusion
+  - disc extrusion
+  - sequestered disc fragment
+  - prolapsed intervertebral disc.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Disc bulge, annular fissure, disc desiccation, disc-space loss or disc-osteophyte complex without explicit herniation/protrusion/extrusion.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include protrusion, extrusion and sequestration. Exclude bulge alone. Exclude isolated Schmorl nodes by study
+    scope.
+  special_cases:
+  - Broad-based protrusion counts; broad-based bulge alone does not. Interpret the reported term without reconstructing disc
+    geometry.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Herniation of nucleus pulposus
+  canonical_name: Herniation of nucleus pulposus
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is disc herniation
+  ai_generated_source_fields:
+    No.: 6
+    MR-RATE label: Herniation of nucleus pulposus
+    Official MR-RATE positive phrase: There is disc herniation
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report describes a focal displaced intervertebral disc as herniated,
+      protruded, extruded or sequestered.
+    Anatomical scope: Cervical, thoracic and lumbar intervertebral discs.
+    Accepted equivalent terms/descriptions: Disc/disk herniation; herniated nucleus pulposus; disc protrusion; disc extrusion;
+      sequestered disc fragment; prolapsed intervertebral disc.
+    Related findings NOT sufficient alone: Disc bulge, annular fissure, disc desiccation, disc-space loss or disc-osteophyte
+      complex without explicit herniation/protrusion/extrusion.
+    Included/excluded subtypes: Include protrusion, extrusion and sequestration. Exclude bulge alone. Exclude isolated Schmorl
+      nodes by study scope.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Broad-based protrusion counts; broad-based bulge alone does not. Interpret the reported
+      term without reconstructing disc geometry.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report explicitly describes external compression or compressive deformation of the spinal cord.
+  anatomical_scope: Spinal cord, including conus medullaris.
+  target_type: null
+  accepted_equivalents:
+  - Cord compression
+  - compressed cord
+  - compressive cord flattening/deformation
+  - cord indentation by a named compressing lesion.
+  ai_generated_accepted_equivalents:
+  - Cord compression
+  - compressed cord
+  - compressive cord flattening/deformation
+  - cord indentation by a named compressing lesion.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Canal stenosis, thecal-sac effacement, cord contact/abutment, myelomalacia or cord signal change alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include compressive cord deformation with or without signal change. Exclude isolated nerve-root or cauda-equina
+    compression.
+  special_cases:
+  - Cord signal may remain normal despite compression. No cord signal abnormality is not a negation of compression.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Spinal cord compression
+  canonical_name: Spinal cord compression
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is spinal cord compression
+  ai_generated_source_fields:
+    No.: 7
+    MR-RATE label: Spinal cord compression
+    Official MR-RATE positive phrase: There is spinal cord compression
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report explicitly describes external compression or compressive deformation
+      of the spinal cord.
+    Anatomical scope: Spinal cord, including conus medullaris.
+    Accepted equivalent terms/descriptions: Cord compression; compressed cord; compressive cord flattening/deformation; cord
+      indentation by a named compressing lesion.
+    Related findings NOT sufficient alone: Canal stenosis, thecal-sac effacement, cord contact/abutment, myelomalacia or cord
+      signal change alone.
+    Included/excluded subtypes: Include compressive cord deformation with or without signal change. Exclude isolated nerve-root
+      or cauda-equina compression.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Cord signal may remain normal despite compression. No cord signal abnormality is not
+      a negation of compression.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies an infarct as lacunar or a lacune as being of ischemic/vascular origin.
+  anatomical_scope: Deep brain structures, subcortical white matter or brainstem.
+  target_type: null
+  accepted_equivalents:
+  - Lacunar infarct/infarction
+  - ischemic lacune
+  - lacune of presumed vascular origin.
+  ai_generated_accepted_equivalents:
+  - Lacunar infarct/infarction
+  - ischemic lacune
+  - lacune of presumed vascular origin.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Small-vessel disease, tiny nonspecific cavity, enlarged perivascular space or a small infarct not described as lacunar.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: Old/chronic lacunar infarct or established ischemic lacune = H. Acute/subacute or age-unspecified lacunar
+    infarct currently described = S.
+  clinical_history_rules: Old/chronic lacunar infarct or established ischemic lacune = H. Acute/subacute or age-unspecified
+    lacunar infarct currently described = S.
+  related_finding_rules: null
+  subtype_rules: Include acute/subacute lacunar infarction. Do not infer lacunar mechanism from size alone.
+  special_cases:
+  - No acute lacunar infarct does not deny an old lacune. An expressly lacunar infarct also supports the parent infarction
+    label with the same temporality.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Lacunar infarct
+  canonical_name: Lacunar infarct
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is lacunar infarct
+  ai_generated_source_fields:
+    No.: 8
+    MR-RATE label: Lacunar infarct
+    Official MR-RATE positive phrase: There is lacunar infarct
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies an infarct as lacunar or a lacune as being of ischemic/vascular
+      origin.
+    Anatomical scope: Deep brain structures, subcortical white matter or brainstem.
+    Accepted equivalent terms/descriptions: Lacunar infarct/infarction; ischemic lacune; lacune of presumed vascular origin.
+    Related findings NOT sufficient alone: Small-vessel disease, tiny nonspecific cavity, enlarged perivascular space or a
+      small infarct not described as lacunar.
+    Included/excluded subtypes: Include acute/subacute lacunar infarction. Do not infer lacunar mechanism from size alone.
+    Special history/temporality rule: Old/chronic lacunar infarct or established ischemic lacune = H. Acute/subacute or age-unspecified
+      lacunar infarct currently described = S.
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: No acute lacunar infarct does not deny an old lacune. An expressly lacunar infarct
+      also supports the parent infarction label with the same temporality.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: 'Proposed concept: clinically silent cerebral microhemorrhage, not merely a susceptibility focus.'
+  anatomical_scope: Brain parenchyma.
+  target_type: null
+  accepted_equivalents: []
+  ai_generated_accepted_equivalents: []
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Microbleed wording alone does not establish the clinical qualifier silent.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: null
+  special_cases:
+  - Clarify whether the target is any reported cerebral microbleed or specifically a clinically silent event.
+  primary_evaluation_inclusion: DEFER
+  ai_generated: true
+  defer_reason: Clinical silence cannot reliably be inferred from imaging-report findings alone; label and supplied positive
+    phrase differ.
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Silent micro-hemorrhage of brain
+  canonical_name: Silent micro-hemorrhage of brain
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is microhemorrhage
+  ai_generated_source_fields:
+    No.: 9
+    MR-RATE label: Silent micro-hemorrhage of brain
+    Official MR-RATE positive phrase: There is microhemorrhage
+    INCLUDE / DEFER: DEFER
+    Plain-language meaning / operational definition: 'Proposed concept: clinically silent cerebral microhemorrhage, not merely
+      a susceptibility focus.'
+    Anatomical scope: Brain parenchyma.
+    Accepted equivalent terms/descriptions: null
+    Related findings NOT sufficient alone: Microbleed wording alone does not establish the clinical qualifier silent.
+    Included/excluded subtypes: null
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Clarify whether the target is any reported cerebral microbleed or specifically a clinically
+      silent event.
+    Reason if DEFER: Clinical silence cannot reliably be inferred from imaging-report findings alone; label and supplied positive
+      phrase differ.
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: DEFERRED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies a CNS cavernous malformation.
+  anatomical_scope: Brain or spinal cord parenchyma.
+  target_type: null
+  accepted_equivalents:
+  - Cavernoma
+  - cavernous malformation
+  - cavernous angioma
+  - CNS cavernous hemangioma.
+  ai_generated_accepted_equivalents:
+  - Cavernoma
+  - cavernous malformation
+  - cavernous angioma
+  - CNS cavernous hemangioma.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Blooming, hemosiderin rim, microbleed, developmental venous anomaly or unspecified vascular malformation alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include solitary/multiple CNS cavernous malformations. Exclude vertebral hemangioma and orbital, hepatic
+    or other extracranial hemangioma.
+  special_cases:
+  - Anatomical site must be clear. A cavernoma alone does not establish a separate current hemorrhage label.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Cavernous hemangioma
+  canonical_name: Cavernous hemangioma
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is cavernoma
+  ai_generated_source_fields:
+    No.: 10
+    MR-RATE label: Cavernous hemangioma
+    Official MR-RATE positive phrase: There is cavernoma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies a CNS cavernous malformation.
+    Anatomical scope: Brain or spinal cord parenchyma.
+    Accepted equivalent terms/descriptions: Cavernoma; cavernous malformation; cavernous angioma; CNS cavernous hemangioma.
+    Related findings NOT sufficient alone: Blooming, hemosiderin rim, microbleed, developmental venous anomaly or unspecified
+      vascular malformation alone.
+    Included/excluded subtypes: Include solitary/multiple CNS cavernous malformations. Exclude vertebral hemangioma and orbital,
+      hepatic or other extracranial hemangioma.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Anatomical site must be clear. A cavernoma alone does not establish a separate current
+      hemorrhage label.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies blood or hematoma in the intracranial subdural space.
+  anatomical_scope: Intracranial subdural compartment.
+  target_type: null
+  accepted_equivalents:
+  - Subdural hematoma
+  - subdural hemorrhage
+  - SDH when unambiguously expanded by context.
+  ai_generated_accepted_equivalents:
+  - Subdural hematoma
+  - subdural hemorrhage
+  - SDH when unambiguously expanded by context.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Subdural hygroma, unspecified subdural fluid collection or dural thickening alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: Chronic subdural hematoma still present = S. Previous SDH fully resolved/evacuated without residual or
+    recurrence = H.
+  clinical_history_rules: Chronic subdural hematoma still present = S. Previous SDH fully resolved/evacuated without residual
+    or recurrence = H.
+  related_finding_rules: null
+  subtype_rules: Include acute, subacute, chronic and acute-on-chronic subdural hematoma. Exclude epidural and spinal subdural
+    bleeding.
+  special_cases:
+  - No acute hemorrhage does not negate a reported chronic subdural hematoma.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Subdural intracranial hemorrhage
+  canonical_name: Subdural intracranial hemorrhage
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is subdural hematoma
+  ai_generated_source_fields:
+    No.: 11
+    MR-RATE label: Subdural intracranial hemorrhage
+    Official MR-RATE positive phrase: There is subdural hematoma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies blood or hematoma in the intracranial subdural space.
+    Anatomical scope: Intracranial subdural compartment.
+    Accepted equivalent terms/descriptions: Subdural hematoma; subdural hemorrhage; SDH when unambiguously expanded by context.
+    Related findings NOT sufficient alone: Subdural hygroma, unspecified subdural fluid collection or dural thickening alone.
+    Included/excluded subtypes: Include acute, subacute, chronic and acute-on-chronic subdural hematoma. Exclude epidural
+      and spinal subdural bleeding.
+    Special history/temporality rule: Chronic subdural hematoma still present = S. Previous SDH fully resolved/evacuated without
+      residual or recurrence = H.
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: No acute hemorrhage does not negate a reported chronic subdural hematoma.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies gliosis or glial scarring in CNS tissue.
+  anatomical_scope: Brain or spinal cord parenchyma.
+  target_type: null
+  accepted_equivalents:
+  - Gliosis
+  - gliotic change
+  - gliotic scarring
+  - glial scar.
+  ai_generated_accepted_equivalents:
+  - Gliosis
+  - gliotic change
+  - gliotic scarring
+  - glial scar.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - T2/FLAIR hyperintensity, old injury, encephalomalacia or chronic ischemic change without explicit gliosis.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include focal/diffuse and post-injury/post-treatment gliosis. Exclude glioma and nonspecific signal change.
+  special_cases:
+  - Gliosis present as a chronic residual finding = S; an old cause does not make the scar itself historical.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Gliosis
+  canonical_name: Gliosis
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is gliosis
+  ai_generated_source_fields:
+    No.: 12
+    MR-RATE label: Gliosis
+    Official MR-RATE positive phrase: There is gliosis
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies gliosis or glial scarring in CNS tissue.
+    Anatomical scope: Brain or spinal cord parenchyma.
+    Accepted equivalent terms/descriptions: Gliosis; gliotic change; gliotic scarring; glial scar.
+    Related findings NOT sufficient alone: T2/FLAIR hyperintensity, old injury, encephalomalacia or chronic ischemic change
+      without explicit gliosis.
+    Included/excluded subtypes: Include focal/diffuse and post-injury/post-treatment gliosis. Exclude glioma and nonspecific
+      signal change.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Gliosis present as a chronic residual finding = S; an old cause does not make the
+      scar itself historical.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies loss of cerebral parenchymal volume.
+  anatomical_scope: Cerebral hemispheres, cortex and subcortical tissue.
+  target_type: null
+  accepted_equivalents:
+  - Cerebral atrophy
+  - cerebral volume loss
+  - cortical atrophy
+  - generalized brain parenchymal volume loss involving the cerebrum.
+  ai_generated_accepted_equivalents:
+  - Cerebral atrophy
+  - cerebral volume loss
+  - cortical atrophy
+  - generalized brain parenchymal volume loss involving the cerebrum.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Prominent sulci, ventriculomegaly or focal encephalomalacia without an explicit atrophy/volume-loss statement.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include focal or diffuse and age-related cerebral atrophy explicitly described. Exclude isolated cerebellar
+    atrophy and congenital hypoplasia.
+  special_cases:
+  - Do not infer dementia or a neurodegenerative etiology. Explicit age-related volume loss still counts as this structural
+    label.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Cerebral atrophy
+  canonical_name: Cerebral atrophy
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is cerebral atrophy
+  ai_generated_source_fields:
+    No.: 13
+    MR-RATE label: Cerebral atrophy
+    Official MR-RATE positive phrase: There is cerebral atrophy
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies loss of cerebral parenchymal volume.
+    Anatomical scope: Cerebral hemispheres, cortex and subcortical tissue.
+    Accepted equivalent terms/descriptions: Cerebral atrophy; cerebral volume loss; cortical atrophy; generalized brain parenchymal
+      volume loss involving the cerebrum.
+    Related findings NOT sufficient alone: Prominent sulci, ventriculomegaly or focal encephalomalacia without an explicit
+      atrophy/volume-loss statement.
+    Included/excluded subtypes: Include focal or diffuse and age-related cerebral atrophy explicitly described. Exclude isolated
+      cerebellar atrophy and congenital hypoplasia.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Do not infer dementia or a neurodegenerative etiology. Explicit age-related volume
+      loss still counts as this structural label.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies established encephalomalacia of brain tissue.
+  anatomical_scope: Brain parenchyma.
+  target_type: null
+  accepted_equivalents:
+  - Encephalomalacia
+  - encephalomalacic change
+  - cystic encephalomalacia.
+  ai_generated_accepted_equivalents:
+  - Encephalomalacia
+  - encephalomalacic change
+  - cystic encephalomalacia.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Gliosis, atrophy, old infarct or postoperative cavity alone without explicit encephalomalacia.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include ischemic, traumatic and postoperative encephalomalacia explicitly named. Exclude an unspecified cyst
+    or cavity.
+  special_cases:
+  - Chronic encephalomalacia currently present = S even when the precipitating injury is historical.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Encephalomalacia
+  canonical_name: Encephalomalacia
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is encephalomalacia
+  ai_generated_source_fields:
+    No.: 14
+    MR-RATE label: Encephalomalacia
+    Official MR-RATE positive phrase: There is encephalomalacia
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies established encephalomalacia of brain tissue.
+    Anatomical scope: Brain parenchyma.
+    Accepted equivalent terms/descriptions: Encephalomalacia; encephalomalacic change; cystic encephalomalacia.
+    Related findings NOT sufficient alone: Gliosis, atrophy, old infarct or postoperative cavity alone without explicit encephalomalacia.
+    Included/excluded subtypes: Include ischemic, traumatic and postoperative encephalomalacia explicitly named. Exclude an
+      unspecified cyst or cavity.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Chronic encephalomalacia currently present = S even when the precipitating injury
+      is historical.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies an arachnoid cyst.
+  anatomical_scope: Intracranial arachnoid/extra-axial spaces.
+  target_type: null
+  accepted_equivalents:
+  - Arachnoid cyst
+  - intracranial arachnoidal cyst.
+  ai_generated_accepted_equivalents:
+  - Arachnoid cyst
+  - intracranial arachnoidal cyst.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - CSF-intensity extra-axial space, enlarged cistern, mega cisterna magna or nonspecific cyst alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include named intracranial arachnoid cysts of any location. Exclude spinal arachnoid cysts and other cyst
+    types.
+  special_cases:
+  - Do not infer cyst type from fluid signal or mass effect alone.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Arachnoid cyst
+  canonical_name: Arachnoid cyst
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is arachnoid cyst
+  ai_generated_source_fields:
+    No.: 15
+    MR-RATE label: Arachnoid cyst
+    Official MR-RATE positive phrase: There is arachnoid cyst
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies an arachnoid cyst.
+    Anatomical scope: Intracranial arachnoid/extra-axial spaces.
+    Accepted equivalent terms/descriptions: Arachnoid cyst; intracranial arachnoidal cyst.
+    Related findings NOT sufficient alone: CSF-intensity extra-axial space, enlarged cistern, mega cisterna magna or nonspecific
+      cyst alone.
+    Included/excluded subtypes: Include named intracranial arachnoid cysts of any location. Exclude spinal arachnoid cysts
+      and other cyst types.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Do not infer cyst type from fluid signal or mass effect alone.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Proposed concept needs distinction between empty-sella morphology and a clinically defined syndrome.
+  anatomical_scope: Sella turcica and pituitary region.
+  target_type: null
+  accepted_equivalents: []
+  ai_generated_accepted_equivalents: []
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Partially empty/empty sella alone does not document symptoms or endocrine dysfunction.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: null
+  special_cases:
+  - Study must specify whether structural empty sella, including partial empty sella, is the intended endpoint.
+  primary_evaluation_inclusion: DEFER
+  ai_generated: true
+  defer_reason: Label says syndrome whereas supplied phrase denotes morphology; clinical scope must be agreed before inclusion.
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Empty sella syndrome
+  canonical_name: Empty sella syndrome
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is empty sella
+  ai_generated_source_fields:
+    No.: 16
+    MR-RATE label: Empty sella syndrome
+    Official MR-RATE positive phrase: There is empty sella
+    INCLUDE / DEFER: DEFER
+    Plain-language meaning / operational definition: Proposed concept needs distinction between empty-sella morphology and
+      a clinically defined syndrome.
+    Anatomical scope: Sella turcica and pituitary region.
+    Accepted equivalent terms/descriptions: null
+    Related findings NOT sufficient alone: Partially empty/empty sella alone does not document symptoms or endocrine dysfunction.
+    Included/excluded subtypes: null
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Study must specify whether structural empty sella, including partial empty sella,
+      is the intended endpoint.
+    Reason if DEFER: Label says syndrome whereas supplied phrase denotes morphology; clinical scope must be agreed before
+      inclusion.
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: DEFERRED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies an aneurysm of an intracranial artery.
+  anatomical_scope: Intracranial arterial circulation.
+  target_type: null
+  accepted_equivalents:
+  - Intracranial/cerebral aneurysm
+  - saccular aneurysm
+  - fusiform aneurysm of a named intracranial artery.
+  ai_generated_accepted_equivalents:
+  - Intracranial/cerebral aneurysm
+  - saccular aneurysm
+  - fusiform aneurysm of a named intracranial artery.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Infundibulum, arterial ectasia/dolichoectasia, tortuosity or unexplained hemorrhage alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include ruptured/unruptured and explicitly thrombosed aneurysms. Exclude pseudoaneurysm unless the study
+    later broadens this scope; exclude extracranial aneurysm.
+  special_cases:
+  - Clip/coil hardware alone = evidence of prior treatment, not current aneurysm. Explicit residual/recurrent aneurysm = S;
+    excluded treated sac with no residual = H.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Intracranial aneurysm
+  canonical_name: Intracranial aneurysm
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is intracranial aneurysm
+  ai_generated_source_fields:
+    No.: 17
+    MR-RATE label: Intracranial aneurysm
+    Official MR-RATE positive phrase: There is intracranial aneurysm
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies an aneurysm of an intracranial artery.
+    Anatomical scope: Intracranial arterial circulation.
+    Accepted equivalent terms/descriptions: Intracranial/cerebral aneurysm; saccular aneurysm; fusiform aneurysm of a named
+      intracranial artery.
+    Related findings NOT sufficient alone: Infundibulum, arterial ectasia/dolichoectasia, tortuosity or unexplained hemorrhage
+      alone.
+    Included/excluded subtypes: Include ruptured/unruptured and explicitly thrombosed aneurysms. Exclude pseudoaneurysm unless
+      the study later broadens this scope; exclude extracranial aneurysm.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Clip/coil hardware alone = evidence of prior treatment, not current aneurysm. Explicit
+      residual/recurrent aneurysm = S; excluded treated sac with no residual = H.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report explicitly identifies a Chiari malformation.
+  anatomical_scope: Craniovertebral junction and hindbrain/posterior fossa.
+  target_type: null
+  accepted_equivalents:
+  - Chiari malformation
+  - Chiari I/II/III
+  - Arnold-Chiari malformation.
+  ai_generated_accepted_equivalents:
+  - Chiari malformation
+  - Chiari I/II/III
+  - Arnold-Chiari malformation.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Low-lying tonsils, tonsillar ectopia or descent measurement, syrinx or posterior-fossa crowding alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include explicitly diagnosed Chiari types. Exclude acquired tonsillar herniation and isolated nonspecific
+    ectopia.
+  special_cases:
+  - Do not diagnose Chiari from a millimeter threshold. Prior decompression alone does not prove a current malformation.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Chiari malformation
+  canonical_name: Chiari malformation
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is Chiari malformation
+  ai_generated_source_fields:
+    No.: 18
+    MR-RATE label: Chiari malformation
+    Official MR-RATE positive phrase: There is Chiari malformation
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report explicitly identifies a Chiari malformation.
+    Anatomical scope: Craniovertebral junction and hindbrain/posterior fossa.
+    Accepted equivalent terms/descriptions: Chiari malformation; Chiari I/II/III; Arnold-Chiari malformation.
+    Related findings NOT sufficient alone: Low-lying tonsils, tonsillar ectopia or descent measurement, syrinx or posterior-fossa
+      crowding alone.
+    Included/excluded subtypes: Include explicitly diagnosed Chiari types. Exclude acquired tonsillar herniation and isolated
+      nonspecific ectopia.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Do not diagnose Chiari from a millimeter threshold. Prior decompression alone does
+      not prove a current malformation.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies an intracranial or intraspinal schwannoma.
+  anatomical_scope: Intracranial cranial nerves and intraspinal nerve roots.
+  target_type: null
+  accepted_equivalents:
+  - Schwannoma
+  - neurilemmoma
+  - vestibular schwannoma
+  - acoustic neuroma.
+  ai_generated_accepted_equivalents:
+  - Schwannoma
+  - neurilemmoma
+  - vestibular schwannoma
+  - acoustic neuroma.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Nerve-sheath tumor not further specified, internal-auditory-canal mass or cerebellopontine-angle mass alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include vestibular and other cranial/spinal schwannomas. Exclude neurofibroma and extracranial peripheral
+    schwannoma.
+  special_cases:
+  - An unspecified nerve-sheath tumor is not necessarily a schwannoma.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Schwannoma
+  canonical_name: Schwannoma
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is schwannoma
+  ai_generated_source_fields:
+    No.: 19
+    MR-RATE label: Schwannoma
+    Official MR-RATE positive phrase: There is schwannoma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies an intracranial or intraspinal schwannoma.
+    Anatomical scope: Intracranial cranial nerves and intraspinal nerve roots.
+    Accepted equivalent terms/descriptions: Schwannoma; neurilemmoma; vestibular schwannoma; acoustic neuroma.
+    Related findings NOT sufficient alone: Nerve-sheath tumor not further specified, internal-auditory-canal mass or cerebellopontine-angle
+      mass alone.
+    Included/excluded subtypes: Include vestibular and other cranial/spinal schwannomas. Exclude neurofibroma and extracranial
+      peripheral schwannoma.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: An unspecified nerve-sheath tumor is not necessarily a schwannoma.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies a cyst arising in the pineal gland.
+  anatomical_scope: Pineal gland.
+  target_type: null
+  accepted_equivalents:
+  - Pineal cyst
+  - pineal gland cyst
+  - benign pineal cyst.
+  ai_generated_accepted_equivalents:
+  - Pineal cyst
+  - pineal gland cyst
+  - benign pineal cyst.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Pineal-region cystic mass, pineal calcification or enlarged pineal gland alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include simple or complex cysts explicitly called pineal cysts. Exclude cystic pineal tumors and arachnoid
+    cysts.
+  special_cases:
+  - Complex appearance alone does not establish a neoplasm or alter a definite pineal-cyst report label.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Cyst of pineal gland
+  canonical_name: Cyst of pineal gland
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is pineal cyst
+  ai_generated_source_fields:
+    No.: 20
+    MR-RATE label: Cyst of pineal gland
+    Official MR-RATE positive phrase: There is pineal cyst
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies a cyst arising in the pineal gland.
+    Anatomical scope: Pineal gland.
+    Accepted equivalent terms/descriptions: Pineal cyst; pineal gland cyst; benign pineal cyst.
+    Related findings NOT sufficient alone: Pineal-region cystic mass, pineal calcification or enlarged pineal gland alone.
+    Included/excluded subtypes: Include simple or complex cysts explicitly called pineal cysts. Exclude cystic pineal tumors
+      and arachnoid cysts.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Complex appearance alone does not establish a neoplasm or alter a definite pineal-cyst
+      report label.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies a hemangioma within a vertebra.
+  anatomical_scope: Vertebral body or posterior elements.
+  target_type: null
+  accepted_equivalents:
+  - Vertebral hemangioma
+  - vertebral body hemangioma
+  - intraosseous hemangioma at a vertebral site.
+  ai_generated_accepted_equivalents:
+  - Vertebral hemangioma
+  - vertebral body hemangioma
+  - intraosseous hemangioma at a vertebral site.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - High T1 vertebral marrow signal, focal fatty marrow, trabecular pattern or nonspecific vertebral lesion alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include typical, atypical and aggressive vertebral hemangiomas explicitly named. Exclude CNS cavernoma and
+    nonvertebral hemangioma.
+  special_cases:
+  - Atypical hemangioma stated definitively = S; possible atypical hemangioma = UC.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Hemangioma of vertebral column
+  canonical_name: Hemangioma of vertebral column
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is vertebral hemangioma
+  ai_generated_source_fields:
+    No.: 21
+    MR-RATE label: Hemangioma of vertebral column
+    Official MR-RATE positive phrase: There is vertebral hemangioma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies a hemangioma within a vertebra.
+    Anatomical scope: Vertebral body or posterior elements.
+    Accepted equivalent terms/descriptions: Vertebral hemangioma; vertebral body hemangioma; intraosseous hemangioma at a
+      vertebral site.
+    Related findings NOT sufficient alone: High T1 vertebral marrow signal, focal fatty marrow, trabecular pattern or nonspecific
+      vertebral lesion alone.
+    Included/excluded subtypes: Include typical, atypical and aggressive vertebral hemangiomas explicitly named. Exclude CNS
+      cavernoma and nonvertebral hemangioma.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Atypical hemangioma stated definitively = S; possible atypical hemangioma = UC.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies a Rathke cleft cyst.
+  anatomical_scope: Pituitary/sellar region, including suprasellar extension.
+  target_type: null
+  accepted_equivalents:
+  - Rathke cleft cyst
+  - Rathke's cleft cyst
+  - Rathke pouch cyst
+  - RCC only when context is explicit.
+  ai_generated_accepted_equivalents:
+  - Rathke cleft cyst
+  - Rathke's cleft cyst
+  - Rathke pouch cyst
+  - RCC only when context is explicit.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Pituitary cyst, pars-intermedia cyst, midline sellar cyst or intracystic nodule alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include named Rathke cleft cysts regardless of size. Exclude cystic adenoma, craniopharyngioma and unspecified
+    sellar cyst.
+  special_cases:
+  - Do not assign embryologic cyst type from location or signal alone.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Rathke's pouch cyst
+  canonical_name: Rathke's pouch cyst
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is Rathke cleft cyst
+  ai_generated_source_fields:
+    No.: 22
+    MR-RATE label: Rathke's pouch cyst
+    Official MR-RATE positive phrase: There is Rathke cleft cyst
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies a Rathke cleft cyst.
+    Anatomical scope: Pituitary/sellar region, including suprasellar extension.
+    Accepted equivalent terms/descriptions: Rathke cleft cyst; Rathke's cleft cyst; Rathke pouch cyst; RCC only when context
+      is explicit.
+    Related findings NOT sufficient alone: Pituitary cyst, pars-intermedia cyst, midline sellar cyst or intracystic nodule
+      alone.
+    Included/excluded subtypes: Include named Rathke cleft cysts regardless of size. Exclude cystic adenoma, craniopharyngioma
+      and unspecified sellar cyst.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Do not assign embryologic cyst type from location or signal alone.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies edema within brain parenchyma.
+  anatomical_scope: Brain parenchyma, including cerebral hemispheres, cerebellum and brainstem.
+  target_type: null
+  accepted_equivalents:
+  - Cerebral/brain edema
+  - vasogenic edema
+  - cytotoxic edema
+  - interstitial edema in brain tissue.
+  ai_generated_accepted_equivalents:
+  - Cerebral/brain edema
+  - vasogenic edema
+  - cytotoxic edema
+  - interstitial edema in brain tissue.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - T2/FLAIR hyperintensity, sulcal effacement, mass effect, midline shift or nonspecific swelling alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include focal, diffuse, perilesional and transependymal edema explicitly called edema. Exclude scalp, orbital
+    and spinal cord edema.
+  special_cases:
+  - Edema without an anatomical referent = NEI. Do not infer its cause.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Cerebral edema
+  canonical_name: Cerebral edema
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is edema
+  ai_generated_source_fields:
+    No.: 23
+    MR-RATE label: Cerebral edema
+    Official MR-RATE positive phrase: There is edema
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies edema within brain parenchyma.
+    Anatomical scope: Brain parenchyma, including cerebral hemispheres, cerebellum and brainstem.
+    Accepted equivalent terms/descriptions: Cerebral/brain edema; vasogenic edema; cytotoxic edema; interstitial edema in
+      brain tissue.
+    Related findings NOT sufficient alone: T2/FLAIR hyperintensity, sulcal effacement, mass effect, midline shift or nonspecific
+      swelling alone.
+    Included/excluded subtypes: Include focal, diffuse, perilesional and transependymal edema explicitly called edema. Exclude
+      scalp, orbital and spinal cord edema.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Edema without an anatomical referent = NEI. Do not infer its cause.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies narrowing of the central spinal canal.
+  anatomical_scope: Cervical, thoracic or lumbar central spinal canal.
+  target_type: null
+  accepted_equivalents:
+  - Spinal canal stenosis
+  - central canal stenosis
+  - central spinal canal narrowing.
+  ai_generated_accepted_equivalents:
+  - Spinal canal stenosis
+  - central canal stenosis
+  - central spinal canal narrowing.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Spondylosis, disc bulge, thecal-sac impression or isolated foraminal/lateral-recess narrowing alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include congenital/acquired and mild/moderate/severe central stenosis. Exclude isolated foraminal and subarticular/lateral-recess
+    stenosis.
+  special_cases:
+  - Central-canal scope follows the supplied positive phrase and must be adopted prospectively. No significant stenosis does
+    not explicitly rule out mild stenosis.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Spinal stenosis
+  canonical_name: Spinal stenosis
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is spinal canal stenosis
+  ai_generated_source_fields:
+    No.: 24
+    MR-RATE label: Spinal stenosis
+    Official MR-RATE positive phrase: There is spinal canal stenosis
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies narrowing of the central spinal canal.
+    Anatomical scope: Cervical, thoracic or lumbar central spinal canal.
+    Accepted equivalent terms/descriptions: Spinal canal stenosis; central canal stenosis; central spinal canal narrowing.
+    Related findings NOT sufficient alone: Spondylosis, disc bulge, thecal-sac impression or isolated foraminal/lateral-recess
+      narrowing alone.
+    Included/excluded subtypes: Include congenital/acquired and mild/moderate/severe central stenosis. Exclude isolated foraminal
+      and subarticular/lateral-recess stenosis.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Central-canal scope follows the supplied positive phrase and must be adopted prospectively.
+      No significant stenosis does not explicitly rule out mild stenosis.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report explicitly identifies inflammatory/infective disease of the mastoid air cells as mastoiditis.
+  anatomical_scope: Mastoid air cells and mastoid antrum.
+  target_type: null
+  accepted_equivalents:
+  - Mastoiditis
+  - coalescent mastoiditis
+  - otomastoiditis.
+  ai_generated_accepted_equivalents:
+  - Mastoiditis
+  - coalescent mastoiditis
+  - otomastoiditis.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Mastoid effusion, opacification, mucosal thickening, sclerosis or middle-ear fluid alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include explicitly named acute, chronic and coalescent mastoiditis. Exclude isolated otitis media or mastoid
+    fluid without mastoiditis attribution.
+  special_cases:
+  - A definite report diagnosis supports the text label even without clinical corroboration; this does not establish actual
+    clinical infection.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Mastoiditis
+  canonical_name: Mastoiditis
+  repository_flagged_label: true
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is mastoiditis
+  ai_generated_source_fields:
+    No.: 25
+    MR-RATE label: Mastoiditis
+    Official MR-RATE positive phrase: There is mastoiditis
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report explicitly identifies inflammatory/infective disease of the mastoid
+      air cells as mastoiditis.
+    Anatomical scope: Mastoid air cells and mastoid antrum.
+    Accepted equivalent terms/descriptions: Mastoiditis; coalescent mastoiditis; otomastoiditis.
+    Related findings NOT sufficient alone: Mastoid effusion, opacification, mucosal thickening, sclerosis or middle-ear fluid
+      alone.
+    Included/excluded subtypes: Include explicitly named acute, chronic and coalescent mastoiditis. Exclude isolated otitis
+      media or mastoid fluid without mastoiditis attribution.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: A definite report diagnosis supports the text label even without clinical corroboration;
+      this does not establish actual clinical infection.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report explicitly identifies mastoiditis as chronic.
+  anatomical_scope: Mastoid air cells and mastoid antrum.
+  target_type: null
+  accepted_equivalents:
+  - Chronic mastoiditis
+  - chronic otomastoiditis.
+  ai_generated_accepted_equivalents:
+  - Chronic mastoiditis
+  - chronic otomastoiditis.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Mastoid sclerosis, underpneumatization, persistent mastoid effusion or mastoiditis without a chronic qualifier.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include chronic and acute-on-chronic mastoiditis explicitly named. Exclude acute-only or temporally unspecified
+    mastoiditis.
+  special_cases:
+  - Currently present chronic mastoiditis = S. Prior resolved mastoiditis = H. Chronic mastoiditis also supports the broader
+    mastoiditis label.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Chronic mastoiditis
+  canonical_name: Chronic mastoiditis
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is chronic mastoiditis
+  ai_generated_source_fields:
+    No.: 26
+    MR-RATE label: Chronic mastoiditis
+    Official MR-RATE positive phrase: There is chronic mastoiditis
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report explicitly identifies mastoiditis as chronic.
+    Anatomical scope: Mastoid air cells and mastoid antrum.
+    Accepted equivalent terms/descriptions: Chronic mastoiditis; chronic otomastoiditis.
+    Related findings NOT sufficient alone: Mastoid sclerosis, underpneumatization, persistent mastoid effusion or mastoiditis
+      without a chronic qualifier.
+    Included/excluded subtypes: Include chronic and acute-on-chronic mastoiditis explicitly named. Exclude acute-only or temporally
+      unspecified mastoiditis.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Currently present chronic mastoiditis = S. Prior resolved mastoiditis = H. Chronic
+      mastoiditis also supports the broader mastoiditis label.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies enlargement of the cerebral ventricular system.
+  anatomical_scope: Intracranial ventricles.
+  target_type: null
+  accepted_equivalents:
+  - Ventriculomegaly
+  - ventricular dilatation/dilation
+  - enlarged cerebral ventricles.
+  ai_generated_accepted_equivalents:
+  - Ventriculomegaly
+  - ventricular dilatation/dilation
+  - enlarged cerebral ventricles.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Hydrocephalus label alone under this conservative rule, prominent CSF spaces, ventricular asymmetry or cerebral atrophy
+    alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include focal/generalized and ex-vacuo ventricular enlargement. Exclude isolated normal size asymmetry without
+    enlargement.
+  special_cases:
+  - No hydrocephalus does not contradict ventriculomegaly. Ventriculomegaly does not automatically establish hydrocephalus.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Ventriculomegaly
+  canonical_name: Ventriculomegaly
+  repository_flagged_label: true
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is ventriculomegaly
+  ai_generated_source_fields:
+    No.: 27
+    MR-RATE label: Ventriculomegaly
+    Official MR-RATE positive phrase: There is ventriculomegaly
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies enlargement of the cerebral ventricular system.
+    Anatomical scope: Intracranial ventricles.
+    Accepted equivalent terms/descriptions: Ventriculomegaly; ventricular dilatation/dilation; enlarged cerebral ventricles.
+    Related findings NOT sufficient alone: Hydrocephalus label alone under this conservative rule, prominent CSF spaces, ventricular
+      asymmetry or cerebral atrophy alone.
+    Included/excluded subtypes: Include focal/generalized and ex-vacuo ventricular enlargement. Exclude isolated normal size
+      asymmetry without enlargement.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: No hydrocephalus does not contradict ventriculomegaly. Ventriculomegaly does not automatically
+      establish hydrocephalus.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: 'Proposed concept: a degenerative cerebellar process, which is not uniquely established by atrophy.'
+  anatomical_scope: Cerebellum.
+  target_type: null
+  accepted_equivalents: []
+  ai_generated_accepted_equivalents: []
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Cerebellar atrophy alone does not specify a degenerative cause.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: null
+  special_cases:
+  - Clarify whether the intended target is structural cerebellar atrophy or etiologic degeneration.
+  primary_evaluation_inclusion: DEFER
+  ai_generated: true
+  defer_reason: Label says degeneration whereas supplied phrase says atrophy; they are not interchangeable without a study-specific
+    definition.
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Cerebellar degeneration
+  canonical_name: Cerebellar degeneration
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is cerebellar atrophy
+  ai_generated_source_fields:
+    No.: 28
+    MR-RATE label: Cerebellar degeneration
+    Official MR-RATE positive phrase: There is cerebellar atrophy
+    INCLUDE / DEFER: DEFER
+    Plain-language meaning / operational definition: 'Proposed concept: a degenerative cerebellar process, which is not uniquely
+      established by atrophy.'
+    Anatomical scope: Cerebellum.
+    Accepted equivalent terms/descriptions: null
+    Related findings NOT sufficient alone: Cerebellar atrophy alone does not specify a degenerative cause.
+    Included/excluded subtypes: null
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Clarify whether the intended target is structural cerebellar atrophy or etiologic
+      degeneration.
+    Reason if DEFER: Label says degeneration whereas supplied phrase says atrophy; they are not interchangeable without a
+      study-specific definition.
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: DEFERRED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report explicitly identifies a mega cisterna magna.
+  anatomical_scope: Retrocerebellar cisterna magna.
+  target_type: null
+  accepted_equivalents:
+  - Mega cisterna magna
+  - megacisterna magna.
+  ai_generated_accepted_equivalents:
+  - Mega cisterna magna
+  - megacisterna magna.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Prominent/enlarged retrocerebellar CSF space or size measurement alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include explicitly named mega cisterna magna. Exclude posterior-fossa arachnoid cyst, Blake pouch cyst and
+    Dandy-Walker malformation.
+  special_cases:
+  - A named developmental variant can support this text label without implying symptomatic disease.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Mega cisterna magna
+  canonical_name: Mega cisterna magna
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is mega cisterna magna
+  ai_generated_source_fields:
+    No.: 29
+    MR-RATE label: Mega cisterna magna
+    Official MR-RATE positive phrase: There is mega cisterna magna
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report explicitly identifies a mega cisterna magna.
+    Anatomical scope: Retrocerebellar cisterna magna.
+    Accepted equivalent terms/descriptions: Mega cisterna magna; megacisterna magna.
+    Related findings NOT sufficient alone: Prominent/enlarged retrocerebellar CSF space or size measurement alone.
+    Included/excluded subtypes: Include explicitly named mega cisterna magna. Exclude posterior-fossa arachnoid cyst, Blake
+      pouch cyst and Dandy-Walker malformation.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: A named developmental variant can support this text label without implying symptomatic
+      disease.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Proposed concept appears to be the anatomical variant cavum septum pellucidum.
+  anatomical_scope: Between the septal leaflets adjacent to the lateral ventricles.
+  target_type: null
+  accepted_equivalents: []
+  ai_generated_accepted_equivalents: []
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Mention of the septum pellucidum alone does not establish a cavum or a pathological cyst.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: null
+  special_cases:
+  - Clarify whether any cavum septum pellucidum or only a pathological cyst is intended; cavum vergae alone is distinct.
+  primary_evaluation_inclusion: DEFER
+  ai_generated: true
+  defer_reason: Label is an anatomical structure rather than a clear pathology; intended variant-versus-cyst scope needs study
+    clarification.
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Structure of cave of septum pellucidum
+  canonical_name: Structure of cave of septum pellucidum
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is cavum septum pellucidum
+  ai_generated_source_fields:
+    No.: 30
+    MR-RATE label: Structure of cave of septum pellucidum
+    Official MR-RATE positive phrase: There is cavum septum pellucidum
+    INCLUDE / DEFER: DEFER
+    Plain-language meaning / operational definition: Proposed concept appears to be the anatomical variant cavum septum pellucidum.
+    Anatomical scope: Between the septal leaflets adjacent to the lateral ventricles.
+    Accepted equivalent terms/descriptions: null
+    Related findings NOT sufficient alone: Mention of the septum pellucidum alone does not establish a cavum or a pathological
+      cyst.
+    Included/excluded subtypes: null
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Clarify whether any cavum septum pellucidum or only a pathological cyst is intended;
+      cavum vergae alone is distinct.
+    Reason if DEFER: Label is an anatomical structure rather than a clear pathology; intended variant-versus-cyst scope needs
+      study clarification.
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: DEFERRED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies hyperostosis or bony overgrowth/thickening of the skull.
+  anatomical_scope: Calvarium and skull base.
+  target_type: null
+  accepted_equivalents:
+  - Skull/calvarial hyperostosis
+  - hyperostosis frontalis interna
+  - hyperostotic thickening of cranial bone.
+  ai_generated_accepted_equivalents:
+  - Skull/calvarial hyperostosis
+  - hyperostosis frontalis interna
+  - hyperostotic thickening of cranial bone.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Calcification, osteoma, sclerosis without thickening, or skull hyperdensity alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include focal/diffuse and explicitly named hyperostosis frontalis interna. Exclude noncranial hyperostosis.
+  special_cases:
+  - Hyperostosis without an anatomical referent = NEI. Do not infer an associated meningioma.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Hyperostosis of skull
+  canonical_name: Hyperostosis of skull
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is hyperostosis
+  ai_generated_source_fields:
+    No.: 31
+    MR-RATE label: Hyperostosis of skull
+    Official MR-RATE positive phrase: There is hyperostosis
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies hyperostosis or bony overgrowth/thickening of the skull.
+    Anatomical scope: Calvarium and skull base.
+    Accepted equivalent terms/descriptions: Skull/calvarial hyperostosis; hyperostosis frontalis interna; hyperostotic thickening
+      of cranial bone.
+    Related findings NOT sufficient alone: Calcification, osteoma, sclerosis without thickening, or skull hyperdensity alone.
+    Included/excluded subtypes: Include focal/diffuse and explicitly named hyperostosis frontalis interna. Exclude noncranial
+      hyperostosis.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Hyperostosis without an anatomical referent = NEI. Do not infer an associated meningioma.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies infarction in an arterial border-zone/watershed distribution.
+  anatomical_scope: Cerebral cortical or internal arterial border zones.
+  target_type: null
+  accepted_equivalents:
+  - Watershed infarct/infarction
+  - border-zone infarction
+  - internal/cortical watershed infarcts.
+  ai_generated_accepted_equivalents:
+  - Watershed infarct/infarction
+  - border-zone infarction
+  - internal/cortical watershed infarcts.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Hypoperfusion, carotid stenosis, watershed ischemia without infarction or nonspecific border-zone signal change alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: Old/chronic watershed infarct = H. Acute/subacute or age-unspecified watershed infarct currently described
+    = S.
+  clinical_history_rules: Old/chronic watershed infarct = H. Acute/subacute or age-unspecified watershed infarct currently
+    described = S.
+  related_finding_rules: null
+  subtype_rules: Include cortical/external and internal/deep border-zone infarcts. Exclude non-infarct hypoperfusion.
+  special_cases:
+  - Do not infer distribution or mechanism from anatomy alone. A watershed infarct also supports parent infarction with the
+    same temporality.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Watershed infarct
+  canonical_name: Watershed infarct
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is watershed infarct
+  ai_generated_source_fields:
+    No.: 32
+    MR-RATE label: Watershed infarct
+    Official MR-RATE positive phrase: There is watershed infarct
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies infarction in an arterial border-zone/watershed distribution.
+    Anatomical scope: Cerebral cortical or internal arterial border zones.
+    Accepted equivalent terms/descriptions: Watershed infarct/infarction; border-zone infarction; internal/cortical watershed
+      infarcts.
+    Related findings NOT sufficient alone: Hypoperfusion, carotid stenosis, watershed ischemia without infarction or nonspecific
+      border-zone signal change alone.
+    Included/excluded subtypes: Include cortical/external and internal/deep border-zone infarcts. Exclude non-infarct hypoperfusion.
+    Special history/temporality rule: Old/chronic watershed infarct = H. Acute/subacute or age-unspecified watershed infarct
+      currently described = S.
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Do not infer distribution or mechanism from anatomy alone. A watershed infarct also
+      supports parent infarction with the same temporality.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies a cyst within the choroid plexus.
+  anatomical_scope: Choroid plexus of the cerebral ventricles.
+  target_type: null
+  accepted_equivalents:
+  - Choroid plexus cyst
+  - cyst of the choroid plexus.
+  ai_generated_accepted_equivalents:
+  - Choroid plexus cyst
+  - cyst of the choroid plexus.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Intraventricular cyst, choroid plexus enlargement, calcification or xanthogranuloma alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include unilateral/bilateral named choroid plexus cysts. Exclude colloid cyst and choroid plexus tumors.
+  special_cases:
+  - Do not equate xanthogranuloma with a cyst unless the report explicitly identifies a choroid plexus cyst.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Choroid plexus cyst
+  canonical_name: Choroid plexus cyst
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is choroid plexus cyst
+  ai_generated_source_fields:
+    No.: 33
+    MR-RATE label: Choroid plexus cyst
+    Official MR-RATE positive phrase: There is choroid plexus cyst
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies a cyst within the choroid plexus.
+    Anatomical scope: Choroid plexus of the cerebral ventricles.
+    Accepted equivalent terms/descriptions: Choroid plexus cyst; cyst of the choroid plexus.
+    Related findings NOT sufficient alone: Intraventricular cyst, choroid plexus enlargement, calcification or xanthogranuloma
+      alone.
+    Included/excluded subtypes: Include unilateral/bilateral named choroid plexus cysts. Exclude colloid cyst and choroid
+      plexus tumors.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Do not equate xanthogranuloma with a cyst unless the report explicitly identifies
+      a choroid plexus cyst.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies narrowing of one or more spinal neural foramina.
+  anatomical_scope: Cervical, thoracic or lumbar neural/intervertebral foramina.
+  target_type: null
+  accepted_equivalents:
+  - Neural foraminal stenosis
+  - neuroforaminal narrowing
+  - foraminal narrowing at a spinal level.
+  ai_generated_accepted_equivalents:
+  - Neural foraminal stenosis
+  - neuroforaminal narrowing
+  - foraminal narrowing at a spinal level.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Facet arthropathy, foraminal disc herniation, root contact or central canal stenosis alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include mild/moderate/severe and unilateral/bilateral foraminal stenosis. Exclude isolated central canal
+    or lateral-recess stenosis.
+  special_cases:
+  - No significant foraminal stenosis does not explicitly exclude mild narrowing. Nerve-root compression need not be present.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Foraminal Spinal Stenosis
+  canonical_name: Foraminal Spinal Stenosis
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is foraminal stenosis
+  ai_generated_source_fields:
+    No.: 34
+    MR-RATE label: Foraminal Spinal Stenosis
+    Official MR-RATE positive phrase: There is foraminal stenosis
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies narrowing of one or more spinal neural foramina.
+    Anatomical scope: Cervical, thoracic or lumbar neural/intervertebral foramina.
+    Accepted equivalent terms/descriptions: Neural foraminal stenosis; neuroforaminal narrowing; foraminal narrowing at a
+      spinal level.
+    Related findings NOT sufficient alone: Facet arthropathy, foraminal disc herniation, root contact or central canal stenosis
+      alone.
+    Included/excluded subtypes: Include mild/moderate/severe and unilateral/bilateral foraminal stenosis. Exclude isolated
+      central canal or lateral-recess stenosis.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: No significant foraminal stenosis does not explicitly exclude mild narrowing. Nerve-root
+      compression need not be present.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies an intracranial lipoma.
+  anatomical_scope: Intracranial compartment, including pericallosal and cisternal sites.
+  target_type: null
+  accepted_equivalents:
+  - Intracranial lipoma
+  - pericallosal lipoma
+  - callosal lipoma
+  - intracranial cisternal lipoma.
+  ai_generated_accepted_equivalents:
+  - Intracranial lipoma
+  - pericallosal lipoma
+  - callosal lipoma
+  - intracranial cisternal lipoma.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Fat signal, fat-containing lesion, dermoid cyst or postoperative fat graft alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include explicitly named intracranial lipomas, whether parenchymal or extra-axial. Exclude scalp, orbital
+    and spinal lipomas.
+  special_cases:
+  - Lipoma without a clear intracranial referent = NEI.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Lipoma of brain
+  canonical_name: Lipoma of brain
+  repository_flagged_label: true
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is lipoma
+  ai_generated_source_fields:
+    No.: 35
+    MR-RATE label: Lipoma of brain
+    Official MR-RATE positive phrase: There is lipoma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies an intracranial lipoma.
+    Anatomical scope: Intracranial compartment, including pericallosal and cisternal sites.
+    Accepted equivalent terms/descriptions: Intracranial lipoma; pericallosal lipoma; callosal lipoma; intracranial cisternal
+      lipoma.
+    Related findings NOT sufficient alone: Fat signal, fat-containing lesion, dermoid cyst or postoperative fat graft alone.
+    Included/excluded subtypes: Include explicitly named intracranial lipomas, whether parenchymal or extra-axial. Exclude
+      scalp, orbital and spinal lipomas.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Lipoma without a clear intracranial referent = NEI.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies a glioma or a named glial tumor subtype.
+  anatomical_scope: Brain and spinal cord parenchyma.
+  target_type: null
+  accepted_equivalents:
+  - Glioma
+  - astrocytoma
+  - oligodendroglioma
+  - glioblastoma
+  - ependymoma
+  - diffuse midline glioma.
+  ai_generated_accepted_equivalents:
+  - Glioma
+  - astrocytoma
+  - oligodendroglioma
+  - glioblastoma
+  - ependymoma
+  - diffuse midline glioma.
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Infiltrative mass, expansile T2 lesion, enhancement, edema or glial scarring alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include explicitly named low/high-grade and diffuse/circumscribed gliomas. Exclude lymphoma, metastasis and
+    nonglial tumors.
+  special_cases:
+  - Do not infer histological grade or molecular subtype. Resection cavity/treatment effect alone does not establish residual
+    glioma.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Glioma
+  canonical_name: Glioma
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is glioma
+  ai_generated_source_fields:
+    No.: 36
+    MR-RATE label: Glioma
+    Official MR-RATE positive phrase: There is glioma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies a glioma or a named glial tumor subtype.
+    Anatomical scope: Brain and spinal cord parenchyma.
+    Accepted equivalent terms/descriptions: Glioma; astrocytoma; oligodendroglioma; glioblastoma; ependymoma; diffuse midline
+      glioma.
+    Related findings NOT sufficient alone: Infiltrative mass, expansile T2 lesion, enhancement, edema or glial scarring alone.
+    Included/excluded subtypes: Include explicitly named low/high-grade and diffuse/circumscribed gliomas. Exclude lymphoma,
+      metastasis and nonglial tumors.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Do not infer histological grade or molecular subtype. Resection cavity/treatment effect
+      alone does not establish residual glioma.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+- operational_definition: Report identifies an adenoma of the pituitary gland.
+  anatomical_scope: Pituitary gland with any explicitly described extrasellar extension.
+  target_type: null
+  accepted_equivalents:
+  - Pituitary adenoma
+  - pituitary microadenoma
+  - pituitary macroadenoma
+  - pituitary neuroendocrine tumor (PitNET).
+  ai_generated_accepted_equivalents:
+  - Pituitary adenoma
+  - pituitary microadenoma
+  - pituitary macroadenoma
+  - pituitary neuroendocrine tumor (PitNET).
+  investigator_machine_variants: []
+  insufficient_evidence:
+  - Sellar mass, pituitary enlargement, focal hypoenhancement or hormonal abnormality alone.
+  negation_assertion_rules: null
+  hedging_rules: null
+  certainty_rules: null
+  temporality_rules: null
+  clinical_history_rules: null
+  related_finding_rules: null
+  subtype_rules: Include functioning/nonfunctioning, micro/macro and hemorrhagic adenomas explicitly named. Exclude hyperplasia,
+    Rathke cyst and unspecified pituitary neoplasm.
+  special_cases:
+  - Pituitary apoplexy alone does not establish adenoma. Do not infer endocrine function from report morphology.
+  primary_evaluation_inclusion: INCLUDE
+  ai_generated: true
+  defer_reason: null
+  notes: AI_Generated content imported verbatim; source suggestions remain provenance only.
+  label: Pituitary adenoma
+  canonical_name: Pituitary adenoma
+  repository_flagged_label: false
+  official_mrrate_terms:
+  - source: OFFICIAL_MRRATE_PROMPT
+    source_url: https://github.com/forithmus/MR-RATE/blob/8727782acd437b2ece16d3307fb62d021bf7b777/data-preprocessing/src/mr_rate_preprocessing/reports_preprocessing/06_pathology_classification/data/pathologies.json
+    positive_phrase: There is pituitary adenoma
+  ai_generated_source_fields:
+    No.: 37
+    MR-RATE label: Pituitary adenoma
+    Official MR-RATE positive phrase: There is pituitary adenoma
+    INCLUDE / DEFER: INCLUDE
+    Plain-language meaning / operational definition: Report identifies an adenoma of the pituitary gland.
+    Anatomical scope: Pituitary gland with any explicitly described extrasellar extension.
+    Accepted equivalent terms/descriptions: Pituitary adenoma; pituitary microadenoma; pituitary macroadenoma; pituitary neuroendocrine
+      tumor (PitNET).
+    Related findings NOT sufficient alone: Sellar mass, pituitary enlargement, focal hypoenhancement or hormonal abnormality
+      alone.
+    Included/excluded subtypes: Include functioning/nonfunctioning, micro/macro and hemorrhagic adenomas explicitly named.
+      Exclude hyperplasia, Rathke cyst and unspecified pituitary neoplasm.
+    Special history/temporality rule: null
+    Special certainty/hedging rule: null
+    Contradiction / special-case notes: Pituitary apoplexy alone does not establish adenoma. Do not infer endocrine function
+      from report morphology.
+    Reason if DEFER: null
+    LLM development status: ACCEPTED_FOR_DEVELOPMENT
+  definition_status: LLM_DEVELOPED
+  development_record_date: null
+  development_comments: null
+  official_terms_provenance_status: PROVENANCE_ONLY
+global_clinical_rules:
+  explicit_diagnosis:
+    category: S
+    decision_text: S — Supported
+    policy: Definite current X or an accepted equivalent in the correct anatomy = S. Apply label-specific overrides first.
+      Present definite X takes precedence over uncertain/history-only mentions; current uncertain X takes UC over history
+      alone. Use only the designated report section and its conflict rule.
+    rule_area: Explicit diagnosis
+    example_wording: There is acute infarction.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  consistent_with:
+    category: S
+    decision_text: S — Supported
+    policy: This is a study convention, not a universal probability threshold.
+    rule_area: Strong hedge
+    example_wording: Findings are consistent with X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  compatible_with:
+    category: S
+    decision_text: S — Supported
+    policy: Accept compatible with when X is the sole affirmative conclusion. Compatible with X or Y, or additional hedging,
+      = UC for each candidate.
+    rule_area: Strong hedge
+    example_wording: Findings are compatible with X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  likely:
+    category: UC
+    decision_text: UC — Uncertain
+    policy: Likely/probable/favored remains explicitly uncertain under this conservative study policy.
+    rule_area: Probability hedge
+    example_wording: Likely X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  suggestive_of:
+    category: UC
+    decision_text: UC — Uncertain
+    policy: Suggestive of/suspicious for remains uncertain, even if the finding appears convincing.
+    rule_area: Moderate hedge
+    example_wording: Suggestive of X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  possible:
+    category: UC
+    decision_text: UC — Uncertain
+    policy: Possible X names X as uncertain. Do not upgrade using associated findings alone.
+    rule_area: Weak hedge
+    example_wording: Possible X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  may_represent:
+    category: UC
+    decision_text: UC — Uncertain
+    policy: May/could represent X = UC.
+    rule_area: Weak hedge
+    example_wording: May represent X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  cannot_exclude:
+    category: UC
+    decision_text: UC — Uncertain
+    policy: Cannot exclude X = UC; this is neither an affirmative diagnosis nor a negation.
+    rule_area: Exclusion hedge
+    example_wording: Cannot exclude X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  explicit_negation:
+    category: C
+    decision_text: C — Contradicted
+    policy: Negation must cover the target anatomy, subtype and time. No acute X does not exclude chronic X; no significant
+      X does not exclude mild X. Without other evidence, narrower negation = U for the broad target.
+    rule_area: Negation
+    example_wording: No evidence of X.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  previous_resolved_disease:
+    category: H
+    decision_text: H — Historical
+    policy: Past/resolved X without present X = H. Resolution does not become C merely because current absence is stated.
+      Concurrent definite present X takes S.
+    rule_area: Resolved/history
+    example_wording: Previous X, now resolved.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  chronic_old_currently_present:
+    category: LABEL_SPECIFIC
+    decision_text: LABEL-SPECIFIC
+    policy: Persistent chronic structural disease = S (e.g., atrophy, gliosis, chronic SDH). Old infarcts and resolved hemorrhagic
+      residues = H; see label temporality fields. Chronic does not universally mean historical.
+    rule_area: Chronic but present
+    example_wording: Chronic/old X is present.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  conflicting_findings_impression:
+    category: C
+    decision_text: C — Contradicted
+    policy: 'Findings-only: ignore impression and classify findings alone. Full-report: explicit final-impression negation
+      of the same X/time/site takes C; retain a conflict flag and both quotes. Unresolved same-authority conflict = NEI. A
+      different diagnosis is not automatically exclusive.'
+    rule_area: Contradiction
+    example_wording: Findings support X but impression states no X or gives a conflicting conclusion.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  diagnosis_only_in_impression:
+    category: U
+    decision_text: U — Unsupported
+    policy: Findings-only = U if that section is complete but silent; NEI if missing/truncated. Full-report is separately
+      classified from impression using certainty/history rules; a definite present X there = S.
+    rule_area: Findings vs impression
+    example_wording: X appears only in impression, not findings.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  related_finding_without_target:
+    category: U
+    decision_text: U — Unsupported
+    policy: Associated findings alone = U unless a label explicitly lists the description as equivalent. Target-named uncertainty
+      = UC. Do not infer a diagnosis from MRI signal/measurements.
+    rule_area: Related finding
+    example_wording: A finding associated with X is present, but X itself is not stated.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+  insufficient_information:
+    category: NEI
+    decision_text: NEI — Not enough information
+    policy: Use for missing/truncated/uninterpretable text or unresolved anatomy/meaning. A readable complete section simply
+      silent about X is U, not NEI.
+    rule_area: Insufficient detail
+    example_wording: Text is too vague to decide whether X is present.
+    category_scope: Apply verbatim policy and label exceptions; not an unconditional endpoint mapping
+    ai_generated: true
+    development_record_date: null
+allowed_reference_categories:
+- S
+- U
+- C
+- UC
+- H
+- NEI
+development_source_schema: llm_assisted_codebook_v1
+development_provenance:
+  generation_method: LLM_ASSISTED
+  human_clinical_validation: false
+  independent_human_review: false
+  source_artifact_sha256: 4b16715b3709eba9b30ab4a5e4f2a9a1c0bcd21ac0666c78d72cd88e79d2d187
+  import_timestamp: '2026-09-10T19:10:56.002616+00:00'

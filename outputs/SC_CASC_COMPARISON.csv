@@ -1,0 +1,5 @@
+Method,Cohort C Cases N,SC (Semantic Concordance),CASC (Consensus-Aware)
+MRHex v1.0.0,2978,0.90139,0.91674
+NegEx,2978,0.80523,0.81858
+ConText / pyConTextNLP,2978,0.80257,0.81554
+medspaCy,2978,0.79490,0.80786

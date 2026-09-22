@@ -1,0 +1,5745 @@
+schema_version: 1
+mapping_id: mrhex_label_configuration_v1
+status: RELEASE
+base_machine_rules: configs/final_deterministic_rules_v2.yaml
+base_architecture: mrhex
+historical_development_dataset: Chunk 1 only
+chunk1_sha256: d9445ec6bc1ba0913077a415c98e78a7111cb106dad672dedc629e30be6e5446
+chunk2_case_level_use: PROHIBITED_BEFORE_D1_FREEZE
+active_labels:
+- Arachnoid cyst
+- Cavernous hemangioma
+- Chiari malformation
+- Choroid plexus cyst
+- Cyst of pineal gland
+- Foraminal Spinal Stenosis
+- Hemangioma of vertebral column
+- Herniation of nucleus pulposus
+- Pituitary adenoma
+- Rathke's pouch cyst
+- Spinal cord compression
+- Spinal stenosis
+- Mega cisterna magna
+- Schwannoma
+- Intracranial meningioma
+- Hyperostosis of skull
+- Encephalomalacia
+- Subdural intracranial hemorrhage
+- Watershed infarct
+- Chronic mastoiditis
+- Glioma
+- Intracranial aneurysm
+- Lacunar infarct
+- Silent micro-hemorrhage of brain
+- Cerebral edema
+- Structure of cave of septum pellucidum
+- Cerebellar degeneration
+- Demyelinating disease of central nervous system
+- Cerebral atrophy
+- Gliosis
+- Empty sella syndrome
+labels:
+  Arachnoid cyst:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    codebook_basis:
+      operational_definition: Report identifies an arachnoid cyst.
+      accepted_equivalents:
+      - Arachnoid cyst
+      - intracranial arachnoidal cyst
+      insufficient_evidence:
+      - CSF-intensity extra-axial space alone
+      - enlarged cistern alone
+      - mega cisterna magna alone
+      - nonspecific cyst alone
+      subtype_boundary: 'Include named intracranial arachnoid cysts of any location.
+        Exclude spinal arachnoid cysts and other cyst types.
+
+        '
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-02486
+    accepted_chunk1_gap_cases:
+    - C01-02486
+    intentionally_deferred_chunk1_cases:
+    - case_id: C01-00267
+      failure_family: SECTION_CERTAINTY_SHIFT
+    - case_id: C01-00471
+      failure_family: RELATED_NON_EQUIVALENT
+    - case_id: C01-01070
+      failure_family: UNNAMED_CSF_CYST_NOT_SUFFICIENT
+    - case_id: C01-01274
+      failure_family: UNCERTAIN_TARGET
+    - case_id: C01-01280
+      failure_family: DIFFERENTIAL_OR_ALTERNATIVE
+    - case_id: C01-01327
+      failure_family: COMPLEX_SCOPE_TRIGGER
+    - case_id: C01-01382
+      failure_family: SECTION_CERTAINTY_SHIFT
+    - case_id: C01-01851
+      failure_family: MULTI_LESION_MIXED_CERTAINTY
+    - case_id: C01-01933
+      failure_family: DIFFERENTIAL_OR_ALTERNATIVE
+    - case_id: C01-02104
+      failure_family: SECTION_CERTAINTY_SHIFT
+    - case_id: C01-02371
+      failure_family: DIFFERENTIAL_OR_ALTERNATIVE
+    - case_id: C01-02415
+      failure_family: SECTION_CERTAINTY_SHIFT
+    - case_id: C01-02475
+      failure_family: RELATED_NON_EQUIVALENT
+    - case_id: C01-02540
+      failure_family: SECTION_CERTAINTY_SHIFT
+    - case_id: C01-02870
+      failure_family: DIFFERENTIAL_OR_ALTERNATIVE
+    - case_id: C01-02949
+      failure_family: SECTION_CERTAINTY_SHIFT
+    add_surface_forms:
+    - arachnoidal cyst
+    - arachnoidal cysts
+  Cyst of pineal gland:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-00345
+    - C01-02615
+    codebook_basis:
+      operational_definition: Report identifies a cyst arising in the pineal gland.
+      accepted_equivalents:
+      - Pineal cyst
+      - pineal gland cyst
+      - benign pineal cyst
+      insufficient_evidence:
+      - Pineal-region cystic mass alone
+      - pineal calcification alone
+      - enlarged pineal gland alone
+      subtype_boundary: 'Include simple or complex cysts explicitly called pineal
+        cysts. Exclude cystic pineal tumors and arachnoid cysts.
+
+        '
+    accepted_chunk1_gap_cases:
+    - C01-00345
+    - C01-02615
+    deferred_chunk1_cases:
+    - case_id: C01-01423
+      reason: possible-neoplasm / conflict boundary remains intentionally routed
+    - case_id: C01-01813
+      reason: mixed certainty remains intentionally routed
+    - case_id: C01-02749
+      reason: findings/impression certainty interaction remains intentionally routed
+    add_compositional_patterns:
+    - pattern_id: D1_PINEAL_COMP_01_NORMAL_VARIANT_FORM
+      pattern: (?i)\bpineal\s+gland\b(?!\s+region\b)(?:(?![.!?;\n]).){0,110}?\b(?:is|appears)\s+(?:in\s+the\s+form\s+of|as)\s+(?:an?\s+)?(?:normal(?:\s+variant)?\s+|benign\s+|simple\s+)?cyst\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies a cyst arising in the pineal gland.
+      development_case: C01-00345
+      rationale: 'The finding explicitly states that the pineal gland itself is in
+        the form of a normal-variant cyst; this is a current radiologic assertion,
+        not merely clinical-history follow-up text.
+
+        '
+    - pattern_id: D1_PINEAL_COMP_02_FRONTED_GLAND_SIMPLE_CYST
+      pattern: (?i)\bin\s+the\s+pineal\s+gland\b(?!\s+region\b)(?:(?!(?:[!?;\n]|\.(?!\d)|\b(?:while|whereas|but|however)\b)).){0,180}?\b(?:a\s+)?(?:(?:thin[-\s]?walled)\s+)?(?:simple\s+)?cyst\s+(?:is|was)\s+(?:observed|seen|noted)\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies a cyst arising in the pineal gland.
+      development_case: C01-02615
+      rationale: 'Fronted pineal-gland anatomy plus an explicitly observed thin-walled/simple
+        cyst establishes the cyst as arising in the pineal gland. Coordinating contrast
+        terms and sentence boundaries are blocked to reduce cross-entity capture.
+
+        '
+  Foraminal Spinal Stenosis:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-02965
+    candidate_id: D1_FORAMINAL_COMP_01
+    codebook_basis:
+      operational_definition: Report identifies narrowing of one or more spinal neural
+        foramina.
+      anatomical_scope: Cervical, thoracic or lumbar neural/intervertebral foramina.
+      accepted_equivalents:
+      - Neural foraminal stenosis
+      - neuroforaminal narrowing
+      - foraminal narrowing at a spinal level.
+      insufficient_evidence:
+      - Facet arthropathy, foraminal disc herniation, root contact or central canal
+        stenosis alone.
+      subtype_boundary: 'Include mild/moderate/severe and unilateral/bilateral foraminal
+        stenosis. Exclude isolated central canal or lateral-recess stenosis.
+
+        '
+      special_case: 'No significant foraminal stenosis does not explicitly exclude
+        mild narrowing. Nerve-root compression need not be present.
+
+        '
+    predeclared_chunk1_changed_case_ids:
+    - C01-02965
+    cured_provenance_chunk1_cases:
+    - C01-00831
+    protected_chunk1_cases:
+    - case_id: C01-00188
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00583
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00949
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01820
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01872
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01910
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02268
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02887
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02945
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02958
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02962
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02964
+      required_state: S
+      required_routing: SAFE_RULE
+    scope_policy:
+      enabled: true
+      presence_semantics: ANY_IN_SCOPE
+    add_compositional_patterns:
+    - pattern_id: D1_FORAMINAL_COMP_01_DIRECTIONAL_LATERALITY_NARROWING
+      pattern: (?i)\b(?:mild|moderate|severe|marked|slight|minimal)?\s*(?:narrowing|stenosis|stenoses)\s+(?:(?:is\s+)?(?:observed|noted|seen|present)\s+)?(?:(?:inferiorly|inferiordly|superiorly|posteriorly|anteriorly|medially|laterally|predominantly|partially)\s+)?(?:in|at|of|within)\s+(?:the\s+)?(?:right\s+|left\s+|bilateral\s+|both\s+|unilateral\s+|either\s+)?(?:neural\s+|neuro-?)?foram(?:ina|inal|en)\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies narrowing of one or more spinal neural foramina.
+      development_case: C01-00831
+      rationale: 'Retrieves directional and laterality variations in neural foraminal
+        narrowing while preserving strict neural-foramen anatomy.
+
+        '
+  Hemangioma of vertebral column:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-02164
+    candidate_id: D1_VERTEBRAL_HEMANGIOMA_SURFACE_01
+    codebook_basis:
+      operational_definition: Report identifies a hemangioma within a vertebra.
+      accepted_equivalents:
+      - Vertebral hemangioma
+      - vertebral body hemangioma
+      - intraosseous hemangioma at a vertebral site.
+      insufficient_evidence:
+      - High T1 vertebral marrow signal alone
+      - focal fatty marrow alone
+      - trabecular pattern alone
+      - nonspecific vertebral lesion alone
+      subtype_boundary: 'Include typical, atypical and aggressive vertebral hemangiomas
+        explicitly named. Exclude CNS cavernoma and nonvertebral hemangioma.
+
+        '
+    predeclared_chunk1_changed_case_ids:
+    - C01-02164
+    protected_chunk1_cases:
+    - case_id: C01-02971
+      required_behavior: remains_routed
+      reason: Odontoid/dens remains a policy-scope ambiguity.
+    - case_id: C01-01253
+      required_behavior: remains_UC
+      reason: Question-mark hemangioma remains uncertain.
+    - case_id: C01-00165
+      required_behavior: unchanged
+      reason: Hemangioma-like wording remains a separate certainty boundary.
+    add_surface_forms:
+    - vertebral hemangiomas
+  Choroid plexus cyst:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-02028
+    candidate_id: D1_CHOROID_PLEXUS_CYST_COMP_01
+    codebook_basis:
+      operational_definition: Report identifies a cyst within the choroid plexus.
+      anatomical_scope: Choroid plexus of the cerebral ventricles.
+      accepted_equivalents:
+      - Choroid plexus cyst
+      - cyst of the choroid plexus.
+      insufficient_evidence:
+      - Intraventricular cyst alone
+      - choroid plexus enlargement alone
+      - calcification alone
+      - xanthogranuloma alone
+      subtype_boundary: 'Include unilateral/bilateral named choroid plexus cysts.
+        Exclude colloid cyst and choroid plexus tumors.
+
+        '
+      special_case: 'Do not equate xanthogranuloma with a cyst unless the report explicitly
+        identifies a choroid plexus cyst.
+
+        '
+    predeclared_chunk1_changed_case_ids:
+    - C01-02028
+    protected_chunk1_cases:
+    - case_id: C01-01372
+      required_behavior: not_SAFE_S
+      reason: 'Cystic lesions in the choroid plexuses are explicitly evaluated as
+        favoring xanthogranuloma.
+
+        '
+    - case_id: C01-01487
+      required_behavior: remains_UC
+      reason: Explicit cyst/xanthogranuloma differential.
+    - case_id: C01-01537
+      required_behavior: remains_UC
+      reason: Suggestive target wording remains hedged.
+    add_compositional_patterns:
+    - pattern_id: D1_CHOROID_PLEXUS_CYST_COMP_01_CONTAINMENT
+      pattern: (?i)\bcyst\b(?!(?:(?![.!?;\n]).){0,180}\b(?:xanthogranuloma|colloid|tumou?r|neoplasm)\b)(?:(?![.!?;\n]).){0,100}?\b(?:located\s+)?(?:in|within)\s+(?:the\s+)?(?:glomus\s+of\s+(?:the\s+)?)?choroid\s+plexus\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies a cyst within the choroid plexus.
+      development_case: C01-02028
+      rationale: 'Retrieves explicit cyst-to-choroid-plexus containment while blocking
+        competing xanthogranuloma, colloid, tumor, or neoplasm wording in the same
+        local sentence window.
+
+        '
+  Herniation of nucleus pulposus:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-00369
+    - C01-00522
+    - C01-00563
+    - C01-00643
+    - C01-01048
+    - C01-01188
+    - C01-01339
+    - C01-02112
+    - C01-02189
+    - C01-02284
+    - C01-02508
+    - C01-02608
+    candidate_id: D1_HNP_SCOPE_AND_RETRIEVAL_01
+    codebook_basis:
+      operational_definition: Report describes a focal displaced intervertebral disc
+        as herniated, protruded, extruded or sequestered.
+      anatomical_scope: Cervical, thoracic and lumbar intervertebral discs.
+      accepted_equivalents:
+      - Disc/disk herniation
+      - herniated nucleus pulposus
+      - disc protrusion
+      - disc extrusion
+      - sequestered disc fragment
+      - prolapsed intervertebral disc.
+      insufficient_evidence:
+      - Disc bulge, annular fissure, disc desiccation, disc-space loss or disc-osteophyte
+        complex without explicit herniation/protrusion/extrusion.
+      subtype_boundary: 'Include protrusion, extrusion and sequestration. Exclude
+        bulge alone. Exclude isolated Schmorl nodes by study scope.
+
+        '
+      special_case: 'Broad-based protrusion counts; broad-based bulge alone does not.
+        Interpret the reported term without reconstructing disc geometry.
+
+        '
+    predeclared_chunk1_changed_case_ids:
+    - C01-00369
+    - C01-00522
+    - C01-00563
+    - C01-00643
+    - C01-01048
+    - C01-01188
+    - C01-01339
+    - C01-02112
+    - C01-02189
+    - C01-02284
+    - C01-02508
+    - C01-02608
+    protected_chunk1_cases:
+    - case_id: C01-00175
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00185
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00253
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00553
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00688
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01284
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01749
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01879
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01904
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01976
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01979
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02040
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02154
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02350
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02358
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02395
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02532
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02613
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01134
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Disc bulge and spondylosis without explicit herniation.
+    - case_id: C01-01182
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Report lacks section headers; text parsed under Indication.
+    - case_id: C01-01799
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Cervical finding conflicts with broad cranial normality statement.
+    scope_policy:
+      enabled: true
+      presence_semantics: ANY_IN_SCOPE
+    add_surface_forms:
+    - disc herniations
+    - disk herniations
+    - disc protrusions
+    - disc extrusions
+    - posterior herniation
+    - posterior herniations
+    - paramedian herniation
+    - paramedian herniations
+    - posterior disc herniation
+    - posterior disc herniations
+    - posterior disk herniation
+    - posterior disk herniations
+    - paramedian disc herniation
+    - paramedian disc herniations
+    - protruded herniation
+    - protruded herniations
+    - central protrusion
+    - central protrusions
+    - central herniations
+    - paracentral herniations
+    - posterolateral herniations
+    - mediolateral herniations
+    - extruded herniations
+    add_compositional_patterns:
+    - pattern_id: D1_HNP_COMP_01_HERNIATIONS_IN_DISCS
+      pattern: (?i)\bherniations?\s+(?:(?:are|is)\s+present\s+)?in\s+(?:[a-z\s]{0,25}\s+)?(?:intervertebral\s+)?discs?\b
+      source_codebook_field: operational_definition
+      source_text: Report describes a focal displaced intervertebral disc as herniated,
+        protruded, extruded or sequestered.
+      development_case: C01-02112
+      rationale: 'Retrieves explicit herniation in intervertebral discs with intervening
+        posture or anatomy words while strictly anchoring to disc anatomy.
+
+        '
+  Spinal stenosis:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-00010
+    - C01-00256
+    - C01-00774
+    candidate_id: D1_SPINAL_STENOSIS_SCOPE_AND_RETRIEVAL_01
+    codebook_basis:
+      operational_definition: Report identifies narrowing of the central spinal canal.
+      anatomical_scope: Cervical, thoracic or lumbar central spinal canal.
+      accepted_equivalents:
+      - Spinal canal stenosis
+      - central canal stenosis
+      - central spinal canal narrowing.
+      insufficient_evidence:
+      - Spondylosis, disc bulge, thecal-sac impression or isolated foraminal/lateral-recess
+        narrowing alone.
+      subtype_boundary: 'Include congenital/acquired and mild/moderate/severe central
+        stenosis. Exclude isolated foraminal and subarticular/lateral-recess stenosis.
+
+        '
+      special_case: 'Central-canal scope follows the supplied positive phrase and
+        must be adopted prospectively. No significant stenosis does not explicitly
+        rule out mild stenosis.
+
+        '
+    predeclared_chunk1_changed_case_ids:
+    - C01-00010
+    - C01-00256
+    - C01-00774
+    protected_chunk1_cases:
+    - case_id: C01-00093
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00172
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00576
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00744
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01485
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00715
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Impression broad cranial normal statement creates cross-section tension
+        with cervical spine findings.
+    - case_id: C01-01306
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Unanchored stenosis without explicit canal specification.
+    - case_id: C01-01635
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Impression cranial normal limits statement creates cross-section tension
+        with sagittal spine finding.
+    - case_id: C01-01760
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Isolated foraminal stenosis and disc herniation without central spinal
+        canal stenosis.
+    - case_id: C01-02004
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Co-occurring uncertain question-marked cord finding (myelomalacia?).
+    scope_policy:
+      enabled: true
+      presence_semantics: ANY_IN_SCOPE
+    add_surface_forms:
+    - spinal canal narrowing
+    - spinal canal narrowings
+    - narrowing of the spinal canal
+    - narrowings of the spinal canal
+    - spinal stenoses
+    - central canal stenoses
+    - central spinal canal narrowings
+    - narrowing of the central spinal canal
+    - narrowing of the vertebral canal
+    - narrowings of the vertebral canal
+    - vertebral canal narrowing
+    - vertebral canal narrowings
+    add_compositional_patterns:
+    - pattern_id: D1_SPINAL_STENOSIS_COMP_01_CONJOINED_FORAMINAL
+      pattern: (?i)\bspinal\s+and\s+(?:[a-z\s]{0,25}\s+)?foraminal\s+stenos(?:is|es)\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies narrowing of the central spinal canal.
+      development_case: C01-00715
+      rationale: 'Recovers coordinated descriptions where spinal (canal) and foraminal
+        stenosis/stenoses are stated jointly in one syntactical clause.
+
+        '
+    - pattern_id: D1_SPINAL_STENOSIS_COMP_02_CANAL_DIAMETER_NARROWING
+      pattern: (?i)\b(?:reduction|reductions|narrowing|narrowings)\s+in\s+(?:the\s+)?(?:anteroposterior\s+diameter\s+of\s+the\s+)?(?:spinal|vertebral)\s+canal(?:\s+diameter)?\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies narrowing of the central spinal canal.
+      development_case: C01-00010
+      rationale: 'Recovers explicit descriptions of reduction or narrowing in spinal/vertebral
+        canal diameter.
+
+        '
+  Spinal cord compression:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-00089
+    - C01-00113
+    - C01-01255
+    - C01-02107
+    - C01-02197
+    candidate_id: D1_SPINAL_CORD_COMPRESSION_SCOPE_AND_RETRIEVAL_01
+    codebook_basis:
+      operational_definition: Report explicitly describes external compression or
+        compressive deformation of the spinal cord.
+      anatomical_scope: Spinal cord, including conus medullaris.
+      accepted_equivalents:
+      - Cord compression
+      - compressed cord
+      - compressive cord flattening/deformation
+      - cord indentation by a named compressing lesion.
+      insufficient_evidence:
+      - Canal stenosis, thecal-sac effacement, cord contact/abutment, myelomalacia
+        or cord signal change alone.
+      subtype_boundary: 'Include compressive cord deformation with or without signal
+        change. Exclude isolated nerve-root or cauda-equina compression.
+
+        '
+      special_case: 'Cord signal may remain normal despite compression. No cord signal
+        abnormality is not a negation of compression.
+
+        '
+    predeclared_chunk1_changed_case_ids:
+    - C01-00089
+    - C01-00113
+    - C01-01255
+    - C01-02107
+    - C01-02197
+    protected_chunk1_cases:
+    - case_id: C01-00127
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00135
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00511
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00559
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00821
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01000
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01180
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01228
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01765
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00043
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Mass lesion displacing spinal cord; displacement without compressive
+        deformation/indentation remains conservatively routed.
+    - case_id: C01-00675
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Multilevel compressions on dural sac only with normal cord caliber and
+        signal; correctly non-supporting.
+    - case_id: C01-00752
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Dural sac compression and demyelinating plaques without extrinsic cord
+        compression; correctly non-supporting.
+    - case_id: C01-01307
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Dural compression and partial canal narrowing without spinal cord compression;
+        correctly non-supporting.
+    - case_id: C01-01958
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Malignant mass causing spinal block and epidural invasion without explicit
+        cord compression; correctly conservatively routed.
+    scope_policy:
+      enabled: true
+      presence_semantics: ANY_IN_SCOPE
+    add_surface_forms:
+    - compression of the spinal cord
+    - compression of the cord
+    - spinal cord compressions
+    - cord compressions
+    - cervical cord compression
+    - thoracic cord compression
+    - dorsal cord compression
+    - compressive deformation of the spinal cord
+    - compressive flattening of the spinal cord
+    - spinal cord is compressed
+    - cord is compressed
+    add_compositional_patterns:
+    - pattern_id: D1_SCC_COMP_01_LESION_CAUSING_CORD_COMPRESSION
+      pattern: (?i)\b(?:(?:herniation|protrusion|extrusion|disc|disk|stenosis|mass|spondylosis|osteophyte|osteophytes|(?:disc|disk)(?:-|\s+)?osteophyte(?:\s+complex(?:es)?)?)\s+(?:(?:at\s+[a-z0-9\-]+|measuring\s+[^.;\n]+)\s+)?(?:causing|producing|with|compressing|compresses)\s+(?:[a-z\s]{0,20}\s+)?(?:compression\s+of\s+(?:the\s+)?(?:cervical|thoracic|dorsal|lumbar\s+)?(?:spinal\s+)?cord|(?:cervical|thoracic|dorsal|lumbar\s+)?(?:spinal\s+)?cord\s+compression|(?:the\s+)?(?:cervical|thoracic|dorsal|lumbar\s+)?(?:spinal\s+)?cord))\b
+      source_codebook_field: operational_definition
+      source_text: Report explicitly describes external compression or compressive
+        deformation of the spinal cord.
+      development_case: C01-00089
+      rationale: 'Recovers compressive lesions where intervening spinal level or size
+        qualifiers are present, as well as lesions stated to cause/produce compression
+        of the spinal cord.
+
+        '
+    - pattern_id: D1_SCC_COMP_02_CORD_INDENTATION_BY_LESION
+      pattern: (?i)\b(?:(?:herniation|protrusion|extrusion|disc|disk|mass|lesion|spondylosis|osteophyte|osteophytes|(?:disc|disk)(?:-|\s+)?osteophyte(?:\s+complex(?:es)?)?)\s+(?:causing|producing|with)\s+(?:[a-z\s]{0,20}\s+)?indentation\s+(?:on|of)\s+(?:the\s+)?(?:spinal\s+)?cord)\b
+      source_codebook_field: accepted_equivalents
+      source_text: cord indentation by a named compressing lesion.
+      development_case: C01-02197
+      rationale: 'Recovers explicit descriptions where a named compressing lesion
+        (disc-osteophyte complex, protrusion, spondylosis, etc.) causes indentation
+        on/of the spinal cord.
+
+        '
+  Pituitary adenoma:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids: []
+    candidate_id: D1_PITUITARY_ADENOMA_RETRIEVAL_01
+    codebook_basis:
+      operational_definition: Report identifies an adenoma of the pituitary gland.
+      anatomical_scope: Pituitary gland (adenohypophysis, neurohypophysis, sella turcica).
+      accepted_equivalents:
+      - Pituitary adenoma
+      - pituitary microadenoma
+      - pituitary macroadenoma
+      - pituitary neuroendocrine tumor (PitNET)
+      insufficient_evidence:
+      - Rathke cleft cyst alone
+      - empty sella alone
+      - pituitary enlargement or asymmetry alone
+      - generic sellar/suprasellar mass alone
+      - pituitary apoplexy alone
+      - pituitary cyst alone
+      - sellar meningioma alone
+      - non-pituitary adenoma alone
+      subtype_boundary: 'Includes microadenoma (< 10 mm), macroadenoma (>= 10 mm),
+        giant adenoma, functioning and non-functioning adenomas, and PitNET terminology.
+
+        '
+    chunk1_cases:
+    - case_id: C01-01057
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02498
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02898
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00825
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-00961
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01216
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01990
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02534
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02804
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-00049
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Findings/Impression certainty shift (SECTION_CERTAINTY_SHIFT / TRG_SECTION_DISCREPANCY);
+        conservatively routed.
+    - case_id: C01-00514
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Post-treatment follow-up with no residual disease on current examination;
+        safely routed.
+    - case_id: C01-00564
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Cross-sentence hedged finding without local organ binding; conservatively
+        routed.
+    - case_id: C01-02934
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Sellar/suprasellar mass with equivocal differential diagnosis (macroadenoma
+        vs meningioma); conservatively routed.
+    add_surface_forms:
+    - pituitary adenomas
+    - pituitary microadenomas
+    - pituitary macroadenomas
+    - adenoma of the pituitary gland
+    - microadenoma of the pituitary gland
+    - macroadenoma of the pituitary gland
+    - adenoma of pituitary
+    - microadenoma of pituitary
+    - macroadenoma of pituitary
+    - adenoma of the pituitary
+    - microadenoma of the pituitary
+    - macroadenoma of the pituitary
+    - pituitary neuroendocrine tumor (PitNET)
+    - pituitary neuroendocrine tumor
+    - pituitary neuroendocrine tumors
+    - PitNET
+    - pituitary adenoma (PitNET)
+    - adenohypophyseal adenoma
+    - adenohypophyseal microadenoma
+    - adenohypophyseal macroadenoma
+    - hypophyseal adenoma
+    - hypophyseal microadenoma
+    - hypophyseal macroadenoma
+    add_compositional_patterns:
+    - pattern_id: D1_PITUITARY_COMP_01_INVERTED_ADENOMA_WITH_ORGAN
+      pattern: (?i)\b(?:adenoma|microadenoma|macroadenoma|pitnet)\s+(?:in|of|within|at|arising
+        from)\s+(?:the\s+)?(?:adenohypophysis|neurohypophysis|hypophysis|pituitary(?:\s+gland)?|sella(?:\s+turcica)?)\b
+      source_codebook_field: accepted_equivalents
+      source_text: Report identifies an adenoma of the pituitary gland.
+      development_case: C01-02898
+      rationale: 'Matches inverted syntax where the adenoma/microadenoma term is syntactically
+        bound to pituitary gland, adenohypophysis, or sella.
+
+        '
+    - pattern_id: D1_PITUITARY_COMP_02_BOUNDED_ORGAN_AND_ADENOMA
+      pattern: (?i)\b(?:in|within|at)\s+(?:the\s+)?(?:pituitary(?:\s+gland)?|adenohypophysis|hypophysis)\b[^.;\n]{0,60}\b(?:compatible\s+with|favoring|suggestive\s+of|suspicious\s+for|representing)\s+(?:a\s+)?(?:pituitary\s+)?(?:adenoma|microadenoma|macroadenoma)\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies an adenoma of the pituitary gland.
+      development_case: C01-00961
+      rationale: 'Captures bounded descriptions where the pituitary gland or adenohypophysis
+        is qualified by an adenoma finding within the same clause.
+
+        '
+  Rathke's pouch cyst:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids: []
+    candidate_id: D1_RATHKE_POUCH_CYST_RETRIEVAL_01
+    codebook_basis:
+      operational_definition: Report identifies a Rathke cleft cyst.
+      anatomical_scope: Pituitary/sellar region, including suprasellar extension.
+      accepted_equivalents:
+      - Rathke cleft cyst
+      - Rathke's cleft cyst
+      - Rathke pouch cyst
+      - RCC only when context is explicit.
+      insufficient_evidence:
+      - Pituitary cyst, pars-intermedia cyst, midline sellar cyst or intracystic nodule
+        alone.
+      subtype_boundary: 'Include named Rathke cleft cysts regardless of size. Exclude
+        cystic adenoma, craniopharyngioma and unspecified sellar cyst.
+
+        '
+    chunk1_cases:
+    - case_id: C01-01870
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02968
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01140
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-02973
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-02979
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00290
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Dense-content probable pars intermedia cyst; hedged non-equivalent finding
+        does not establish S or U (TARGET_RETRIEVAL_INCOMPLETE).
+    - case_id: C01-00506
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Well-defined cystic lesion (Mucinous Rathke cleft cyst?) in complex
+        multi-clause sentence with question mark (TRG_COMPLEX_UNCERTAINTY_SCOPE).
+    - case_id: C01-00679
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Examination suboptimal due to motion artifact (TRG_LIMITED_COVERAGE).
+    - case_id: C01-01553
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Findings hedges (Rathke cleft cyst?) while impression has trailing question
+        mark with multiple other findings (TRG_SECTION_DISCREPANCY / TRG_MULTI_LESION_MIXED_CERTAINTY).
+    - case_id: C01-02974
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Equivocal differential (Rathke cleft cyst?/cystic microadenoma?) in
+        complex coordinated sentence (TRG_COMPLEX_UNCERTAINTY_SCOPE).
+    - case_id: C01-02978
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Pars intermedia cyst co-occurring with compound negation ("and there
+        is no intracranial metastatic lesion") prevents raw regex match (TARGET_RETRIEVAL_INCOMPLETE).
+    add_surface_forms:
+    - Rathke cleft cysts
+    - Rathke's cleft cysts
+    - Rathke pouch cysts
+    - Rathke's pouch cysts
+    - cleft cyst of Rathke
+    - cleft cyst of Rathke's pouch
+    - cleft cyst of Rathke pouch
+    - cyst of Rathke's pouch
+    - cyst of Rathke pouch
+    - cyst of Rathke cleft
+    - cyst of Rathke's cleft
+    - Rathke cleft cystic lesion
+    - Rathke's cleft cystic lesion
+    - Rathke pouch cystic lesion
+    - Rathke's pouch cystic lesion
+    - mucinous Rathke cleft cyst
+    - mucinous Rathke's cleft cyst
+    - colloid Rathke cleft cyst
+    - colloid Rathke's cleft cyst
+    add_compositional_patterns:
+    - pattern_id: D1_RATHKE_COMP_01_INVERTED_CYST_OF_RATHKE
+      pattern: (?i)\b(?:cleft\s+cyst|cyst)\s+of\s+(?:the\s+)?(?:Rathke(?:\'s)?(?:\s+(?:pouch|cleft))?)\b
+      source_codebook_field: accepted_equivalents
+      source_text: Rathke cleft cyst; Rathke's cleft cyst; Rathke pouch cyst.
+      development_case: null
+      rationale: 'Captures syntactic inversions linking cyst/cleft cyst directly with
+        Rathke/Rathke''s pouch.
+
+        '
+    - pattern_id: D1_RATHKE_COMP_02_CYSTIC_LESION
+      pattern: (?i)\bRathke(?:\'s)?\s+(?:cleft|pouch)\s+(?:cystic\s+(?:lesion|mass|structure|appearance)|cyst)\b
+      source_codebook_field: operational_definition
+      source_text: Report identifies a Rathke cleft cyst.
+      development_case: C01-00506
+      rationale: 'Captures explicit mentions where Rathke cleft/pouch qualifies a
+        cystic lesion or structure.
+
+        '
+  Cavernous hemangioma:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-02947
+    candidate_id: D1_CAVERNOMA_RETRIEVAL_01
+    codebook_basis:
+      operational_definition: Report identifies a CNS cavernous malformation.
+      anatomical_scope: Brain or spinal cord parenchyma. Cranial/CNS pathology; does
+        not use spinal multi-level scope aggregation.
+      accepted_equivalents:
+      - Cavernoma
+      - cavernous malformation
+      - cavernous angioma
+      - CNS cavernous hemangioma
+      insufficient_evidence:
+      - Blooming, hemosiderin rim, microbleed, developmental venous anomaly or unspecified
+        vascular malformation alone.
+      subtype_rules: 'Include solitary/multiple CNS cavernous malformations. Exclude
+        vertebral hemangioma and orbital, hepatic or other extracranial hemangioma.
+
+        '
+      special_cases: 'Anatomical site must be clear. A cavernoma alone does not establish
+        a separate current hemorrhage label.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00186
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00408
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00665
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00749
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01088
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01302
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01548
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01750
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02947
+      required_state: S
+      required_routing: SAFE_RULE
+      reason: Recovered plural surface form cavernomas.
+    - case_id: C01-02277
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02290
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02378
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02880
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02959
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-00777
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Findings affirms definite cavernoma while Impression hedges as probable
+        cavernoma (SECTION_CERTAINTY_SHIFT).
+    - case_id: C01-00953
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Caudate nucleus head and body without intracranial hierarchy term; conservatively
+        routed under anatomy check (TRG_ANATOMY_MISMATCH).
+    - case_id: C01-01794
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Caudate nucleus in findings, basal ganglia in impression; conservatively
+        routed under anatomy check (TRG_ANATOMY_MISMATCH).
+    - case_id: C01-02118
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Findings hedges "may represent a Zabramski type 2 cavernoma" while impression
+        affirms; properly routed under section certainty shift (TRG_SECTION_DISCREPANCY).
+    - case_id: C01-02954
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Frontobasal localization, cingulate cortex without intracranial hierarchy
+        term; conservatively routed under anatomy check (TRG_ANATOMY_MISMATCH).
+    - case_id: C01-02961
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Lentiform nucleus without intracranial hierarchy term; conservatively
+        routed under anatomy check (TRG_ANATOMY_MISMATCH).
+    add_surface_forms:
+    - cavernomas
+    - cavernous hemangiomas
+    - cavernous malformations
+    - cavernous angiomas
+    - cerebral cavernous malformation
+    - cerebral cavernous malformations
+    - cerebral cavernoma
+    - cerebral cavernomas
+    - cerebral cavernous angioma
+    - cerebral cavernous angiomas
+    - brainstem cavernoma
+    - brainstem cavernomas
+    - intracranial cavernoma
+    - intracranial cavernomas
+    - intracranial cavernous hemangioma
+    - intracranial cavernous hemangiomas
+    add_compositional_patterns:
+    - pattern_id: D1_CAVERNOMA_COMP_01_INVERTED_CNS_CAVERNOUS
+      pattern: (?i)\bcavernous\s+(?:hemangioma|malformation|angioma)s?\s+(?:in|of|within|at)\s+(?:the\s+)?(?:brain|cerebrum|cerebellum|brainstem|spinal\s+cord|cns)\b
+      source_codebook_field: accepted_equivalents
+      source_text: Cavernoma; cavernous malformation; cavernous angioma; CNS cavernous
+        hemangioma.
+      development_case: null
+      rationale: 'Captures explicit syntactic bindings where cavernous hemangioma/malformation/angioma
+        is tied to brain, cerebrum, cerebellum, brainstem, or spinal cord.
+
+        '
+  Chiari malformation:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids: []
+    candidate_id: D1_CHIARI_RETRIEVAL_01
+    codebook_basis:
+      operational_definition: Report explicitly identifies a Chiari malformation.
+      anatomical_scope: Craniovertebral junction and hindbrain/posterior fossa. Cranial/posterior
+        fossa pathology; does not use spinal multi-level scope aggregation.
+      accepted_equivalents:
+      - Chiari malformation
+      - Chiari I/II/III
+      - Arnold-Chiari malformation.
+      insufficient_evidence:
+      - Low-lying tonsils, tonsillar ectopia or descent measurement, syrinx or posterior-fossa
+        crowding alone.
+      subtype_rules: 'Include explicitly diagnosed Chiari types. Exclude acquired
+        tonsillar herniation and isolated nonspecific ectopia.
+
+        '
+      special_cases: 'Do not diagnose Chiari from a millimeter threshold. Prior decompression
+        alone does not prove a current malformation.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00348
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00952
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01086
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01369
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01484
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02099
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02696
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02939
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02957
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02976
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02977
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02975
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01115
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Isolated tonsillar ectopia (2 mm caudal migration) without Chiari diagnosis;
+        correctly abstains to ROUTE_TO_LLM (TARGET_RETRIEVAL_INCOMPLETE).
+    - case_id: C01-02377
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Isolated cerebellar tonsillar ectopia (4 mm extension inferiorly) without
+        Chiari diagnosis; correctly abstains to ROUTE_TO_LLM (TARGET_RETRIEVAL_INCOMPLETE).
+    - case_id: C01-02970
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Isolated low-lying cerebellar tonsils (5 mm extension caudally) without
+        Chiari diagnosis; correctly abstains to ROUTE_TO_LLM (TARGET_RETRIEVAL_INCOMPLETE).
+    add_surface_forms:
+    - Arnold-Chiari malformations
+    - Arnold Chiari malformation
+    - Arnold Chiari malformations
+    - Arnold-Chiari
+    - Arnold Chiari
+    - Arnold-Chiari I malformation
+    - Arnold-Chiari type 1 malformation
+    - type 1 Chiari malformation
+    - type I Chiari malformation
+    - type 2 Chiari malformation
+    - type II Chiari malformation
+    - type 1.5 Chiari malformation
+    - Chiari 1.5 malformation
+    - Chiari 1.5
+    - Chiari type 1.5
+    - Chiari type 1.5 malformation
+    - Chiari 1 deformity
+    - Chiari I deformity
+    - Chiari 1 anomaly
+    - Chiari I anomaly
+    - Chiari malformation type 1
+    - Chiari malformation type I
+    - Chiari malformation type 2
+    - Chiari malformation type II
+    add_compositional_patterns:
+    - pattern_id: D1_CHIARI_COMP_01_TYPE_CHIARI
+      pattern: (?i)\btype\s+(?:1|I|2|II|1\.5)\s+Chiari(?:\s+malformation)?\b
+      source_codebook_field: accepted_equivalents
+      source_text: Chiari malformation; Chiari I/II/III; Arnold-Chiari malformation.
+      development_case: null
+      rationale: 'Captures explicit syntactic constructions linking ''Type 1/I/2/II''
+        directly with ''Chiari''.
+
+        '
+  Mega cisterna magna:
+    inheritance_status: KEEP_WITH_ENSEMBLE_ALIGNED_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_MEGA_CISTERNA_MAGNA_ENSEMBLE_ALIGNED_02
+    chunk1_changed_case_ids:
+    - C01-01404
+    - C01-02306
+    codebook_basis:
+      operational_definition: Report explicitly identifies a mega cisterna magna.
+      anatomical_scope: Retrocerebellar cisterna magna.
+      accepted_equivalents:
+      - Mega cisterna magna
+      - megacisterna magna
+      insufficient_evidence:
+      - Prominent/enlarged retrocerebellar CSF space or size measurement alone.
+      subtype_rules: 'Include explicitly named mega cisterna magna. Exclude posterior-fossa
+        arachnoid cyst, Blake pouch cyst, and Dandy-Walker malformation.
+
+        '
+      special_cases: A named developmental variant can support this text label without
+        implying symptomatic disease.
+    add_compositional_patterns:
+    - pattern_id: D1_MEGA_CISTERNA_MAGNA_COMP_01_ENLARGED_CISTERNA
+      pattern: (?i)\b(?:(?:the\s+)?cisterna\s+magna\s+(?:is\s+)?(?:(?:mildly|slightly)\s+)?enlarged|(?:(?:mildly|slightly)\s+)?enlarged\s+cisterna\s+magna)\b
+      source_codebook_field: ensemble_aligned_p0_scope
+      source_text: Cisterna magna is enlarged; cisterna magna is mildly enlarged.
+      development_case: C01-01404; C01-02306
+      rationale: Bounded direct cisterna-magna enlargement construction. It does not
+        match generic posterior-fossa or retrocerebellar CSF-space enlargement, prominence,
+        widening, or cyst terminology.
+    chunk1_cases:
+    - case_id: C01-00204
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Mega cisterna magna versus arachnoid cyst differential with lesion-specific
+        mixed certainty.
+    - case_id: C01-00393
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Mega cisterna magna versus arachnoid cyst differential with complex
+        uncertainty scope.
+    - case_id: C01-01296
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Mega cisterna magna versus arachnoid cyst differential with lesion-specific
+        mixed certainty.
+    - case_id: C01-01436
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Mega cisterna magna versus arachnoid cyst differential with complex
+        uncertainty scope.
+    - case_id: C01-01774
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Mega cisterna magna versus arachnoid cyst differential with lesion-specific
+        mixed certainty.
+  Schwannoma:
+    inheritance_status: KEEP_V2_EXACT
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_SCHWANNOMA_INHERIT_01
+    chunk1_changed_case_ids: []
+    codebook_basis:
+      operational_definition: Report identifies an intracranial or intraspinal schwannoma.
+      anatomical_scope: Intracranial cranial nerves and intraspinal nerve roots.
+      accepted_equivalents:
+      - Schwannoma
+      - neurilemmoma
+      - vestibular schwannoma
+      - acoustic neuroma
+      insufficient_evidence:
+      - Nerve-sheath tumor not further specified alone
+      - internal-auditory-canal mass alone
+      - cerebellopontine-angle mass alone
+      subtype_boundary: 'Include vestibular and other cranial/spinal schwannomas.
+        Exclude neurofibroma and extracranial peripheral schwannoma.
+
+        '
+      special_case: 'An unspecified nerve-sheath tumor is not necessarily a schwannoma.
+
+        '
+    chunk1_cases:
+    - case_id: C01-01264
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01439
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02726
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-00268
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Clinical glossopharyngeal locality gap with CPA-aligned Findings/Impression;
+        conservatively routed (TRG_ANATOMY_MISMATCH).
+    - case_id: C01-00473
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Spinal meningioma primary with spinal schwannoma differential; conservatively
+        routed.
+    - case_id: C01-00758
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Acoustic plus facial-nerve lesions with mixed certainty and section
+        discrepancy; conservatively routed.
+    - case_id: C01-02291
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Residual CPA schwannoma with anaphoric clause lacking same-clause anatomy;
+        conservatively routed (TRG_ANATOMY_MISMATCH).
+    - case_id: C01-02758
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Post-resection history with current lesion in complex scope; conservatively
+        routed.
+    - case_id: C01-02950
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Bilateral resected-versus-stable disease with laterality conflict; conservatively
+        routed.
+    - case_id: C01-02972
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Operated disease with residual mass in mixed historical/current scope;
+        conservatively routed.
+  Intracranial meningioma:
+    inheritance_status: KEEP_V2_EXACT
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_MENINGIOMA_INHERIT_01
+    chunk1_changed_case_ids: []
+    codebook_basis:
+      operational_definition: Report identifies an intracranial meningioma.
+      anatomical_scope: Intracranial meninges and related intracranial tumor extent.
+      accepted_equivalents:
+      - Meningioma
+      - intracranial meningeal tumor explicitly termed meningioma.
+      insufficient_evidence:
+      - Dural tail, dural enhancement, extra-axial mass, calcification or adjacent
+        hyperostosis alone.
+      subtype_boundary: 'Include any expressly named meningioma grade or location
+        within the cranium. Exclude spinal meningioma and unspecified dural tumors.
+
+        '
+      special_case: 'No tissue confirmation required for report-text support. Do not
+        infer subtype or grade.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00152
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00160
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00602
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00868
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01381
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01645
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01886
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01984
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02043
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02225
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02412
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02523
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02542
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02587
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02814
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02817
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02819
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02824
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02882
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00431
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-00470
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01198
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01743
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01818
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01859
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-00008
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Multifocal sphenoid/convexity meningioma; location lexical gap (TRG_ANATOMY_MISMATCH)
+        requires shared anatomy-hierarchy redesign; conservatively routed.
+    - case_id: C01-00059
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Meningioma and schwannoma co-occurrence with section discrepancy; uncertainty
+        preserved; conservatively routed.
+    - case_id: C01-00169
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Section certainty shift (primarily-compatible Findings vs definite Impression);
+        conservatively routed.
+    - case_id: C01-00321
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question-mark hedged meningioma with laterality conflict; conservatively
+        routed.
+    - case_id: C01-00343
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question-mark hedged meningioma with complex uncertainty scope; conservatively
+        routed.
+    - case_id: C01-00350
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Residual meningioma at resection bed; residual/location lexical gap
+        requires shared redesign; conservatively routed.
+    - case_id: C01-00481
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: CPA/cavernous meningioma location lexical gap; conservatively routed.
+    - case_id: C01-00545
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Destructive mass with ambiguous polarity and complex uncertainty scope;
+        conservatively routed.
+    - case_id: C01-00592
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question-mark hedged meningioma with complex uncertainty scope; conservatively
+        routed.
+    - case_id: C01-01129
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question-mark hedged meningioma with complex uncertainty scope; conservatively
+        routed.
+    - case_id: C01-01143
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Tentorial meningioma with Findings/Impression certainty shift; conservatively
+        routed.
+    - case_id: C01-01196
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Intraosseous meningioma with mixed certainty and location lexical gap;
+        conservatively routed.
+    - case_id: C01-01245
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Postoperative recurrent/residual meningioma with laterality conflict
+        and complex scope; conservatively routed.
+    - case_id: C01-01292
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Clinical question-mark indication vs definite radiologic statement;
+        section discrepancy; conservatively routed.
+    - case_id: C01-01321
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Tentorial meningioma with Findings/Impression certainty shift; conservatively
+        routed.
+    - case_id: C01-01328
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question-mark hedged meningiomas with laterality conflict; conservatively
+        routed.
+    - case_id: C01-01428
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question-mark hedged meningioma with complex uncertainty scope; conservatively
+        routed.
+    - case_id: C01-01453
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Location lexical gap (parenthesized meningioma); conservatively routed.
+    - case_id: C01-01466
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Residual meningioma with ambiguous polarity and location lexical gap;
+        conservatively routed.
+    - case_id: C01-01498
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Meningioma versus metastasis differential with mixed certainty; conservatively
+        routed.
+    - case_id: C01-01532
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Craniocervical junction recurrent meningioma; location lexical gap requires
+        shared redesign; conservatively routed.
+    - case_id: C01-01586
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Calvarial question-mark meningioma with clinical history; complex uncertainty
+        scope; conservatively routed.
+    - case_id: C01-01817
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Frontal-bone meningioma location lexical gap with clinical-indication
+        provenance; conservatively routed.
+    - case_id: C01-02075
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Favoring-hedged parasagittal meningioma with location lexical gap; conservatively
+        routed.
+    - case_id: C01-02192
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Petroclival/sellar meningioma location lexical gap with laterality conflict;
+        conservatively routed.
+    - case_id: C01-02332
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question-mark hedged follow-up meningioma with complex uncertainty scope;
+        conservatively routed.
+    - case_id: C01-02494
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Suggestive-hedged meningioma with ambiguous polarity and complex scope;
+        conservatively routed.
+    - case_id: C01-02495
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: 'Retrieval gap: mass compatible with the meninges without lineage term;
+        not supportable under codebook; conservatively routed.'
+    - case_id: C01-02583
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Petroclival meningioma location lexical gap; conservatively routed.
+    - case_id: C01-02877
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Residual vertex/parafalcine meningioma; residual/location lexical gap
+        requires shared redesign; conservatively routed.
+  Hyperostosis of skull:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITIONS
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-00137
+    - C01-00182
+    - C01-00342
+    - C01-00702
+    - C01-01340
+    codebook_basis:
+      operational_definition: Report identifies hyperostosis or bony overgrowth/thickening
+        of the skull.
+      anatomical_scope: Calvarium and skull base.
+      accepted_equivalents:
+      - Skull/calvarial hyperostosis
+      - hyperostosis frontalis interna
+      - hyperostotic thickening of cranial bone
+      insufficient_evidence:
+      - Calcification, osteoma, sclerosis without thickening, or skull hyperdensity
+        alone.
+      subtype_boundary: Include focal/diffuse and explicitly named hyperostosis frontalis
+        interna; exclude noncranial hyperostosis.
+    add_surface_forms:
+    - hyperosteosis frontalis interna
+    add_compositional_patterns:
+    - pattern_id: D1_SKULL_HYPEROSTOSIS_COMP_01_CALVARIAL_DIFFUSE_THICKENING
+      pattern: (?i)\b(?:thickening\s+(?:consistent\s+with|compatible\s+with)\s+diffuse\s+hyperostosis\s+(?:was|is)\s+(?:observed|present)\s+in\s+(?:the\s+)?calvarial\s+bones?|diffuse\s+calvarial\s+thickening)\b
+      source_codebook_field: accepted_equivalents
+      source_text: Report identifies hyperostosis or bony overgrowth/thickening of
+        the skull; scope is calvarium and skull base.
+      rationale: Bounded literal retrieval of explicit diffuse calvarial thickening
+        or calvarial-bone thickening explicitly compatible with diffuse hyperostosis;
+        no generic thickening, lesion, or meningioma inference.
+  Encephalomalacia:
+    inheritance_status: KEEP_V2_EXACT
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_ENCEPHALOMALACIA_REAUDIT_01
+    chunk1_changed_case_ids: []
+    codebook_basis:
+      operational_definition: Report identifies established encephalomalacia of brain
+        tissue.
+      anatomical_scope: Brain parenchyma.
+      accepted_equivalents:
+      - Encephalomalacia
+      - encephalomalacic change
+      - cystic encephalomalacia.
+      insufficient_evidence:
+      - Gliosis, atrophy, old infarct or postoperative cavity alone without explicit
+        encephalomalacia.
+      subtype_boundary: 'Include ischemic, traumatic and postoperative encephalomalacia
+        explicitly named. Exclude an unspecified cyst or cavity.
+
+        '
+      special_case: 'Chronic encephalomalacia currently present = S even when the
+        precipitating injury is historical.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00094
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00120
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00128
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00215
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00249
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00259
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00284
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00311
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00319
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00326
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: CHRONIC_INFARCT_PARENCHYMAL_LOSS_WITHOUT_EXPLICIT_ENCEPHALOMALACIA
+    - case_id: C01-00347
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00357
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00391
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00434
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00443
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00536
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00539
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00572
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: CYSTIC_INFARCT_WITHOUT_EXPLICIT_ENCEPHALOMALACIA
+    - case_id: C01-00641
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00716
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: POSTOPERATIVE_CRANIOTOMY_WITHOUT_EXPLICIT_ENCEPHALOMALACIA
+    - case_id: C01-00789
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00790
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: UNRESOLVED_PERIVASCULAR_SPACE_OR_ENCEPHALOMALACIA_DISJUNCTION
+    - case_id: C01-00803
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00840
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: QUESTION_MARK_HEDGED_UNCERTAIN_SCOPE
+    - case_id: C01-00869
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: PARENCHYMAL_DEFECT_INFARCT_WITHOUT_EXPLICIT_ENCEPHALOMALACIA
+    - case_id: C01-00873
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: BILATERAL_CROSS_SECTION_LATERALITY_CONFLICT
+    - case_id: C01-00893
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00963
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00964
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00982
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00989
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01099
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01106
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01111
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01170
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: FINDINGS_CHRONIC_INFARCT_VS_IMPRESSION_ENCEPHALOMALACIA_DISCREPANCY
+    - case_id: C01-01193
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01309
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01394
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01432
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01469
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01503
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: HYPHENATED_COMPOUND_ENCEPHALOMALACIC_GLIOTIC_RETRIEVAL_GAP
+    - case_id: C01-01511
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: COORDINATED_POSTOPERATIVE_AMBIGUOUS_SCOPE
+    - case_id: C01-01527
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01542
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01555
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01724
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01728
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01737
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01747
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MALFORMED_OR_COMPLEX_PUNCTUATION_SCOPE
+    - case_id: C01-01849
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01888
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01891
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01893
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01903
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01981
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01997
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02000
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: COORDINATED_COMPOUND_CYSTIC_ENCEPHALOMALACIC_AND_GLIOTIC_GAP
+    - case_id: C01-02007
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02023
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02074
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: CHRONIC_LACUNAR_SEQUELA_WITHOUT_EXPLICIT_ENCEPHALOMALACIA
+    - case_id: C01-02114
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02148
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02187
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02255
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02263
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02300
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02317
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02543
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02546
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02556
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02598
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: PARENCHYMAL_DEFECT_POST_SURGERY_WITHOUT_EXPLICIT_ENCEPHALOMALACIA
+    - case_id: C01-02678
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02729
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: POSTOPERATIVE_SEQUELA_FINDINGS_IMPRESSION_SCOPE_DISCREPANCY
+    - case_id: C01-02748
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02797
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02890
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02915
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02940
+      required_state: S
+      required_routing: SAFE_RULE
+  Subdural intracranial hemorrhage:
+    inheritance_status: KEEP_V2_EXACT
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_SUBDURAL_REAUDIT_01
+    chunk1_changed_case_ids: []
+    codebook_basis:
+      operational_definition: Report identifies blood or hematoma in the intracranial
+        subdural space.
+      anatomical_scope: Intracranial subdural compartment.
+      accepted_equivalents:
+      - Subdural hematoma
+      - subdural hemorrhage
+      insufficient_evidence:
+      - Subdural hygroma, unspecified subdural fluid collection, or dural thickening
+        alone.
+      subtype_boundary: 'Include acute, subacute, chronic, and acute-on-chronic subdural
+        hematoma. Exclude epidural and spinal subdural bleeding.
+
+        '
+      special_case: 'Chronic hematoma still present is S; fully resolved/evacuated
+        SDH without residual or recurrence is H.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00086
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00508
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: POSTOPERATIVE_HEMORRHAGIC_SUBDURAL_COLLECTION_RETRIEVAL_GAP
+    - case_id: C01-00515
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: POSTOPERATIVE_GENERIC_SUBDURAL_COLLECTION_NO_LINEAGE
+    - case_id: C01-00727
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00880
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: SUBDURAL_LINEAR_HEMORRHAGE_COMPOSITIONAL_RETRIEVAL_GAP
+    - case_id: C01-01223
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: LATERALITY_CONFLICT
+    - case_id: C01-01790
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01873
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: POSTOPERATIVE_FLUID_COLLECTION_WITH_BLOOD_ELEMENTS_NO_LINEAGE
+    - case_id: C01-02014
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: SECTION_LOCATION_MISMATCH
+    - case_id: C01-02335
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02483
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02636
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02866
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02951
+      required_state: S
+      required_routing: SAFE_RULE
+  Watershed infarct:
+    inheritance_status: KEEP_WITH_ENSEMBLE_ALIGNED_TEMPORALITY_OVERRIDE
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_WATERSHED_REAUDIT_01
+    label_policy_overrides:
+      chronic_present_state: S
+    chunk1_changed_case_ids:
+    - C01-00034
+    - C01-00772
+    - C01-01159
+    codebook_basis:
+      operational_definition: Report identifies infarction in an arterial border-zone/watershed
+        distribution.
+      anatomical_scope: Cerebral cortical or internal arterial border zones.
+      accepted_equivalents:
+      - Watershed infarct/infarction
+      - border-zone infarction
+      - internal/cortical watershed infarcts
+      insufficient_evidence:
+      - Hypoperfusion, carotid stenosis, watershed ischemia without infarction, or
+        nonspecific border-zone signal change alone.
+      subtype_boundary: 'Include cortical/external and internal/deep border-zone infarcts.
+        Exclude non-infarct hypoperfusion.
+
+        '
+      special_case: 'Do not infer distribution or mechanism from anatomy alone. A
+        watershed infarct also supports parent infarction with the same temporality.
+
+        '
+      temporality_rules: 'Currently visualized chronic or old watershed infarct =
+        S. History of watershed infarct, prior/previous infarct without current lesion,
+        or established sequela = H. Acute/subacute or age-unspecified watershed infarct
+        currently described = S.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00034
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00217
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: WATERSHED_ISCHEMIA_WITHOUT_INFARCT_LINEAGE
+    - case_id: C01-00355
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: BORDER_ZONE_ENCEPHALOMALACIA_WITHOUT_NAMED_WATERSHED_INFARCT
+    - case_id: C01-00586
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: ACA_MCA_WATERSHED_SEQUELA_WITHOUT_NAMED_WATERSHED_INFARCT
+    - case_id: C01-00772
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01046
+      required_state: H
+      required_routing: SAFE_RULE
+    - case_id: C01-01061
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: WATERSHED_ZONE_ENCEPHALOMALACIA_WITHOUT_NAMED_INFARCT
+    - case_id: C01-01159
+      required_state: S
+      required_routing: SAFE_RULE
+  Chronic mastoiditis:
+    inheritance_status: KEEP_WITH_ENSEMBLE_ALIGNED_STRUCTURAL_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_MASTOIDITIS_PREFREEZE_STRUCTURAL_01
+    chunk1_changed_case_ids:
+    - C01-00203
+    - C01-00234
+    - C01-00861
+    - C01-01450
+    - C01-01507
+    - C01-01577
+    - C01-02191
+    - C01-02778
+    codebook_basis:
+      operational_definition: Report explicitly identifies mastoiditis as chronic,
+        or explicitly describes mastoid-local sclerosis or sclerotic mastoid change.
+      anatomical_scope: Mastoid air cells and mastoid antrum.
+      accepted_equivalents:
+      - Chronic mastoiditis
+      - chronic otomastoiditis
+      - acute-on-chronic mastoiditis
+      insufficient_evidence:
+      - Underpneumatization, persistent mastoid effusion, mucosal thickening, fluid
+        opacification, middle-ear disease/otitis media, cholesteatoma, or mastoiditis
+        without a chronic qualifier.
+      subtype_boundary: 'Include chronic and acute-on-chronic mastoiditis explicitly
+        named. Exclude acute-only or temporally unspecified mastoiditis.
+
+        '
+      special_case: 'Currently present chronic mastoiditis or mastoid-local sclerosis/sclerotic
+        change = S under the Chunk-1 reference-ensemble operationalization. Prior
+        resolved mastoiditis = H. Chronic mastoiditis also supports the broader mastoiditis
+        label.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00040
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_SCLEROSIS_OR_UNDERPNEUMATIZATION_ROUTE
+    - case_id: C01-00079
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NONSPECIFIC_MASTOID_CHANGE_ROUTE
+    - case_id: C01-00141
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-00143
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00203
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00234
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00236
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-00261
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-00292
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-00489
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NONSPECIFIC_MASTOID_CHANGE_ROUTE
+    - case_id: C01-00527
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-00566
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MIDDLE_EAR_DISEASE_ROUTE
+    - case_id: C01-00577
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00596
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NONSPECIFIC_MASTOID_CHANGE_ROUTE
+    - case_id: C01-00635
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00685
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NONSPECIFIC_MASTOID_CHANGE_ROUTE
+    - case_id: C01-00707
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00740
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00787
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00843
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00849
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00861
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00883
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-00901
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-01202
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-01338
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01376
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-01377
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NONSPECIFIC_MASTOID_CHANGE_ROUTE
+    - case_id: C01-01409
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_SCLEROSIS_OR_UNDERPNEUMATIZATION_ROUTE
+    - case_id: C01-01425
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-01441
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-01450
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01507
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01535
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-01554
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-01577
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01579
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01773
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01917
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: UNQUALIFIED_MASTOIDITIS_ROUTE
+    - case_id: C01-02001
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-02010
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-02025
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NONSPECIFIC_MASTOID_CHANGE_ROUTE
+    - case_id: C01-02080
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-02083
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02105
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-02191
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02218
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02258
+      required_state: U
+      required_routing: SAFE_RULE
+    - case_id: C01-02272
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02413
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_EFFUSION_COLLECTION_ROUTE
+    - case_id: C01-02438
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MASTOID_SCLEROSIS_OR_UNDERPNEUMATIZATION_ROUTE
+    - case_id: C01-02507
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: UNQUALIFIED_MASTOIDITIS_ROUTE
+    - case_id: C01-02686
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NONSPECIFIC_MASTOID_CHANGE_ROUTE
+    - case_id: C01-02778
+      required_state: S
+      required_routing: SAFE_RULE
+    add_compositional_patterns:
+    - pattern_id: D1_CHRONIC_MASTOIDITIS_COMP_01_MASTOID_SCLEROSIS
+      pattern: (?i)\b(?:(?:sclerosis|sclerotic(?:\s+(?:changes?|aeration\s+loss(?:es)?))?)\b[^.\n;]{0,80}\bmastoid(?:\s+(?:air\s+)?cells?|\s+bones?)?|\bmastoid(?:\s+(?:air\s+)?cells?|\s+bones?)?[^.\n;]{0,80}\b(?:sclerosis|sclerotic(?:\s+(?:changes?|aeration\s+loss(?:es)?))?))\b
+      source_codebook_field: reference_ensemble_target_semantics
+      source_text: Mastoid-local sclerosis or sclerotic change repeatedly received
+        S from the four-reference ensemble in Chunk 1.
+      development_case: null
+      rationale: Bounded mastoid-local structural chronicity pattern. It excludes
+        generic inflammation, fluid, middle-ear, sinus, and non-mastoid sclerosis
+        wording.
+  Glioma:
+    inheritance_status: KEEP_V2_EXACT
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_GLIOMA_INHERIT_01
+    chunk1_changed_case_ids: []
+    codebook_basis:
+      operational_definition: Report identifies a glioma or a named glial tumor subtype.
+      anatomical_scope: Brain and spinal cord parenchyma.
+      accepted_equivalents:
+      - Glioma
+      - astrocytoma
+      - oligodendroglioma
+      - glioblastoma
+      - ependymoma
+      - diffuse midline glioma.
+      insufficient_evidence:
+      - Infiltrative mass, expansile T2 lesion, enhancement, edema or glial scarring
+        alone.
+      subtype_boundary: 'Include explicitly named low/high-grade and diffuse/circumscribed
+        gliomas. Exclude lymphoma, metastasis and nonglial tumors.
+
+        '
+      special_case: 'Do not infer histological grade or molecular subtype. Resection
+        cavity/treatment effect alone does not establish residual glioma.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00495
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00623
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01682
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02654
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02941
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00183
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent glial neoplasm phrasing; conservatively routed.
+    - case_id: C01-00213
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Differential diagnosis raising low-grade glial neoplasm; conservatively
+        routed.
+    - case_id: C01-00854
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent glial mass phrasing; conservatively routed.
+    - case_id: C01-01067
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Hedged non-equivalent glial tumor phrasing; conservatively routed.
+    - case_id: C01-01164
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent low-grade glial mass phrasing; conservatively routed.
+    - case_id: C01-01285
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent glial neoplasm phrasing; conservatively routed.
+    - case_id: C01-01397
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent glial mass phrasing; conservatively routed.
+    - case_id: C01-02024
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Postoperative cavity without definite residual; conservatively routed.
+    - case_id: C01-02303
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Clinical history of anaplastic astrocytoma with radiation changes; conservatively
+        routed.
+    - case_id: C01-02374
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent glial neoplasm phrasing; conservatively routed.
+    - case_id: C01-02419
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Clinical history of astrocytoma with uninvolved scan; conservatively
+        routed.
+  Intracranial aneurysm:
+    inheritance_status: KEEP_V2_EXACT
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_INTRACRANIAL_ANEURYSM_INHERIT_01
+    chunk1_changed_case_ids: []
+    codebook_basis:
+      operational_definition: Report identifies an aneurysm of an intracranial artery.
+      anatomical_scope: Intracranial arterial circulation.
+      accepted_equivalents:
+      - Intracranial/cerebral aneurysm
+      - saccular aneurysm
+      - fusiform aneurysm of a named intracranial artery.
+      insufficient_evidence:
+      - Infundibulum, arterial ectasia/dolichoectasia, tortuosity or unexplained hemorrhage
+        alone.
+      subtype_boundary: 'Include ruptured/unruptured and explicitly thrombosed aneurysms.
+        Exclude pseudoaneurysm unless the study later broadens this scope; exclude
+        extracranial aneurysm.
+
+        '
+      special_case: 'Clip/coil hardware alone = evidence of prior treatment, not current
+        aneurysm. Explicit residual/recurrent aneurysm = S; excluded treated sac with
+        no residual = H.
+
+        '
+    chunk1_cases:
+    - case_id: C01-00442
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00389
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02716
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-02948
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-00050
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent suspicious aneurysm phrasing; conservatively routed.
+    - case_id: C01-00178
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent fusiform aneurysmatic dilatation phrasing; conservatively
+        routed.
+    - case_id: C01-00721
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent suspicious aneurysmal dilation phrasing; conservatively
+        routed.
+    - case_id: C01-00914
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Unmapped AComA aneurysm phrasing without accepted lineage prefix (LLM-assisted development rule); conservatively
+        routed.
+    - case_id: C01-01559
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent fusiform dilation without aneurysm; conservatively routed.
+    - case_id: C01-01969
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Question mark uncertainty phrasing; conservatively routed.
+    - case_id: C01-02273
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Complex postoperative evaluation of thrombosed aneurysm with coil-stent;
+        conservatively routed.
+    - case_id: C01-02639
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent differential phrasing (view favoring aneurysm); conservatively
+        routed.
+    - case_id: C01-02763
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Non-equivalent blister-like aneurysmal dilation phrasing; conservatively
+        routed.
+    - case_id: C01-02942
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: Unmapped stable AComA aneurysm phrasing without accepted lineage prefix (LLM-assisted development rule);
+        conservatively routed.
+  Lacunar infarct:
+    inheritance_status: KEEP_WITH_ENSEMBLE_ALIGNED_TEMPORALITY_OVERRIDE
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_LACUNAR_INFARCT_INHERIT_01
+    chunk1_changed_case_ids:
+    - C01-00085
+    - C01-00114
+    - C01-00372
+    - C01-00375
+    - C01-00627
+    - C01-00700
+    - C01-00742
+    - C01-00925
+    - C01-01093
+    - C01-01215
+    - C01-01335
+    - C01-01524
+    - C01-01736
+    - C01-01821
+    - C01-01852
+    - C01-01922
+    - C01-01932
+    - C01-01964
+    - C01-02091
+    - C01-02174
+    - C01-02238
+    - C01-02341
+    - C01-02497
+    - C01-02597
+    codebook_basis:
+      operational_definition: Report identifies an infarct as lacunar or a lacune
+        as being of ischemic/vascular origin.
+      anatomical_scope: Deep brain structures, subcortical white matter or brainstem.
+      accepted_equivalents:
+      - Lacunar infarct/infarction
+      - ischemic lacune
+      - lacune of presumed vascular origin.
+      insufficient_evidence:
+      - Small-vessel disease, tiny nonspecific cavity, enlarged perivascular space
+        or a small infarct not described as lacunar.
+      subtype_boundary: Include acute/subacute lacunar infarction. Do not infer lacunar
+        mechanism from size alone.
+      special_case: No acute lacunar infarct does not deny an old lacune. An expressly
+        lacunar infarct also supports the parent infarction label with the same temporality.
+      temporality_rules: Old/chronic lacunar infarct or established ischemic lacune
+        = H. Acute/subacute or age-unspecified lacunar infarct currently described
+        = S.
+    chunk1_cases:
+    - case_id: C01-00085
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00114
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00324
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00338
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: LIMITED_EXAM_OR_COVERAGE_ROUTING
+    - case_id: C01-00372
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00375
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00382
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00401
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: ENSEMBLE_SPLIT_AND_TARGET_RETRIEVAL_UNCERTAINTY
+    - case_id: C01-00428
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00530
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: MIXED_HISTORICAL_CURRENT_CONFLICT_ROUTING
+    - case_id: C01-00627
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00629
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: LATERALITY_MISMATCH_ROUTING
+    - case_id: C01-00680
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00700
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00706
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00710
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00730
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00742
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00807
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00832
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00850
+      required_state: H
+      required_routing: SAFE_RULE
+    - case_id: C01-00902
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: SUBACUTE_PUTAMEN_INFARCT_WITHOUT_LACUNAR_LINEAGE
+    - case_id: C01-00925
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00935
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00938
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01055
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01079
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01092
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01093
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01215
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01234
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: LIMITED_EXAM_OR_COVERAGE_ROUTING
+    - case_id: C01-01315
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01335
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01370
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01413
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01524
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01610
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01620
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01736
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01807
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: COMPLEX_UNCERTAINTY_SCOPE_ROUTING
+    - case_id: C01-01821
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01852
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01868
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01922
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01930
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01932
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01964
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01980
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: QUESTION_MARK_UNCERTAINTY_ROUTING
+    - case_id: C01-02061
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: NON_EQUIVALENT_BARE_CYSTIC_LACUNE_ROUTING
+    - case_id: C01-02091
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02119
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02174
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02194
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02238
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02244
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: EXPLICIT_SECTION_CONFLICT_ROUTING
+    - case_id: C01-02274
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02278
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02281
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02341
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02362
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02451
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02467
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02487
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02497
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02531
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02554
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: SEQUELA_LACUNAR_AREA_ENSEMBLE_SPLIT
+    - case_id: C01-02597
+      required_state: S
+      required_routing: SAFE_RULE
+    label_policy_overrides:
+      chronic_present_state: S
+  Silent micro-hemorrhage of brain:
+    inheritance_status: KEEP_WITH_ENSEMBLE_ALIGNED_TARGET_SEMANTICS
+    chunk1_acceptance_status: ACCEPTED
+    codebook_basis:
+      canonical_name: Silent micro-hemorrhage of brain
+      operational_definition: Report identifies cerebral microhemorrhage or petechial
+        hemorrhage.
+      anatomical_scope: Brain parenchyma.
+      accepted_equivalents:
+      - microhemorrhage
+      - micro-hemorrhage
+      - microbleed
+      - petechial hemorrhage
+      - punctate hemorrhage
+      - chronic hemorrhagic foci
+      insufficient_evidence:
+      - Susceptibility artifact or blooming alone without hemorrhage terminology
+      - calcification alone
+      - cavernoma alone without independent microhemorrhage
+      - intracranial hematoma or non-microscopic hemorrhage alone
+      subtype_rules: Include cerebral microhemorrhages and petechial or punctate hemorrhages
+        in brain parenchyma. Exclude isolated extra-axial hemorrhage, subarachnoid
+        hemorrhage, cavernoma, and calcification.
+    machine_rules:
+      surface_forms:
+      - microhemorrhage
+      - microhemorrhages
+      - micro-hemorrhage
+      - micro-hemorrhages
+      - microhemorrhagic
+      - microhemorrhagic focus
+      - microhemorrhagic foci
+      - microbleed
+      - microbleeds
+      - cerebral microbleed
+      - cerebral microbleeds
+      - chronic microbleed
+      - chronic microbleeds
+      - old microhemorrhage
+      - petechial hemorrhage
+      - petechial hemorrhages
+      - petechial microhemorrhage
+      - petechial microhemorrhages
+      - punctate hemorrhage
+      - punctate hemorrhages
+      - chronic hemorrhagic focus
+      - chronic hemorrhagic foci
+      compositional_patterns: []
+      excluded_anatomy:
+      - scalp
+      - subcutaneous
+      - extracranial
+      - spine
+      - spinal
+      - cervical canal
+      - thoracic
+      - lumbar
+      - sacral
+      - orbital
+      - orbit
+      global_policy_overrides: {}
+      label_policy_overrides: {}
+    chunk1_acceptance_gate: PASS
+    chunk1_changed_case_ids:
+    - C01-00081
+    - C01-00142
+    - C01-00149
+    - C01-00187
+    - C01-00207
+    - C01-00226
+    - C01-00233
+    - C01-00242
+    - C01-00483
+    - C01-00567
+    - C01-00642
+    - C01-00662
+    - C01-00775
+    - C01-00797
+    - C01-00921
+    - C01-00937
+    - C01-00976
+    - C01-01087
+    - C01-01127
+    - C01-01155
+    - C01-01205
+    - C01-01322
+    - C01-01445
+    - C01-01562
+    - C01-01582
+    - C01-01600
+    - C01-01623
+    - C01-01683
+    - C01-01718
+    - C01-01756
+    - C01-01783
+    - C01-01806
+    - C01-01809
+    - C01-01811
+    - C01-02121
+    - C01-02178
+    - C01-02212
+    - C01-02323
+    - C01-02485
+    - C01-02595
+    - C01-02599
+    - C01-02629
+    - C01-02662
+    - C01-02680
+    - C01-02689
+    - C01-02771
+    chunk1_cases:
+    - case_id: C01-00081
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00142
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00149
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00187
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00207
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00226
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00233
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00242
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00358
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SECTION_DISCREPANCY
+    - case_id: C01-00483
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00496
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_MULTI_LESION_MIXED_CERTAINTY
+    - case_id: C01-00567
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00642
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00651
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_TARGET_RETRIEVAL_UNCERTAINTY
+    - case_id: C01-00662
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00775
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00797
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00921
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00937
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00940
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SECTION_DISCREPANCY
+    - case_id: C01-00976
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01087
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01127
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01155
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01205
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01322
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01445
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01562
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01582
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01600
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01623
+      required_state: UC
+      required_routing: SAFE_RULE
+    - case_id: C01-01683
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01718
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01756
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01783
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01806
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01809
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01811
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02008
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_TARGET_RETRIEVAL_UNCERTAINTY
+    - case_id: C01-02051
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_TARGET_RETRIEVAL_UNCERTAINTY
+    - case_id: C01-02121
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02178
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02212
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02323
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02485
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02569
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-02595
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02599
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02629
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02662
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02680
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02689
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02771
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02790
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SECTION_DISCREPANCY
+  Cerebral edema:
+    inheritance_status: KEEP_WITH_ENSEMBLE_ALIGNED_RULES
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_CEREBRAL_EDEMA_ENSEMBLE_ALIGNED_01
+    codebook_basis:
+      canonical_name: Cerebral edema
+      operational_definition: Report identifies edema within brain parenchyma.
+      anatomical_scope: Brain parenchyma, including cerebral hemispheres, cerebellum
+        and brainstem.
+      accepted_equivalents:
+      - Cerebral/brain edema
+      - vasogenic edema
+      - cytotoxic edema
+      - interstitial edema in brain tissue.
+      insufficient_evidence:
+      - T2/FLAIR hyperintensity, sulcal effacement, mass effect, midline shift or
+        nonspecific swelling alone.
+      subtype_boundary: Include focal, diffuse, perilesional and transependymal edema
+        explicitly called edema. Exclude scalp, orbital and spinal cord edema.
+      special_case: Edema without an anatomical referent = NEI. Do not infer its cause.
+    scope_policy:
+      enabled: true
+      presence_semantics: ANY_IN_SCOPE
+    add_surface_forms:
+    - edema
+    - focal edema
+    - cortical edema
+    - cerebellar edema
+    - brainstem edema
+    - perifocal edema
+    - infiltrative edema
+    - reactive edema
+    - moderate edema
+    - mild edema
+    - marked edema
+    - severe edema
+    - significant edema
+    - intense edema
+    - extensive edema
+    - minimal edema
+    - massive edema
+    - residual edema
+    - postoperative edema
+    add_excluded_anatomy:
+    - temporal muscle
+    - temporal muscles
+    - temporalis muscle
+    - temporalis muscles
+    - subcutaneous
+    - periorbital
+    chunk1_changed_case_ids:
+    - C01-00394
+    - C01-00399
+    - C01-00415
+    - C01-00444
+    - C01-00454
+    - C01-00546
+    - C01-00633
+    - C01-00636
+    - C01-00711
+    - C01-00865
+    - C01-00876
+    - C01-00907
+    - C01-00956
+    - C01-01056
+    - C01-01062
+    - C01-01120
+    - C01-01204
+    - C01-01232
+    - C01-01258
+    - C01-01374
+    - C01-01599
+    - C01-01646
+    - C01-01678
+    - C01-01752
+    - C01-01766
+    - C01-01770
+    - C01-01956
+    - C01-02066
+    - C01-02149
+    - C01-02210
+    - C01-02237
+    - C01-02250
+    - C01-02334
+    - C01-02381
+    - C01-02414
+    - C01-02564
+    - C01-02663
+    - C01-02813
+    chunk1_cases:
+    - case_id: C01-00037
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00046
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00053
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00073
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00074
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00098
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00136
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00145
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00180
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00214
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00220
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00225
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_TARGET_RETRIEVAL_UNCERTAINTY
+    - case_id: C01-00230
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00238
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00240
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00296
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00388
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00394
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00399
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00415
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00418
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00419
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00422
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00440
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00444
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00454
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00507
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00535
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00546
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00600
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00628
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00633
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00636
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SECTION_DISCREPANCY
+    - case_id: C01-00698
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-00711
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00746
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00751
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00765
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00804
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00822
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00865
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00876
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00907
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00922
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00928
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00945
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-00956
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00987
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-00996
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01014
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01029
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01056
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01062
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01064
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01098
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SUBTYPE_LINEAGE
+    - case_id: C01-01107
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01118
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01120
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01178
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01204
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-01207
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01219
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01232
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01258
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01263
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01267
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01316
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SECTION_DISCREPANCY
+    - case_id: C01-01336
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01337
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01341
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01353
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01366
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01374
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01386
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01393
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01395
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01426
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01455
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01488
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01595
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SECTION_DISCREPANCY
+    - case_id: C01-01596
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01599
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01602
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01607
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01632
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01644
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01646
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01652
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01664
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01671
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01678
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01738
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01752
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01764
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-01766
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01770
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01775
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01814
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01830
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01843
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01875
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01927
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01950
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01956
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01985
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-01986
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-01998
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02066
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02073
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-02077
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02085
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-02131
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02149
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02167
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02169
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02210
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-02236
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02237
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02250
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_SECTION_DISCREPANCY
+    - case_id: C01-02259
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02307
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_COMPLEX_UNCERTAINTY_SCOPE
+    - case_id: C01-02313
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02315
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02331
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02334
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02337
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02348
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02381
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02397
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02414
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02422
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02472
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02478
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02510
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02519
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02520
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02536
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02562
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_TARGET_RETRIEVAL_UNCERTAINTY
+    - case_id: C01-02564
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02580
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02593
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02633
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02635
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02663
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02695
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02718
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02736
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02747
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02751
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02754
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02776
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02777
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02792
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02808
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_ANATOMY_MISMATCH
+    - case_id: C01-02813
+      required_state: S
+      required_routing: SAFE_RULE
+    - case_id: C01-02826
+      required_state: null
+      required_routing: ROUTE_TO_LLM
+      reason: TRG_TARGET_RETRIEVAL_UNCERTAINTY
+  Structure of cave of septum pellucidum:
+    inheritance_status: ADD_ENSEMBLE_ALIGNED_RULES
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_CAVUM_SEPTUM_PELLUCIDUM_ENSEMBLE_ALIGNED_01
+    codebook_basis:
+      canonical_name: Structure of cave of septum pellucidum
+      operational_definition: Explicit cavum septum pellucidum or bounded septum-associated
+        equivalent.
+      anatomical_scope: Between septal leaflets adjacent to the lateral ventricles.
+      accepted_equivalents:
+      - cavum septum pellucidum
+      - cavum septi pellucidi
+      - CSP
+      - cavum septum pellucidum et vergae
+      - cavum septi pellucidi et vergae
+      insufficient_evidence:
+      - septum pellucidum mention alone
+      - generic intracranial cyst
+      - cavum vergae alone
+      - cavum velum interpositum
+      subtype_rules: CSP and CSP-plus-vergae constructions are included. Isolated
+        cavum vergae and cavum velum interpositum are distinct.
+    machine_rules:
+      version: d1_csp_ensemble_candidate_01
+      positive_terms:
+      - cavum septum pellucidum
+      - cavum septi pellucidi
+      - CSP
+      surface_forms:
+      - cavum septum pellucidum et vergae
+      - cavum septi pellucidi et vergae
+      compositional_patterns:
+      - pattern_id: COMP_CSP_SEPTUM_AND_VERGAE
+        pattern: (?i)\bseptum\s+pellucidum\s+(?:and|with)\s+cavum\s+vergae\b
+        reason: Bounded septum-pellucidum-associated cavum construction.
+      - pattern_id: COMP_CSP_SEPTUM_INTERPOSITUM
+        pattern: (?i)\bcavum\s+septum\s+interpositum\b
+        reason: Observed septum-associated cavum wording; distinct from cavum velum
+          interpositum.
+      - pattern_id: COMP_CSP_SPELLING_VARIANT
+        pattern: (?i)\bcavum\s+septum\s+pel+icidum\s+et\s+var+gae\b
+        reason: General spelling-tolerant form for septum-pellucidum et vergae wording.
+      related_non_equivalent_patterns:
+      - pattern_id: REL_CSP_CAVUM_VERGAE
+        pattern: (?i)\bcavum\s+vergae\b
+        reason: Cavum vergae alone is distinct from CSP under the codebook and split
+          in the corpus.
+      - pattern_id: REL_CSP_CAVUM_VELUM_INTERPOSITUM
+        pattern: (?i)\bcavum\s+velum\s+interpositum\b
+        reason: Distinct midline cavity; never infer CSP from generic cavum wording.
+      excluded_anatomy: []
+      required_anatomy: []
+      policy:
+        operational_definition: Explicit cavum septum pellucidum or bounded septum-associated
+          equivalent.
+        anatomical_scope: Between septal leaflets adjacent to the lateral ventricles.
+        insufficient_evidence:
+        - septum pellucidum mention alone
+        - generic intracranial cyst
+        - cavum vergae alone
+        - cavum velum interpositum
+    chunk1_changed_case_ids:
+    - C01-00052
+    - C01-00195
+    - C01-00251
+    - C01-00293
+    - C01-00317
+    - C01-00490
+    - C01-00521
+    - C01-00523
+    - C01-00547
+    - C01-00601
+    - C01-00810
+    - C01-00826
+    - C01-00919
+    - C01-00951
+    - C01-00980
+    - C01-01039
+    - C01-01213
+    - C01-01224
+    - C01-01235
+    - C01-01248
+    - C01-01402
+    - C01-01408
+    - C01-01482
+    - C01-01499
+    - C01-01504
+    - C01-01598
+    - C01-01691
+    - C01-01731
+    - C01-01763
+    - C01-01833
+    - C01-01919
+    - C01-02052
+    - C01-02100
+    - C01-02202
+    - C01-02219
+    - C01-02373
+    - C01-02392
+    - C01-02462
+    - C01-02553
+    - C01-02559
+    - C01-02605
+    - C01-02627
+  Cerebellar degeneration:
+    inheritance_status: ADD_ENSEMBLE_ALIGNED_RULES
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_CEREBELLAR_DEGENERATION_ENSEMBLE_ALIGNED_01
+    codebook_basis:
+      canonical_name: Cerebellar degeneration
+      operational_definition: Report identifies cerebellar atrophy, volume loss, or
+        degeneration.
+      anatomical_scope: Cerebellum, including cerebellar hemispheres and vermis.
+      accepted_equivalents:
+      - Cerebellar atrophy
+      - cerebellar volume loss
+      - cerebellar degeneration
+      - vermian atrophy
+      - prominence of cerebellar folia secondary to atrophy
+      insufficient_evidence:
+      - Cerebral atrophy alone
+      - generalized cerebral volume loss alone
+      - cerebellar infarct alone
+      - cerebellar hypoplasia alone
+      subtype_rules: Include diffuse, focal, hemispheric, cortical, and vermian cerebellar
+        atrophy or degeneration. Exclude isolated cerebral atrophy and non-atrophic
+        cerebellar lesions.
+    machine_rules:
+      version: d1_cerebellar_degeneration_candidate_01
+      positive_terms:
+      - cerebellar degeneration
+      - cerebellar atrophy
+      - cerebellar volume loss
+      - Cerebellar degeneration
+      - Cerebellar atrophy
+      surface_forms:
+      - cerebellar degenerations
+      - cerebellar degenerative
+      - cerebellar atrophies
+      - cerebellar atrophic
+      - cerebellar volume reduction
+      - cerebellar cortical atrophy
+      - cerebellar cortical atrophic
+      - cerebellar hemispheric atrophy
+      - cerebellar hemisphere atrophy
+      - cerebellar vermis atrophy
+      - vermian atrophy
+      - vermal atrophy
+      - diffuse cerebellar atrophy
+      - focal cerebellar atrophy
+      - mild cerebellar atrophy
+      - moderate cerebellar atrophy
+      - severe cerebellar atrophy
+      - marked cerebellar atrophy
+      - significant cerebellar atrophy
+      - senile cerebellar atrophy
+      - superior cerebellar atrophy
+      - cerebellar volume loss-degeneration
+      - cerebellar atrophy-degeneration
+      - cerebellar and vermal atrophy
+      - cerebellar and vermian atrophy
+      compositional_patterns:
+      - pattern_id: COMP_CEREBELLAR_ATROPHY_IN_CEREBELLUM
+        pattern: (?i)\batroph(?:y|ic)\s+(?:is\s+(?:observed|noted|seen|present|developed)\s+)?(?:in|of|involving)\s+(?:the\s+)?(?:bilateral\s+|both\s+|left\s+|right\s+)?(?:cerebell\w*|cerebellar\s+hemispheres?|vermis)\b
+        reason: Explicit atrophy in cerebellum or cerebellar hemispheres
+      - pattern_id: COMP_CEREBELLAR_FOLIA_PROMINENT
+        pattern: (?i)\b(?:prominent\s+(?:cerebral\s+and\s+)?cerebellar\s+folia|cerebellar\s+folia\s+(?:are|have\s+become)\s+prominent)\b
+        reason: Prominent cerebellar folia in posterior fossa
+      - pattern_id: COMP_CEREBELLAR_FOLIA_WIDENING_ATROPHY
+        pattern: (?i)\bwidening\s+[^.;\n]{0,30}\b(?:compatible|consistent)\s+with\s+atrophy\s+in\s+(?:the\s+)?cerebellar\s+folia\b
+        reason: Widening in cerebellar folia consistent with atrophy
+      - pattern_id: COMP_CEREBELLAR_FOLIA_DILATED_ATROPHY
+        pattern: (?i)\bcerebellar\s+folia\s+are\s+dilated\s+consistent\s+with\s+(?:cerebellar\s+)?atrophy\b
+        reason: Cerebellar folia dilated consistent with atrophy
+      - pattern_id: COMP_CEREBELLAR_HEMISPHERES_ATROPHIC
+        pattern: (?i)\bcerebellar\s+hemispheres\s+(?:and\s+vermis\s+)?(?:show|appear|are)\s+(?:moderately\s+|mildly\s+)?atrophic\b
+        reason: Cerebellar hemispheres atrophic
+      - pattern_id: COMP_CEREBELLAR_CEREBRAL_COORDINATED_ATROPHY
+        pattern: (?i)\b(?:cerebral\s+and\s+cerebellar\s+(?:cortical\s+|senile\s+)?atrophy|senile\s+cerebral\s+and\s+cerebellar\s+(?:cortical\s+)?atrophy|cerebral\s+cerebellar\s+atrophy)\b
+        reason: Coordinated cerebral and cerebellar atrophy establishes cerebellar
+          involvement
+      - pattern_id: COMP_CEREBELLAR_VOLUME_LOSS_COMPATIBLE_ATROPHY
+        pattern: (?i)\bvolume\s+loss\s+(?:is\s+observed\s+in\s+the\s+cerebellum|compatible\s+with\s+(?:moderate\s+|mild\s+)?atrophy\s+in\s+(?:both\s+)?cerebellar)\b
+        reason: Volume loss in cerebellum compatible with atrophy
+      - pattern_id: COMP_ATROPHY_OBSERVED_IN_CEREBELLAR_HEMISPHERE
+        pattern: (?i)\batrophy\s+[^.;\n]{0,50}\bin\s+(?:the\s+)?(?:left\s+|right\s+|bilateral\s+)?cerebellar\s+hemisphere\b
+        reason: Atrophy in cerebellar hemisphere
+      excluded_anatomy: []
+      required_anatomy:
+      - cerebellum
+      - cerebellar
+      - vermis
+      - vermian
+      - vermal
+      - posterior fossa
+      - folia
+      policy:
+        operational_definition: Report identifies cerebellar atrophy, volume loss,
+          or degeneration.
+        anatomical_scope: Cerebellum, including cerebellar hemispheres and vermis.
+        insufficient_evidence:
+        - Cerebral atrophy alone.
+        - Generalized cerebral volume loss alone.
+        - Cerebellar infarct alone.
+        - Cerebellar hypoplasia alone.
+    chunk1_changed_case_ids:
+    - C01-00077
+    - C01-00111
+    - C01-00117
+    - C01-00129
+    - C01-00197
+    - C01-00212
+    - C01-00279
+    - C01-00318
+    - C01-00370
+    - C01-00407
+    - C01-00445
+    - C01-00449
+    - C01-00476
+    - C01-00482
+    - C01-00491
+    - C01-00587
+    - C01-00605
+    - C01-00674
+    - C01-00703
+    - C01-00771
+    - C01-00862
+    - C01-00872
+    - C01-00913
+    - C01-00920
+    - C01-00933
+    - C01-01060
+    - C01-01101
+    - C01-01121
+    - C01-01131
+    - C01-01136
+    - C01-01179
+    - C01-01199
+    - C01-01268
+    - C01-01356
+    - C01-01403
+    - C01-01467
+    - C01-01490
+    - C01-01521
+    - C01-01531
+    - C01-01533
+    - C01-01576
+    - C01-01625
+    - C01-01626
+    - C01-01627
+    - C01-01634
+    - C01-01656
+    - C01-01689
+    - C01-01707
+    - C01-01730
+    - C01-01795
+    - C01-01824
+    - C01-01856
+    - C01-01970
+    - C01-01972
+    - C01-01987
+    - C01-01992
+    - C01-02005
+    - C01-02087
+    - C01-02127
+    - C01-02156
+    - C01-02200
+    - C01-02231
+    - C01-02234
+    - C01-02283
+    - C01-02294
+    - C01-02304
+    - C01-02310
+    - C01-02333
+    - C01-02336
+    - C01-02393
+    - C01-02441
+    - C01-02464
+    - C01-02466
+    - C01-02477
+    - C01-02551
+    - C01-02590
+    - C01-02672
+    - C01-02697
+    - C01-02702
+    - C01-02720
+    - C01-02750
+    - C01-02800
+    - C01-02839
+  Demyelinating disease of central nervous system:
+    inheritance_status: KEEP_WITH_ENSEMBLE_ALIGNED_RULES
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_DEMYELINATING_DISEASE_ENSEMBLE_ALIGNED_01
+    codebook_basis:
+      canonical_name: Demyelinating disease of central nervous system
+      operational_definition: Report identifies CNS demyelinating disease or lesions
+        explicitly attributed to demyelination.
+      anatomical_scope: Brain and spinal cord.
+      accepted_equivalents:
+      - Demyelinating plaques
+      - demyelinating lesions
+      - CNS demyelination
+      - lesions of multiple sclerosis explicitly present
+      - multiple sclerosis plaques
+      - central pontine myelinolysis
+      - osmotic demyelination
+      insufficient_evidence:
+      - Nonspecific white-matter hyperintensities, white-matter disease, small-vessel
+        ischemic change or isolated T2 signal abnormality.
+      - Nonspecific plaques without demyelinating attribution.
+      - Gliosis or encephalomalacia alone without explicit demyelinating attribution.
+      subtype_rules: Include explicitly inflammatory/acquired demyelinating lesions,
+        multiple sclerosis plaques/lesions, central pontine myelinolysis/osmotic demyelination.
+        Exclude peripheral neuropathy, isolated clinical history of MS without lesions,
+        nonspecific plaques, and unspecified dysmyelination.
+      special_cases:
+      - Nonenhancing or stable demyelinating plaques remain S. No active demyelination
+        does not negate existing inactive plaques.
+    add_surface_forms:
+    - demyelinating plaque
+    - demyelinating lesion
+    - demyelinating disease
+    - demyelinating plaque formation
+    - demyelinating plaque formations
+    - demyelinating lesion formation
+    - demyelinating lesion formations
+    - demyelinating plaque-like lesion
+    - demyelinating plaque-like lesions
+    - demyelination area
+    - demyelination areas
+    - multiple sclerosis plaques
+    - multiple sclerosis plaque
+    - multiple sclerosis lesions
+    - multiple sclerosis lesion
+    - MS plaques
+    - MS plaque
+    - MS lesions
+    - MS lesion
+    - central pontine myelinolysis
+    - osmotic demyelination syndrome
+    - osmotic demyelination
+    - myelinolysis
+    - tumefactive demyelinating lesion
+    - tumefactive demyelinating lesions
+    - active demyelinating plaques
+    - active demyelinating plaque
+    - inactive demyelinating plaques
+    - inactive demyelinating plaque
+    - chronic demyelinating plaques
+    - chronic demyelinating plaque
+    - stable demyelinating plaques
+    - stable demyelinating plaque
+    - inactive MS plaques
+    - inactive MS plaque
+    - active MS plaques
+    - active MS plaque
+    - demyelinating pathology
+    - demyelinating processes
+    - demyelinating diseases
+    - old demyelinating plaques
+    - old demyelinating plaque
+    - old demyelinating plaque formations
+    - old demyelinating plaque formation
+    add_compositional_patterns:
+    - pattern_id: COMP_DEMYELINATING_PLAQUES_CONSISTENT_MS
+      pattern: (?i)\b(?:plaques?|lesions?)\s+(?:compatible|consistent)\s+with\s+(?:multiple\s+sclerosis|MS|demyelinat\w*)\b
+      reason: Plaques or lesions consistent with MS or demyelination
+    - pattern_id: COMP_DEMYELINATING_PROCESS_COMPATIBLE
+      pattern: (?i)\b(?:compatible|consistent)\s+with\s+(?:a\s+)?demyelinating\s+(?:process|disease|pathology)\b
+      reason: Findings compatible with demyelinating process
+    - pattern_id: COMP_DEMYELINATING_MCDONALD_CRITERIA
+      pattern: (?i)\b(?:(?:meet(?:s|ing)?|fulfill(?:s|ing)?)\s+(?:the\s+)?(?:2017\s+|revised\s+)?(?:McDonald|MS)\s+criteria|(?:(?:McDonald|MS)\s+criteria\s+are\s+met))\b
+      reason: Radiological findings meeting McDonald criteria for MS
+    chunk1_changed_case_ids:
+    - C01-00026
+    - C01-00029
+    - C01-00239
+    - C01-00244
+    - C01-00276
+    - C01-00336
+    - C01-00469
+    - C01-00478
+    - C01-00480
+    - C01-00548
+    - C01-00626
+    - C01-00663
+    - C01-00718
+    - C01-00741
+    - C01-00764
+    - C01-00798
+    - C01-00829
+    - C01-00915
+    - C01-00934
+    - C01-00948
+    - C01-00968
+    - C01-01038
+    - C01-01063
+    - C01-01124
+    - C01-01259
+    - C01-01329
+    - C01-01468
+    - C01-01568
+    - C01-01574
+    - C01-01611
+    - C01-01621
+    - C01-01648
+    - C01-01679
+    - C01-01681
+    - C01-01720
+    - C01-01739
+    - C01-01780
+    - C01-01829
+    - C01-01854
+    - C01-01858
+    - C01-01895
+    - C01-01901
+    - C01-01944
+    - C01-02012
+    - C01-02048
+    - C01-02084
+    - C01-02088
+    - C01-02157
+    - C01-02165
+    - C01-02166
+    - C01-02267
+    - C01-02302
+    - C01-02376
+    - C01-02386
+    - C01-02402
+    - C01-02480
+    - C01-02570
+    - C01-02711
+    - C01-02735
+    - C01-02844
+    - C01-02874
+    - C01-02926
+  Cerebral atrophy:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_CEREBRAL_ATROPHY_ENSEMBLE_ALIGNED_01
+    codebook_basis:
+      canonical_name: Cerebral atrophy
+      operational_definition: Report identifies loss of cerebral parenchymal volume.
+      anatomical_scope: Cerebral hemispheres, cortex and subcortical tissue.
+      accepted_equivalents:
+      - Cerebral atrophy
+      - cerebral volume loss
+      - cortical atrophy
+      - generalized brain parenchymal volume loss involving the cerebrum
+      - senile cerebral atrophy
+      - diffuse cerebral atrophy
+      - lobar cerebral atrophy
+      insufficient_evidence:
+      - Prominent sulci, ventriculomegaly or focal encephalomalacia without an explicit
+        atrophy/volume-loss statement.
+      - Isolated cerebellar atrophy alone.
+      subtype_rules: Include focal or diffuse and age-related cerebral atrophy explicitly
+        described. Exclude isolated cerebellar atrophy and congenital hypoplasia.
+    add_surface_forms:
+    - cerebral cortical atrophy
+    - cerebral cortical atrophic
+    - cerebral volume reduction
+    - cerebral parenchymal volume loss
+    - generalized brain volume loss
+    - global brain volume loss
+    - global cerebral atrophy
+    - global atrophy
+    - diffuse brain atrophy
+    - cerebral senile atrophy
+    - senile cerebral atrophy
+    - senile atrophy
+    - cerebral involution
+    - involutional cerebral changes
+    - supratentorial atrophy
+    - supratentorial central-predominant atrophy
+    - central and peripheral csf spaces show atrophic dilatation
+    - atrophic dilatation in central and peripheral csf spaces
+    - atrophic dilatation
+    - atrophic pattern
+    - cortical atrophic pattern
+    - cerebral atrophic pattern
+    - cerebral and cerebellar atrophic pattern
+    - mild atrophic appearance
+    - atrophic appearance
+    - frontal atrophy
+    - temporal atrophy
+    - parietal atrophy
+    - occipital atrophy
+    - frontoparietal atrophy
+    - frontotemporal atrophy
+    - temporoparietal atrophy
+    - temporo-occipital atrophy
+    - biparietal atrophy
+    - hemispheric atrophy
+    - cerebral hemiatrophy
+    - lobar atrophy
+    - gyral atrophy
+    - gyrus atrophy
+    - bilateral hippocampal atrophy
+    - cerebral and cerebellar atrophy
+    - cerebral and cerebellar mild atrophy
+    - bilateral cerebral and cerebellar mild atrophy
+    - cerebral cerebellar atrophy
+    - cerebral-cerebellar atrophy
+    - cerebral-serebellar atrophy
+    - cerebral and cerebellar senile atrophy
+    - cerebral and cerebellar atrophic changes
+    - cerebral and mild cerebellar atrophic changes
+    add_compositional_patterns:
+    - pattern_id: COMP_D1_ATROPHY_SECONDARY_WIDENING
+      pattern: (?i)\b(?:widening|enlargement|increase|increased|dilation|dilatation|prominence|deepening)\s+[^.;\n]{0,50}\b(?:secondary\s+to|consistent\s+with|compatible\s+with|due\s+to|in\s+favor\s+of)\s+(?:(?:mild|moderate|marked|severe|central|senile|cortical|cerebral|cerebrocerebellar)\s+)?atroph(?:y|ic\s+changes)\b
+      reason: CSF space, ventricular, or sulcal widening/prominence secondary to or
+        consistent with atrophy.
+    - pattern_id: COMP_D1_ATROPHY_OBSERVED_IN_CEREBRAL_LOBE
+      pattern: (?i)\b(?:atroph(?:y|ic\s+changes|ic\s+pattern))\s+[^.;\n]{0,30}\b(?:is\s+observed|noted|present|seen)\s+in\s+(?:the\s+)?(?:bilateral\s+|both\s+)?(?:cerebr\w*|frontal|temporal|parietal|occipital|hemispher\w*)\b
+      reason: Atrophy observed in cerebral lobes or hemispheres.
+    - pattern_id: COMP_D1_LOBAR_ATROPHY_GRADING
+      pattern: (?i)\b(?:Koedam\s+grade\s+\d+|MTA\s+(?:score\s+)?\d+)\s+[^.;\n]{0,40}\b(?:atrophy|volume\s+loss)\b|\b(?:atrophy|volume\s+loss)\s+scored\s+as\s+\d+\s+in\s+[^.;\n]{0,40}\b(?:hippocamp\w*|medial\s+temporal)\b
+      reason: Standard radiological grading score for lobar or medial temporal atrophy.
+    - pattern_id: COMP_D1_COORDINATED_CEREBRO_CEREBELLAR
+      pattern: (?i)\b(?:cerebr\w*|cortex|cortical)(?:\s+and\s+|\s*,\s*|\s*-\s*)(?:cerebell\w*|serebell\w*)\s+(?:(?:mild|moderate|marked|senile|cortical)\s+)*atroph(?:y|ic)\b
+      reason: Coordinated cerebral-cerebellar atrophy explicitly establishes cerebral
+        atrophy.
+    - pattern_id: COMP_D1_CEREBRAL_VOLUME_LOSS_DUE_TO
+      pattern: (?i)\b(?:dilat\w*|enlarg\w*|widening|deepening)\s+[^.;\n]{0,50}\b(?:due\s+to|secondary\s+to|compatible\s+with|consistent\s+with)\s+(?:cerebral|cortical|parenchymal|periventricular(?:\s+white\s+matter)?)\s+volume\s+loss\b
+      reason: Ventricular/sulcal dilation or widening secondary to cerebral, cortical,
+        or parenchymal volume loss.
+    chunk1_changed_case_ids:
+    - C01-00001
+    - C01-00002
+    - C01-00003
+    - C01-00012
+    - C01-00013
+    - C01-00015
+    - C01-00016
+    - C01-00022
+    - C01-00023
+    - C01-00025
+    - C01-00030
+    - C01-00033
+    - C01-00038
+    - C01-00039
+    - C01-00042
+    - C01-00047
+    - C01-00057
+    - C01-00063
+    - C01-00070
+    - C01-00083
+    - C01-00101
+    - C01-00103
+    - C01-00108
+    - C01-00122
+    - C01-00140
+    - C01-00147
+    - C01-00150
+    - C01-00153
+    - C01-00157
+    - C01-00163
+    - C01-00167
+    - C01-00191
+    - C01-00192
+    - C01-00198
+    - C01-00199
+    - C01-00201
+    - C01-00208
+    - C01-00210
+    - C01-00211
+    - C01-00218
+    - C01-00221
+    - C01-00229
+    - C01-00231
+    - C01-00232
+    - C01-00237
+    - C01-00250
+    - C01-00252
+    - C01-00265
+    - C01-00274
+    - C01-00275
+    - C01-00278
+    - C01-00282
+    - C01-00291
+    - C01-00294
+    - C01-00299
+    - C01-00300
+    - C01-00301
+    - C01-00307
+    - C01-00308
+    - C01-00309
+    - C01-00310
+    - C01-00315
+    - C01-00320
+    - C01-00328
+    - C01-00330
+    - C01-00335
+    - C01-00339
+    - C01-00352
+    - C01-00360
+    - C01-00366
+    - C01-00378
+    - C01-00385
+    - C01-00390
+    - C01-00398
+    - C01-00410
+    - C01-00424
+    - C01-00427
+    - C01-00429
+    - C01-00433
+    - C01-00448
+    - C01-00453
+    - C01-00472
+    - C01-00512
+    - C01-00513
+    - C01-00528
+    - C01-00540
+    - C01-00542
+    - C01-00544
+    - C01-00549
+    - C01-00551
+    - C01-00556
+    - C01-00575
+    - C01-00579
+    - C01-00658
+    - C01-00666
+    - C01-00667
+    - C01-00669
+    - C01-00676
+    - C01-00677
+    - C01-00687
+    - C01-00695
+    - C01-00705
+    - C01-00720
+    - C01-00731
+    - C01-00743
+    - C01-00748
+    - C01-00756
+    - C01-00768
+    - C01-00773
+    - C01-00786
+    - C01-00792
+    - C01-00815
+    - C01-00816
+    - C01-00817
+    - C01-00819
+    - C01-00820
+    - C01-00828
+    - C01-00833
+    - C01-00837
+    - C01-00842
+    - C01-00866
+    - C01-00875
+    - C01-00894
+    - C01-00916
+    - C01-00924
+    - C01-00930
+    - C01-00939
+    - C01-00941
+    - C01-00971
+    - C01-00974
+    - C01-00978
+    - C01-00984
+    - C01-00990
+    - C01-00992
+    - C01-01001
+    - C01-01013
+    - C01-01016
+    - C01-01031
+    - C01-01041
+    - C01-01043
+    - C01-01049
+    - C01-01065
+    - C01-01068
+    - C01-01073
+    - C01-01075
+    - C01-01091
+    - C01-01109
+    - C01-01113
+    - C01-01125
+    - C01-01128
+    - C01-01137
+    - C01-01138
+    - C01-01146
+    - C01-01156
+    - C01-01168
+    - C01-01173
+    - C01-01175
+    - C01-01211
+    - C01-01217
+    - C01-01221
+    - C01-01231
+    - C01-01239
+    - C01-01243
+    - C01-01251
+    - C01-01257
+    - C01-01260
+    - C01-01265
+    - C01-01286
+    - C01-01300
+    - C01-01349
+    - C01-01355
+    - C01-01363
+    - C01-01390
+    - C01-01405
+    - C01-01416
+    - C01-01424
+    - C01-01433
+    - C01-01434
+    - C01-01452
+    - C01-01475
+    - C01-01478
+    - C01-01486
+    - C01-01493
+    - C01-01513
+    - C01-01538
+    - C01-01558
+    - C01-01564
+    - C01-01566
+    - C01-01569
+    - C01-01573
+    - C01-01588
+    - C01-01592
+    - C01-01613
+    - C01-01616
+    - C01-01617
+    - C01-01618
+    - C01-01619
+    - C01-01643
+    - C01-01666
+    - C01-01668
+    - C01-01685
+    - C01-01687
+    - C01-01717
+    - C01-01725
+    - C01-01746
+    - C01-01771
+    - C01-01776
+    - C01-01781
+    - C01-01787
+    - C01-01792
+    - C01-01800
+    - C01-01801
+    - C01-01802
+    - C01-01812
+    - C01-01819
+    - C01-01825
+    - C01-01828
+    - C01-01836
+    - C01-01844
+    - C01-01846
+    - C01-01848
+    - C01-01861
+    - C01-01863
+    - C01-01866
+    - C01-01897
+    - C01-01900
+    - C01-01924
+    - C01-01935
+    - C01-01938
+    - C01-01941
+    - C01-01957
+    - C01-01959
+    - C01-01963
+    - C01-01989
+    - C01-01994
+    - C01-02003
+    - C01-02018
+    - C01-02021
+    - C01-02031
+    - C01-02033
+    - C01-02041
+    - C01-02042
+    - C01-02044
+    - C01-02047
+    - C01-02072
+    - C01-02078
+    - C01-02079
+    - C01-02108
+    - C01-02123
+    - C01-02136
+    - C01-02141
+    - C01-02142
+    - C01-02145
+    - C01-02160
+    - C01-02163
+    - C01-02205
+    - C01-02209
+    - C01-02214
+    - C01-02229
+    - C01-02232
+    - C01-02247
+    - C01-02253
+    - C01-02287
+    - C01-02297
+    - C01-02316
+    - C01-02319
+    - C01-02328
+    - C01-02345
+    - C01-02346
+    - C01-02356
+    - C01-02369
+    - C01-02375
+    - C01-02383
+    - C01-02385
+    - C01-02387
+    - C01-02394
+    - C01-02404
+    - C01-02408
+    - C01-02409
+    - C01-02421
+    - C01-02425
+    - C01-02433
+    - C01-02440
+    - C01-02443
+    - C01-02448
+    - C01-02452
+    - C01-02460
+    - C01-02461
+    - C01-02469
+    - C01-02473
+    - C01-02474
+    - C01-02484
+    - C01-02491
+    - C01-02492
+    - C01-02506
+    - C01-02538
+    - C01-02547
+    - C01-02585
+    - C01-02586
+    - C01-02606
+    - C01-02607
+    - C01-02621
+    - C01-02631
+    - C01-02637
+    - C01-02647
+    - C01-02648
+    - C01-02651
+    - C01-02657
+    - C01-02658
+    - C01-02675
+    - C01-02679
+    - C01-02682
+    - C01-02699
+    - C01-02700
+    - C01-02706
+    - C01-02710
+    - C01-02714
+    - C01-02721
+    - C01-02737
+    - C01-02755
+    - C01-02757
+    - C01-02764
+    - C01-02770
+    - C01-02775
+    - C01-02782
+    - C01-02791
+    - C01-02795
+    - C01-02796
+    - C01-02799
+    - C01-02815
+    - C01-02825
+    - C01-02828
+    - C01-02829
+    - C01-02840
+    - C01-02846
+    - C01-02852
+    - C01-02855
+    - C01-02860
+    - C01-02863
+    - C01-02865
+    - C01-02868
+    - C01-02871
+    - C01-02872
+    - C01-02875
+    - C01-02883
+    - C01-02886
+    - C01-02892
+    - C01-02895
+    - C01-02896
+    - C01-02905
+    - C01-02907
+  Gliosis:
+    inheritance_status: KEEP_WITH_AUDITED_ADDITION
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_GLIOSIS_ENSEMBLE_ALIGNED_01
+    codebook_basis:
+      canonical_name: Gliosis
+      operational_definition: Report identifies gliosis or glial scarring in CNS tissue.
+      anatomical_scope: Brain or spinal cord parenchyma.
+      accepted_equivalents:
+      - Gliosis
+      - gliotic change
+      - gliotic scarring
+      - glial scar
+      - glial scarring
+      - ischemic gliosis
+      - gliotic background
+      insufficient_evidence:
+      - T2/FLAIR hyperintensity, old injury, encephalomalacia or chronic ischemic
+        change without explicit gliosis phrasing.
+      - Isolated microangiopathic/small vessel disease without explicit gliotic phrasing.
+      subtype_rules: Include focal/diffuse and post-injury/post-treatment gliosis.
+        Exclude glioma/glial neoplasm and nonspecific signal change without gliosis
+        terminology.
+    add_surface_forms:
+    - ischemic gliotic background
+    - ischemic-gliotic background
+    - gliotic background
+    - gliotic signal
+    - gliotic signals
+    - gliotic rim
+    - gliotic rims
+    - gliotic wall
+    - gliotic walls
+    - atrophic and gliotic
+    - gliotic and atrophic
+    - ischemic gliosis
+    - ischemic-gliosis
+    - gliosis focus
+    - gliosis foci
+    - gliosis area
+    - gliosis areas
+    - gliotic appearance
+    - gliotic pattern
+    - nonspecific gliotic foci
+    - nonspecific-gliotic foci
+    - nonspecific gliotic focus
+    - nonspecific-gliotic focus
+    - nonspecific gliotic lesions
+    - nonspecific-gliotic lesions
+    - nonspecific gliotic lesion
+    - nonspecific-gliotic lesion
+    - ischemic gliotic foci
+    - ischemic-gliotic foci
+    - ischemic gliotic focus
+    - ischemic-gliotic focus
+    - ischemic gliotic lesions
+    - ischemic-gliotic lesions
+    - ischemic gliotic lesion
+    - ischemic-gliotic lesion
+    - gliotic defect
+    - gliotic defects
+    - chronic ischemic gliotic
+    - chronic ischemic-gliotic
+    - ischemic gliotic changes
+    - ischemic-gliotic changes
+    - nonspecific gliotic changes
+    - nonspecific-gliotic changes
+    - chronic gliotic foci
+    - chronic gliotic focus
+    - focal gliotic area
+    - focal gliotic areas
+    - punctate ischemic-gliotic foci
+    - punctate ischemic gliotic foci
+    - ischemic-gliotic areas
+    - ischemic gliotic areas
+    - focal ischemic-gliotic changes
+    - focal ischemic gliotic changes
+    add_compositional_patterns:
+    - pattern_id: COMP_D1_GLIOSIS_INTERVENING_MODIFIERS
+      pattern: (?i)\b(?:(?:chronic|punctate|nodular|ischemic|ischemic[\s-]+|diffuse|focal|nonspecific|non-specific|subcortical|periventricular)?\s*(?:gliotic|glial))\s+(?:(?:parenchymal|subcortical|deep|white\s+matter|periventricular|subcentimetric|millimetric|punctate|nodular|T[12](?:-weighted)?(?:\s+and\s+FLAIR)?|FLAIR(?:\s+and\s+T[12])?|hyperintense|hypointense)\s+){1,3}(?:focus|foci|lesion|lesions|area|areas|signals?|intensity|intensities|changes?|increases?|sequela|sequelae|scar|scars|scarring|defect|defects)\b
+      reason: Allows descriptive radiological intervening modifiers between gliotic
+        and target lesion noun.
+    - pattern_id: COMP_D1_GLIOTIC_BACKGROUND
+      pattern: (?i)\b(?:on\s+(?:an?\s+)?(?:(?:chronic|mild|punctate|ischemic|diffuse|focal|nonspecific)[\s-]+)?gliotic\s+background)\b
+      reason: Findings observed on an explicit ischemic/gliotic background.
+    - pattern_id: COMP_D1_GLIOTIC_SIGNAL_CHANGES
+      pattern: (?i)\b(?:(?:chronic|ischemic|ischemic[\s-]+|nonspecific|non-specific|focal|diffuse)\s+)?(?:gliotic|glial)\s+(?:(?:T[12](?:-weighted)?|FLAIR|hyperintense|hypointense|signal(?:\s+intensity)?)\s+){0,3}(?:signals?|changes?|increases?)\b
+      reason: Explicit gliotic signal changes or signal increases.
+    - pattern_id: COMP_D1_PREDICATIVE_GLIOTIC
+      pattern: (?i)\b(?:(?:atrophic|edematous|chronic)\s+and\s+gliotic|gliotic\s+and\s+(?:atrophic|edematous|chronic)|gliotic\s+in\s+(?:appearance|nature|character))\b
+      reason: Predicative coordinate descriptions establishing tissue gliosis.
+    chunk1_changed_case_ids:
+    - C01-00004
+    - C01-00005
+    - C01-00007
+    - C01-00009
+    - C01-00011
+    - C01-00014
+    - C01-00017
+    - C01-00018
+    - C01-00019
+    - C01-00020
+    - C01-00024
+    - C01-00031
+    - C01-00035
+    - C01-00044
+    - C01-00045
+    - C01-00048
+    - C01-00054
+    - C01-00055
+    - C01-00061
+    - C01-00062
+    - C01-00064
+    - C01-00065
+    - C01-00068
+    - C01-00071
+    - C01-00072
+    - C01-00080
+    - C01-00082
+    - C01-00087
+    - C01-00090
+    - C01-00092
+    - C01-00095
+    - C01-00099
+    - C01-00100
+    - C01-00102
+    - C01-00104
+    - C01-00105
+    - C01-00107
+    - C01-00109
+    - C01-00110
+    - C01-00112
+    - C01-00115
+    - C01-00116
+    - C01-00118
+    - C01-00121
+    - C01-00124
+    - C01-00126
+    - C01-00130
+    - C01-00131
+    - C01-00132
+    - C01-00138
+    - C01-00139
+    - C01-00144
+    - C01-00146
+    - C01-00148
+    - C01-00151
+    - C01-00158
+    - C01-00162
+    - C01-00168
+    - C01-00170
+    - C01-00173
+    - C01-00174
+    - C01-00176
+    - C01-00177
+    - C01-00181
+    - C01-00184
+    - C01-00193
+    - C01-00196
+    - C01-00200
+    - C01-00202
+    - C01-00206
+    - C01-00209
+    - C01-00216
+    - C01-00223
+    - C01-00224
+    - C01-00227
+    - C01-00228
+    - C01-00235
+    - C01-00243
+    - C01-00246
+    - C01-00247
+    - C01-00248
+    - C01-00257
+    - C01-00258
+    - C01-00260
+    - C01-00262
+    - C01-00263
+    - C01-00266
+    - C01-00269
+    - C01-00270
+    - C01-00272
+    - C01-00273
+    - C01-00277
+    - C01-00280
+    - C01-00281
+    - C01-00283
+    - C01-00286
+    - C01-00287
+    - C01-00295
+    - C01-00297
+    - C01-00302
+    - C01-00305
+    - C01-00306
+    - C01-00312
+    - C01-00316
+    - C01-00322
+    - C01-00323
+    - C01-00325
+    - C01-00327
+    - C01-00329
+    - C01-00331
+    - C01-00333
+    - C01-00334
+    - C01-00340
+    - C01-00341
+    - C01-00344
+    - C01-00346
+    - C01-00349
+    - C01-00354
+    - C01-00359
+    - C01-00361
+    - C01-00362
+    - C01-00363
+    - C01-00368
+    - C01-00373
+    - C01-00376
+    - C01-00377
+    - C01-00381
+    - C01-00384
+    - C01-00386
+    - C01-00395
+    - C01-00397
+    - C01-00400
+    - C01-00402
+    - C01-00403
+    - C01-00405
+    - C01-00409
+    - C01-00412
+    - C01-00413
+    - C01-00416
+    - C01-00417
+    - C01-00420
+    - C01-00421
+    - C01-00423
+    - C01-00425
+    - C01-00432
+    - C01-00436
+    - C01-00437
+    - C01-00438
+    - C01-00439
+    - C01-00450
+    - C01-00451
+    - C01-00452
+    - C01-00456
+    - C01-00457
+    - C01-00461
+    - C01-00462
+    - C01-00463
+    - C01-00464
+    - C01-00467
+    - C01-00468
+    - C01-00474
+    - C01-00475
+    - C01-00477
+    - C01-00479
+    - C01-00484
+    - C01-00485
+    - C01-00487
+    - C01-00492
+    - C01-00494
+    - C01-00499
+    - C01-00501
+    - C01-00502
+    - C01-00503
+    - C01-00504
+    - C01-00505
+    - C01-00510
+    - C01-00516
+    - C01-00517
+    - C01-00519
+    - C01-00524
+    - C01-00526
+    - C01-00529
+    - C01-00531
+    - C01-00533
+    - C01-00537
+    - C01-00541
+    - C01-00543
+    - C01-00554
+    - C01-00558
+    - C01-00561
+    - C01-00562
+    - C01-00565
+    - C01-00568
+    - C01-00569
+    - C01-00580
+    - C01-00584
+    - C01-00590
+    - C01-00591
+    - C01-00593
+    - C01-00598
+    - C01-00599
+    - C01-00604
+    - C01-00606
+    - C01-00607
+    - C01-00609
+    - C01-00611
+    - C01-00613
+    - C01-00614
+    - C01-00615
+    - C01-00616
+    - C01-00618
+    - C01-00619
+    - C01-00620
+    - C01-00621
+    - C01-00624
+    - C01-00625
+    - C01-00630
+    - C01-00631
+    - C01-00634
+    - C01-00637
+    - C01-00638
+    - C01-00639
+    - C01-00648
+    - C01-00650
+    - C01-00652
+    - C01-00653
+    - C01-00654
+    - C01-00655
+    - C01-00657
+    - C01-00659
+    - C01-00664
+    - C01-00668
+    - C01-00671
+    - C01-00672
+    - C01-00673
+    - C01-00682
+    - C01-00686
+    - C01-00690
+    - C01-00694
+    - C01-00697
+    - C01-00704
+    - C01-00717
+    - C01-00719
+    - C01-00724
+    - C01-00725
+    - C01-00728
+    - C01-00732
+    - C01-00734
+    - C01-00735
+    - C01-00736
+    - C01-00737
+    - C01-00738
+    - C01-00739
+    - C01-00745
+    - C01-00747
+    - C01-00750
+    - C01-00753
+    - C01-00754
+    - C01-00761
+    - C01-00762
+    - C01-00763
+    - C01-00767
+    - C01-00769
+    - C01-00770
+    - C01-00778
+    - C01-00779
+    - C01-00781
+    - C01-00783
+    - C01-00784
+    - C01-00785
+    - C01-00791
+    - C01-00802
+    - C01-00808
+    - C01-00809
+    - C01-00811
+    - C01-00813
+    - C01-00814
+    - C01-00823
+    - C01-00824
+    - C01-00827
+    - C01-00830
+    - C01-00834
+    - C01-00835
+    - C01-00836
+    - C01-00839
+    - C01-00841
+    - C01-00845
+    - C01-00846
+    - C01-00855
+    - C01-00858
+    - C01-00859
+    - C01-00863
+    - C01-00864
+    - C01-00871
+    - C01-00874
+    - C01-00877
+    - C01-00879
+    - C01-00881
+    - C01-00882
+    - C01-00885
+    - C01-00889
+    - C01-00890
+    - C01-00891
+    - C01-00892
+    - C01-00895
+    - C01-00897
+    - C01-00898
+    - C01-00903
+    - C01-00906
+    - C01-00908
+    - C01-00910
+    - C01-00911
+    - C01-00912
+    - C01-00926
+    - C01-00927
+    - C01-00932
+    - C01-00936
+    - C01-00942
+    - C01-00943
+    - C01-00944
+    - C01-00946
+    - C01-00954
+    - C01-00957
+    - C01-00958
+    - C01-00959
+    - C01-00960
+    - C01-00965
+    - C01-00966
+    - C01-00972
+    - C01-00977
+    - C01-00983
+    - C01-00985
+    - C01-00986
+    - C01-00988
+    - C01-00991
+    - C01-00993
+    - C01-00997
+    - C01-00998
+    - C01-00999
+    - C01-01002
+    - C01-01004
+    - C01-01005
+    - C01-01007
+    - C01-01008
+    - C01-01010
+    - C01-01015
+    - C01-01019
+    - C01-01020
+    - C01-01025
+    - C01-01026
+    - C01-01033
+    - C01-01034
+    - C01-01035
+    - C01-01037
+    - C01-01044
+    - C01-01045
+    - C01-01051
+    - C01-01052
+    - C01-01054
+    - C01-01059
+    - C01-01071
+    - C01-01076
+    - C01-01077
+    - C01-01078
+    - C01-01082
+    - C01-01083
+    - C01-01084
+    - C01-01085
+    - C01-01089
+    - C01-01103
+    - C01-01108
+    - C01-01114
+    - C01-01117
+    - C01-01119
+    - C01-01126
+    - C01-01130
+    - C01-01135
+    - C01-01141
+    - C01-01142
+    - C01-01144
+    - C01-01145
+    - C01-01148
+    - C01-01149
+    - C01-01151
+    - C01-01152
+    - C01-01153
+    - C01-01157
+    - C01-01160
+    - C01-01161
+    - C01-01165
+    - C01-01172
+    - C01-01174
+    - C01-01176
+    - C01-01177
+    - C01-01185
+    - C01-01186
+    - C01-01190
+    - C01-01195
+    - C01-01197
+    - C01-01203
+    - C01-01206
+    - C01-01208
+    - C01-01209
+    - C01-01212
+    - C01-01218
+    - C01-01222
+    - C01-01225
+    - C01-01227
+    - C01-01229
+    - C01-01230
+    - C01-01233
+    - C01-01236
+    - C01-01238
+    - C01-01240
+    - C01-01241
+    - C01-01242
+    - C01-01247
+    - C01-01249
+    - C01-01250
+    - C01-01254
+    - C01-01261
+    - C01-01262
+    - C01-01266
+    - C01-01270
+    - C01-01271
+    - C01-01276
+    - C01-01277
+    - C01-01279
+    - C01-01281
+    - C01-01282
+    - C01-01283
+    - C01-01288
+    - C01-01289
+    - C01-01290
+    - C01-01291
+    - C01-01294
+    - C01-01299
+    - C01-01301
+    - C01-01304
+    - C01-01305
+    - C01-01312
+    - C01-01317
+    - C01-01318
+    - C01-01332
+    - C01-01333
+    - C01-01334
+    - C01-01342
+    - C01-01343
+    - C01-01344
+    - C01-01346
+    - C01-01352
+    - C01-01354
+    - C01-01357
+    - C01-01359
+    - C01-01360
+    - C01-01362
+    - C01-01365
+    - C01-01367
+    - C01-01368
+    - C01-01371
+    - C01-01373
+    - C01-01383
+    - C01-01387
+    - C01-01388
+    - C01-01389
+    - C01-01391
+    - C01-01396
+    - C01-01398
+    - C01-01399
+    - C01-01400
+    - C01-01406
+    - C01-01415
+    - C01-01420
+    - C01-01421
+    - C01-01427
+    - C01-01429
+    - C01-01430
+    - C01-01431
+    - C01-01435
+    - C01-01437
+    - C01-01438
+    - C01-01440
+    - C01-01442
+    - C01-01443
+    - C01-01446
+    - C01-01447
+    - C01-01448
+    - C01-01449
+    - C01-01454
+    - C01-01456
+    - C01-01459
+    - C01-01461
+    - C01-01462
+    - C01-01463
+    - C01-01464
+    - C01-01465
+    - C01-01471
+    - C01-01472
+    - C01-01473
+    - C01-01474
+    - C01-01477
+    - C01-01479
+    - C01-01480
+    - C01-01481
+    - C01-01483
+    - C01-01489
+    - C01-01494
+    - C01-01495
+    - C01-01501
+    - C01-01505
+    - C01-01510
+    - C01-01512
+    - C01-01517
+    - C01-01520
+    - C01-01522
+    - C01-01523
+    - C01-01528
+    - C01-01529
+    - C01-01530
+    - C01-01536
+    - C01-01539
+    - C01-01541
+    - C01-01543
+    - C01-01544
+    - C01-01545
+    - C01-01547
+    - C01-01552
+    - C01-01556
+    - C01-01557
+    - C01-01560
+    - C01-01563
+    - C01-01570
+    - C01-01572
+    - C01-01575
+    - C01-01580
+    - C01-01581
+    - C01-01584
+    - C01-01585
+    - C01-01587
+    - C01-01589
+    - C01-01590
+    - C01-01591
+    - C01-01593
+    - C01-01594
+    - C01-01601
+    - C01-01604
+    - C01-01606
+    - C01-01609
+    - C01-01612
+    - C01-01615
+    - C01-01622
+    - C01-01630
+    - C01-01631
+    - C01-01633
+    - C01-01636
+    - C01-01637
+    - C01-01638
+    - C01-01640
+    - C01-01641
+    - C01-01649
+    - C01-01650
+    - C01-01651
+    - C01-01653
+    - C01-01655
+    - C01-01660
+    - C01-01661
+    - C01-01663
+    - C01-01665
+    - C01-01669
+    - C01-01670
+    - C01-01674
+    - C01-01675
+    - C01-01677
+    - C01-01680
+    - C01-01688
+    - C01-01693
+    - C01-01694
+    - C01-01695
+    - C01-01697
+    - C01-01699
+    - C01-01700
+    - C01-01702
+    - C01-01705
+    - C01-01710
+    - C01-01713
+    - C01-01714
+    - C01-01715
+    - C01-01719
+    - C01-01721
+    - C01-01722
+    - C01-01729
+    - C01-01735
+    - C01-01740
+    - C01-01741
+    - C01-01744
+    - C01-01751
+    - C01-01753
+    - C01-01757
+    - C01-01758
+    - C01-01759
+    - C01-01762
+    - C01-01767
+    - C01-01768
+    - C01-01777
+    - C01-01778
+    - C01-01779
+    - C01-01789
+    - C01-01793
+    - C01-01796
+    - C01-01804
+    - C01-01808
+    - C01-01810
+    - C01-01823
+    - C01-01826
+    - C01-01831
+    - C01-01832
+    - C01-01837
+    - C01-01838
+    - C01-01839
+    - C01-01841
+    - C01-01842
+    - C01-01845
+    - C01-01847
+    - C01-01853
+    - C01-01855
+    - C01-01864
+    - C01-01865
+    - C01-01869
+    - C01-01871
+    - C01-01876
+    - C01-01880
+    - C01-01882
+    - C01-01885
+    - C01-01887
+    - C01-01892
+    - C01-01894
+    - C01-01899
+    - C01-01902
+    - C01-01906
+    - C01-01909
+    - C01-01913
+    - C01-01915
+    - C01-01934
+    - C01-01937
+    - C01-01939
+    - C01-01940
+    - C01-01942
+    - C01-01943
+    - C01-01946
+    - C01-01949
+    - C01-01951
+    - C01-01952
+    - C01-01955
+    - C01-01960
+    - C01-01961
+    - C01-01962
+    - C01-01967
+    - C01-01971
+    - C01-01973
+    - C01-01977
+    - C01-01982
+    - C01-01988
+    - C01-01991
+    - C01-02006
+    - C01-02016
+    - C01-02020
+    - C01-02027
+    - C01-02029
+    - C01-02035
+    - C01-02038
+    - C01-02039
+    - C01-02046
+    - C01-02049
+    - C01-02050
+    - C01-02053
+    - C01-02054
+    - C01-02055
+    - C01-02058
+    - C01-02062
+    - C01-02067
+    - C01-02069
+    - C01-02071
+    - C01-02076
+    - C01-02081
+    - C01-02086
+    - C01-02089
+    - C01-02092
+    - C01-02093
+    - C01-02094
+    - C01-02097
+    - C01-02098
+    - C01-02101
+    - C01-02102
+    - C01-02103
+    - C01-02106
+    - C01-02109
+    - C01-02110
+    - C01-02111
+    - C01-02113
+    - C01-02120
+    - C01-02122
+    - C01-02124
+    - C01-02125
+    - C01-02126
+    - C01-02129
+    - C01-02130
+    - C01-02132
+    - C01-02134
+    - C01-02135
+    - C01-02137
+    - C01-02138
+    - C01-02139
+    - C01-02140
+    - C01-02144
+    - C01-02146
+    - C01-02147
+    - C01-02150
+    - C01-02151
+    - C01-02152
+    - C01-02161
+    - C01-02162
+    - C01-02170
+    - C01-02181
+    - C01-02183
+    - C01-02184
+    - C01-02185
+    - C01-02186
+    - C01-02190
+    - C01-02193
+    - C01-02195
+    - C01-02196
+    - C01-02199
+    - C01-02201
+    - C01-02203
+    - C01-02206
+    - C01-02207
+    - C01-02208
+    - C01-02213
+    - C01-02215
+    - C01-02224
+    - C01-02226
+    - C01-02228
+    - C01-02240
+    - C01-02242
+    - C01-02243
+    - C01-02245
+    - C01-02246
+    - C01-02251
+    - C01-02257
+    - C01-02260
+    - C01-02261
+    - C01-02270
+    - C01-02271
+    - C01-02276
+    - C01-02286
+    - C01-02288
+    - C01-02289
+    - C01-02292
+    - C01-02293
+    - C01-02298
+    - C01-02299
+    - C01-02312
+    - C01-02314
+    - C01-02325
+    - C01-02327
+    - C01-02329
+    - C01-02339
+    - C01-02340
+    - C01-02342
+    - C01-02343
+    - C01-02344
+    - C01-02347
+    - C01-02351
+    - C01-02352
+    - C01-02354
+    - C01-02355
+    - C01-02359
+    - C01-02363
+    - C01-02364
+    - C01-02365
+    - C01-02366
+    - C01-02367
+    - C01-02368
+    - C01-02370
+    - C01-02390
+    - C01-02391
+    - C01-02396
+    - C01-02398
+    - C01-02399
+    - C01-02400
+    - C01-02401
+    - C01-02403
+    - C01-02405
+    - C01-02406
+    - C01-02411
+    - C01-02417
+    - C01-02424
+    - C01-02427
+    - C01-02429
+    - C01-02431
+    - C01-02432
+    - C01-02434
+    - C01-02436
+    - C01-02442
+    - C01-02444
+    - C01-02445
+    - C01-02446
+    - C01-02450
+    - C01-02453
+    - C01-02455
+    - C01-02456
+    - C01-02459
+    - C01-02463
+    - C01-02468
+    - C01-02470
+    - C01-02476
+    - C01-02489
+    - C01-02490
+    - C01-02493
+    - C01-02496
+    - C01-02499
+    - C01-02501
+    - C01-02503
+    - C01-02505
+    - C01-02509
+    - C01-02511
+    - C01-02512
+    - C01-02513
+    - C01-02515
+    - C01-02516
+    - C01-02521
+    - C01-02522
+    - C01-02524
+    - C01-02526
+    - C01-02527
+    - C01-02528
+    - C01-02530
+    - C01-02535
+    - C01-02537
+    - C01-02541
+    - C01-02544
+    - C01-02545
+    - C01-02548
+    - C01-02549
+    - C01-02550
+    - C01-02560
+    - C01-02561
+    - C01-02566
+    - C01-02568
+    - C01-02571
+    - C01-02572
+    - C01-02575
+    - C01-02576
+    - C01-02577
+    - C01-02579
+    - C01-02581
+    - C01-02582
+    - C01-02589
+    - C01-02591
+    - C01-02594
+    - C01-02600
+    - C01-02601
+    - C01-02609
+    - C01-02610
+    - C01-02612
+    - C01-02616
+    - C01-02618
+    - C01-02623
+    - C01-02624
+    - C01-02626
+    - C01-02632
+    - C01-02634
+    - C01-02638
+    - C01-02641
+    - C01-02642
+    - C01-02643
+    - C01-02649
+    - C01-02655
+    - C01-02659
+    - C01-02660
+    - C01-02664
+    - C01-02665
+    - C01-02666
+    - C01-02669
+    - C01-02670
+    - C01-02673
+    - C01-02674
+    - C01-02676
+    - C01-02677
+    - C01-02681
+    - C01-02683
+    - C01-02684
+    - C01-02685
+    - C01-02690
+    - C01-02691
+    - C01-02692
+    - C01-02693
+    - C01-02698
+    - C01-02701
+    - C01-02703
+    - C01-02704
+    - C01-02705
+    - C01-02712
+    - C01-02717
+    - C01-02719
+    - C01-02724
+    - C01-02725
+    - C01-02727
+    - C01-02731
+    - C01-02732
+    - C01-02733
+    - C01-02734
+    - C01-02738
+    - C01-02739
+    - C01-02741
+    - C01-02744
+    - C01-02746
+    - C01-02753
+    - C01-02756
+    - C01-02759
+    - C01-02760
+    - C01-02761
+    - C01-02762
+    - C01-02765
+    - C01-02766
+    - C01-02767
+    - C01-02769
+    - C01-02772
+    - C01-02773
+    - C01-02774
+    - C01-02779
+    - C01-02784
+    - C01-02785
+    - C01-02786
+    - C01-02787
+    - C01-02789
+    - C01-02794
+    - C01-02801
+    - C01-02803
+    - C01-02805
+    - C01-02806
+    - C01-02807
+    - C01-02811
+    - C01-02812
+    - C01-02818
+    - C01-02822
+    - C01-02823
+    - C01-02830
+    - C01-02831
+    - C01-02832
+    - C01-02833
+    - C01-02834
+    - C01-02835
+    - C01-02837
+    - C01-02838
+    - C01-02842
+    - C01-02843
+    - C01-02845
+    - C01-02847
+    - C01-02848
+    - C01-02850
+    - C01-02851
+    - C01-02853
+    - C01-02857
+    - C01-02858
+    - C01-02864
+    - C01-02867
+    - C01-02869
+    - C01-02873
+    - C01-02876
+    - C01-02879
+    - C01-02881
+    - C01-02884
+    - C01-02885
+    - C01-02888
+    - C01-02889
+    - C01-02891
+    - C01-02893
+    - C01-02894
+    - C01-02899
+    - C01-02901
+    - C01-02902
+    - C01-02903
+    - C01-02904
+    - C01-02906
+    - C01-02909
+    - C01-02912
+    - C01-02913
+    - C01-02914
+    - C01-02916
+    - C01-02917
+    - C01-02919
+    - C01-02920
+    - C01-02921
+    - C01-02922
+    - C01-02923
+    - C01-02924
+    - C01-02925
+    - C01-02927
+    - C01-02928
+    - C01-02929
+    - C01-02930
+    - C01-02932
+    - C01-02933
+  Empty sella syndrome:
+    inheritance_status: OVERLAY_OWNED_NO_V2_MAPPING
+    chunk1_acceptance_status: ACCEPTED
+    chunk1_acceptance_gate: PASS
+    candidate_id: D1_EMPTY_SELLA_ENSEMBLE_ALIGNED_01
+    codebook_basis:
+      label: Empty sella syndrome
+      canonical_name: Empty sella syndrome
+      operational_definition: Report identifies radiological empty-sella morphology
+        involving the sella turcica/pituitary region.
+      anatomical_scope: Sella turcica and pituitary region.
+      accepted_equivalents:
+      - empty sella
+      - empty sella syndrome
+      - empty sella turcica
+      - partial empty sella
+      - partial empty sella syndrome
+      - empty sella appearance
+      - partial empty sella appearance
+      insufficient_evidence:
+      - Isolated pituitary thinning/flattening or decreased pituitary height alone.
+      - Isolated widened/enlarged/shallow sella alone.
+      - Pituitary adenoma, Rathke cleft cyst, generic sellar cyst, postoperative sellar
+        cavity, or pituitary hypoplasia alone.
+      - Pseudotumor cerebri/intracranial hypertension workup alone without empty-sella
+        morphology.
+      subtype_rules: Include complete and partial empty-sella morphology. Exclude
+        isolated non-specific sellar/pituitary findings listed above. This is AI_REFERENCE_ENSEMBLE_OPERATIONALIZATION,
+        not clinical consensus revision.
+    machine_rules:
+      version: d1_overlay_owned_v1
+      positive_terms:
+      - empty sella
+      - empty sella syndrome
+      - partial empty sella
+      - partial empty sella syndrome
+      - Empty sella syndrome
+      surface_forms:
+      - empty sella turcica
+      - partially empty sella
+      - partially empty sella turcica
+      - partial empty sella turcica
+      - partially empty sella syndrome
+      - empty sella appearance
+      - partial empty sella appearance
+      - partial-empty sella
+      compositional_patterns:
+      - pattern_id: D1_EMPTY_SELLA_COMP_01_CSF_HERNIATION_THINNED_PITUITARY
+        pattern: (?i)(?:\b(?:suprasellar\s+cistern|csf)\b[\s\S]{0,160}?\b(?:herniat(?:ed|ion)|protrud(?:ed|ing)|exten(?:ded|sion))\b[\s\S]{0,160}?\b(?:into|within)\s+(?:the\s+)?sell(?:a(?:\s+turcica)?|ar\s+fossa)\b[\s\S]{0,220}?(?:\b(?:pituitary|adenohypophysis|hypophysis)\b[\s\S]{0,80}?\b(?:thinning|thinned|flattened|compressed|decreased\s+height|reduced\s+height)\b|\b(?:thinning|thinned|flattened|compressed|decreased\s+height|reduced\s+height)\b[\s\S]{0,80}?\b(?:pituitary|adenohypophysis|hypophysis)\b)|(?:\b(?:pituitary|adenohypophysis|hypophysis)\b[\s\S]{0,80}?\b(?:thinning|thinned|flattened|compressed|decreased\s+height|reduced\s+height)\b|\b(?:thinning|thinned|flattened|compressed|decreased\s+height|reduced\s+height)\b[\s\S]{0,80}?\b(?:pituitary|adenohypophysis|hypophysis)\b)[\s\S]{0,220}?\b(?:suprasellar\s+cistern|csf)\b[\s\S]{0,160}?\b(?:herniat(?:ed|ion)|protrud(?:ed|ing)|exten(?:ded|sion))\b[\s\S]{0,160}?\b(?:into|within)\s+(?:the\s+)?sell(?:a(?:\s+turcica)?|ar\s+fossa)\b)
+        source_codebook_field: operational_definition
+        source_text: CSF/suprasellar-cistern herniation into the sella with pituitary
+          thinning (ensemble S family).
+        rationale: Bounded ensemble-aligned morphology rule; isolated thinning alone
+          does not match.
+      - pattern_id: D1_EMPTY_SELLA_COMP_02_WIDENED_SELLA_FLATTENED_PITUITARY
+        pattern: (?i)(?:(?:\bsella(?:\s+turcica)?\b[\s\S]{0,160}?\b(?:widened|enlarged|wide|widest|expanded|wider(?:\s+than\s+normal)?)\b|\b(?:widened|enlarged|wide|widest|expanded|wider(?:\s+than\s+normal)?)\b[\s\S]{0,160}?\bsella(?:\s+turcica)?\b)[\s\S]{0,220}?(?:\b(?:pituitary|adenohypophysis|hypophysis)\b[\s\S]{0,80}?\b(?:flattened|compressed|thin(?:ned)?|decreased\s+height|reduced\s+height|height\s+(?:is\s+)?decreas\w*|wider\s+than\s+normal|widest)\b|\b(?:flattened|compressed|thin(?:ned)?|decreased\s+height|reduced\s+height|height\s+(?:is\s+)?decreas\w*|wider\s+than\s+normal|widest)\b[\s\S]{0,80}?\b(?:pituitary|adenohypophysis|hypophysis)\b)|(?:\b(?:pituitary|adenohypophysis|hypophysis)\b[\s\S]{0,80}?\b(?:flattened|compressed|thin(?:ned)?|decreased\s+height|reduced\s+height|height\s+(?:is\s+)?decreas\w*|wider\s+than\s+normal|widest)\b|\b(?:flattened|compressed|thin(?:ned)?|decreased\s+height|reduced\s+height|height\s+(?:is\s+)?decreas\w*|wider\s+than\s+normal|widest)\b[\s\S]{0,80}?\b(?:pituitary|adenohypophysis|hypophysis)\b)[\s\S]{0,220}?(?:\bsella(?:\s+turcica)?\b[\s\S]{0,160}?\b(?:widened|enlarged|wide|widest|expanded|wider(?:\s+than\s+normal)?)\b|\b(?:widened|enlarged|wide|widest|expanded|wider(?:\s+than\s+normal)?)\b[\s\S]{0,160}?\bsella(?:\s+turcica)?\b))
+        source_codebook_field: operational_definition
+        source_text: Widened/enlarged sella with pituitary flattening (ensemble S
+          family).
+        rationale: Bounded ensemble-aligned morphology rule; isolated sellar widening
+          or isolated pituitary findings alone do not match.
+      excluded_anatomy: []
+      required_anatomy: []
+    chunk1_changed_case_ids:
+    - C01-00028
+    - C01-00096
+    - C01-00106
+    - C01-00123
+    - C01-00156
+    - C01-00189
+    - C01-00219
+    - C01-00241
+    - C01-00255
+    - C01-00303
+    - C01-00304
+    - C01-00313
+    - C01-00396
+    - C01-00406
+    - C01-00486
+    - C01-00498
+    - C01-00570
+    - C01-00571
+    - C01-00574
+    - C01-00589
+    - C01-00594
+    - C01-00617
+    - C01-00640
+    - C01-00660
+    - C01-00693
+    - C01-00755
+    - C01-00766
+    - C01-00795
+    - C01-00805
+    - C01-00905
+    - C01-00947
+    - C01-00955
+    - C01-00969
+    - C01-01009
+    - C01-01040
+    - C01-01090
+    - C01-01096
+    - C01-01097
+    - C01-01123
+    - C01-01150
+    - C01-01189
+    - C01-01200
+    - C01-01201
+    - C01-01220
+    - C01-01237
+    - C01-01278
+    - C01-01295
+    - C01-01308
+    - C01-01325
+    - C01-01345
+    - C01-01350
+    - C01-01457
+    - C01-01492
+    - C01-01496
+    - C01-01500
+    - C01-01518
+    - C01-01525
+    - C01-01565
+    - C01-01639
+    - C01-01676
+    - C01-01723
+    - C01-01732
+    - C01-01786
+    - C01-01860
+    - C01-01867
+    - C01-01874
+    - C01-01877
+    - C01-01878
+    - C01-01889
+    - C01-01898
+    - C01-01908
+    - C01-01928
+    - C01-01929
+    - C01-01947
+    - C01-01948
+    - C01-01954
+    - C01-01974
+    - C01-01975
+    - C01-01978
+    - C01-02002
+    - C01-02034
+    - C01-02059
+    - C01-02070
+    - C01-02155
+    - C01-02179
+    - C01-02182
+    - C01-02230
+    - C01-02239
+    - C01-02252
+    - C01-02265
+    - C01-02305
+    - C01-02322
+    - C01-02330
+    - C01-02338
+    - C01-02361
+    - C01-02410
+    - C01-02423
+    - C01-02454
+    - C01-02458
+    - C01-02502
+    - C01-02517
+    - C01-02567
+    - C01-02596
+    - C01-02603
+    - C01-02611
+    - C01-02619
+    - C01-02622
+    - C01-02645
+    - C01-02650
+    - C01-02668
+    - C01-02694
+    - C01-02780
+    - C01-02798
+    - C01-02802

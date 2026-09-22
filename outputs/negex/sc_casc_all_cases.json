@@ -1,0 +1,7 @@
+{
+  "method": "negex",
+  "all_cases_n": 2978,
+  "semantic_concordance_SC": 0.80523,
+  "CASC": 0.81858,
+  "q_consensus_sum": 2834.5
+}

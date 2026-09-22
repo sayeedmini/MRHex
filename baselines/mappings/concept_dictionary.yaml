@@ -1,0 +1,670 @@
+Metastatic malignant neoplasm to brain:
+  canonical_name: Metastatic malignant neoplasm to brain
+  target_count: 6
+  variants:
+  - Metastatic malignant neoplasm to brain
+  - secondary malignant brain deposits
+  - intracerebral metastatic deposits
+  - Brain metastasis/metastases
+  - brain metastases
+  - brain metastasis
+Intracranial meningioma:
+  canonical_name: Intracranial meningioma
+  target_count: 6
+  variants:
+  - recurrent intracranial meningioma
+  - residual intracranial meningioma
+  - Intracranial meningioma
+  - recurrent meningioma
+  - residual meningioma
+  - Meningioma
+Demyelinating disease of central nervous system:
+  canonical_name: Demyelinating disease of central nervous system
+  target_count: 44
+  variants:
+  - Demyelinating disease of central nervous system
+  - demyelinating plaque-like lesions
+  - tumefactive demyelinating lesions
+  - demyelinating plaque-like lesion
+  - tumefactive demyelinating lesion
+  - demyelinating lesion formations
+  - demyelinating plaque formations
+  - demyelinating lesion formation
+  - demyelinating plaque formation
+  - inactive demyelinating plaques
+  - osmotic demyelination syndrome
+  - chronic demyelinating plaques
+  - inactive demyelinating plaque
+  - lesions of multiple sclerosis
+  - active demyelinating plaques
+  - central pontine myelinolysis
+  - chronic demyelinating plaque
+  - stable demyelinating plaques
+  - active demyelinating plaque
+  - stable demyelinating plaque
+  - multiple sclerosis lesions
+  - multiple sclerosis plaques
+  - multiple sclerosis lesion
+  - multiple sclerosis plaque
+  - demyelinating pathology
+  - demyelinating disease
+  - demyelinating lesions
+  - Demyelinating plaques
+  - demyelinating process
+  - osmotic demyelination
+  - demyelinating lesion
+  - demyelinating plaque
+  - demyelination areas
+  - inactive MS plaques
+  - demyelination area
+  - inactive MS plaque
+  - active MS plaques
+  - CNS demyelination
+  - active MS plaque
+  - myelinolysis
+  - MS lesions
+  - MS plaques
+  - MS lesion
+  - MS plaque
+Herniation of nucleus pulposus:
+  canonical_name: Herniation of nucleus pulposus
+  target_count: 38
+  variants:
+  - Herniation of nucleus pulposus
+  - prolapsed intervertebral disc
+  - paramedian disc herniations
+  - herniated nucleus pulposus
+  - paramedian disc herniation
+  - posterior disc herniations
+  - posterior disk herniations
+  - posterolateral herniations
+  - posterior disc herniation
+  - posterior disk herniation
+  - posterolateral herniation
+  - sequestered disc fragment
+  - mediolateral herniations
+  - mediolateral herniation
+  - paracentral herniations
+  - paracentral herniation
+  - paramedian herniations
+  - disc shows herniation
+  - paramedian herniation
+  - posterior herniations
+  - protruded herniations
+  - Disc/disk herniation
+  - extruded herniations
+  - posterior herniation
+  - protruded herniation
+  - central herniations
+  - central protrusions
+  - extruded herniation
+  - central herniation
+  - central protrusion
+  - disc herniations
+  - disc protrusions
+  - disk herniations
+  - disc extrusions
+  - disc herniation
+  - disc protrusion
+  - disk herniation
+  - disc extrusion
+Spinal cord compression:
+  canonical_name: Spinal cord compression
+  target_count: 17
+  variants:
+  - compressive deformation of the spinal cord
+  - compressive flattening of the spinal cord
+  - compressive cord flattening/deformation
+  - compression of the spinal cord
+  - compressive cord deformation
+  - compressive cord flattening
+  - cervical cord compression
+  - spinal cord is compressed
+  - thoracic cord compression
+  - spinal cord compressions
+  - compression of the cord
+  - dorsal cord compression
+  - Spinal cord compression
+  - cord is compressed
+  - cord compressions
+  - Cord compression
+  - compressed cord
+Lacunar infarct:
+  canonical_name: Lacunar infarct
+  target_count: 8
+  variants:
+  - lacune of presumed vascular origin
+  - Lacunar infarct/infarction
+  - lacunar infarctions
+  - lacunar infarction
+  - ischemic lacunes
+  - Lacunar infarcts
+  - ischemic lacune
+  - Lacunar infarct
+Silent micro-hemorrhage of brain:
+  canonical_name: Silent micro-hemorrhage of brain
+  target_count: 7
+  variants:
+  - Silent micro-hemorrhage of brain
+  - chronic hemorrhagic foci
+  - petechial hemorrhage
+  - punctate hemorrhage
+  - micro-hemorrhage
+  - microhemorrhage
+  - microbleed
+Cavernous hemangioma:
+  canonical_name: Cavernous hemangioma
+  target_count: 21
+  variants:
+  - intracranial cavernous hemangiomas
+  - intracranial cavernous hemangioma
+  - cerebral cavernous malformations
+  - cerebral cavernous malformation
+  - cerebral cavernous angiomas
+  - cerebral cavernous angioma
+  - CNS cavernous hemangioma
+  - cavernous malformations
+  - intracranial cavernomas
+  - cavernous malformation
+  - intracranial cavernoma
+  - cavernous hemangiomas
+  - brainstem cavernomas
+  - Cavernous hemangioma
+  - brainstem cavernoma
+  - cerebral cavernomas
+  - cavernous angiomas
+  - cerebral cavernoma
+  - cavernous angioma
+  - cavernomas
+  - Cavernoma
+Subdural intracranial hemorrhage:
+  canonical_name: Subdural intracranial hemorrhage
+  target_count: 6
+  variants:
+  - Subdural intracranial hemorrhages
+  - Subdural intracranial hemorrhage
+  - subdural hemorrhages
+  - subdural hemorrhage
+  - subdural hematomas
+  - subdural hematoma
+Gliosis:
+  canonical_name: Gliosis
+  target_count: 58
+  variants:
+  - ischemic gliotic background
+  - ischemic-gliotic background
+  - nonspecific gliotic changes
+  - nonspecific gliotic lesions
+  - nonspecific-gliotic changes
+  - nonspecific-gliotic lesions
+  - nonspecific gliotic lesion
+  - nonspecific-gliotic lesion
+  - nonspecific gliotic focus
+  - nonspecific-gliotic focus
+  - chronic ischemic gliotic
+  - chronic ischemic-gliotic
+  - ischemic gliotic changes
+  - ischemic gliotic lesions
+  - ischemic-gliotic changes
+  - ischemic-gliotic lesions
+  - nonspecific gliotic foci
+  - nonspecific-gliotic foci
+  - ischemic gliotic lesion
+  - ischemic-gliotic lesion
+  - ischemic gliotic focus
+  - ischemic-gliotic focus
+  - ischemic gliotic foci
+  - ischemic-gliotic foci
+  - atrophic and gliotic
+  - gliotic and atrophic
+  - gliotic appearance
+  - gliotic background
+  - gliotic scarring
+  - gliotic sequelae
+  - ischemic gliosis
+  - ischemic-gliosis
+  - gliotic changes
+  - gliotic defects
+  - gliotic lesions
+  - gliotic pattern
+  - gliotic sequela
+  - gliotic signals
+  - glial scarring
+  - gliotic change
+  - gliotic defect
+  - gliotic lesion
+  - gliotic signal
+  - gliosis areas
+  - gliosis focus
+  - gliotic areas
+  - gliotic focus
+  - gliotic walls
+  - gliosis area
+  - gliosis foci
+  - gliotic area
+  - gliotic foci
+  - gliotic rims
+  - gliotic wall
+  - glial scars
+  - gliotic rim
+  - glial scar
+  - Gliosis
+Cerebral atrophy:
+  canonical_name: Cerebral atrophy
+  target_count: 59
+  variants:
+  - generalized brain parenchymal volume loss involving the cerebrum
+  - central and peripheral csf spaces show atrophic dilatation
+  - atrophic dilatation in central and peripheral csf spaces
+  - bilateral cerebral and cerebellar mild atrophy
+  - cerebral and mild cerebellar atrophic changes
+  - supratentorial central-predominant atrophy
+  - cerebral and cerebellar atrophic changes
+  - cerebral and cerebellar atrophic pattern
+  - cerebral and cerebellar senile atrophy
+  - cerebral and cerebellar mild atrophy
+  - cerebral parenchymal volume loss
+  - cerebral and cerebellar atrophy
+  - bilateral hippocampal atrophy
+  - generalized brain volume loss
+  - involutional cerebral changes
+  - generalized cerebral atrophy
+  - cerebral cerebellar atrophy
+  - cerebral-cerebellar atrophy
+  - cerebral-serebellar atrophy
+  - cerebral cortical atrophic
+  - cerebral atrophic pattern
+  - cerebral cortical atrophy
+  - cerebral volume reduction
+  - cortical atrophic pattern
+  - temporo-occipital atrophy
+  - diffuse cerebral atrophy
+  - global brain volume loss
+  - mild atrophic appearance
+  - cerebral senile atrophy
+  - global cerebral atrophy
+  - senile cerebral atrophy
+  - temporoparietal atrophy
+  - frontoparietal atrophy
+  - frontotemporal atrophy
+  - lobar cerebral atrophy
+  - supratentorial atrophy
+  - diffuse brain atrophy
+  - cerebral hemiatrophy
+  - cerebral volume loss
+  - atrophic appearance
+  - atrophic dilatation
+  - cerebral involution
+  - hemispheric atrophy
+  - biparietal atrophy
+  - brain volume loss
+  - occipital atrophy
+  - atrophic pattern
+  - cerebral atrophy
+  - cortical atrophy
+  - parietal atrophy
+  - temporal atrophy
+  - central atrophy
+  - frontal atrophy
+  - global atrophy
+  - senile atrophy
+  - brain atrophy
+  - gyral atrophy
+  - gyrus atrophy
+  - lobar atrophy
+Encephalomalacia:
+  canonical_name: Encephalomalacia
+  target_count: 11
+  variants:
+  - encephalomalacic changes
+  - encephalomalacic lesions
+  - cystic encephalomalacia
+  - encephalomalacic cavity
+  - encephalomalacic change
+  - encephalomalacic lesion
+  - encephalomalacic areas
+  - encephalomalacic focus
+  - encephalomalacic area
+  - encephalomalacic foci
+  - encephalomalacia
+Arachnoid cyst:
+  canonical_name: Arachnoid cyst
+  target_count: 6
+  variants:
+  - intracranial arachnoidal cysts
+  - intracranial arachnoidal cyst
+  - arachnoidal cysts
+  - arachnoidal cyst
+  - Arachnoid cysts
+  - Arachnoid cyst
+Empty sella syndrome:
+  canonical_name: Empty sella syndrome
+  target_count: 7
+  variants:
+  - partial empty sella appearance
+  - partial empty sella syndrome
+  - empty sella appearance
+  - empty sella syndrome
+  - empty sella turcica
+  - partial empty sella
+  - empty sella
+Intracranial aneurysm:
+  canonical_name: Intracranial aneurysm
+  target_count: 5
+  variants:
+  - Intracranial/cerebral aneurysm
+  - Intracranial aneurysm
+  - cerebral aneurysm
+  - fusiform aneurysm
+  - saccular aneurysm
+Chiari malformation:
+  canonical_name: Chiari malformation
+  target_count: 45
+  variants:
+  - Arnold-Chiari type 1 malformation
+  - Arnold-Chiari I malformation
+  - Chiari type 1.5 malformation
+  - type 1.5 Chiari malformation
+  - Arnold Chiari malformations
+  - Arnold-Chiari malformations
+  - Chiari malformation type II
+  - Chiari type II malformation
+  - type II Chiari malformation
+  - Arnold Chiari malformation
+  - Arnold-Chiari malformation
+  - Chiari malformation type 1
+  - Chiari malformation type 2
+  - Chiari malformation type I
+  - Chiari type 1 malformation
+  - Chiari type 2 malformation
+  - Chiari type I malformation
+  - type 1 Chiari malformation
+  - type 2 Chiari malformation
+  - type I Chiari malformation
+  - Chiari 1.5 malformation
+  - Chiari II malformation
+  - Chiari 1 malformation
+  - Chiari 2 malformation
+  - Chiari I malformation
+  - Chiari malformations
+  - Chiari malformation
+  - Chiari 1 deformity
+  - Chiari I deformity
+  - Chiari 1 anomaly
+  - Chiari I anomaly
+  - Chiari I/II/III
+  - Chiari type 1.5
+  - Chiari type II
+  - Arnold Chiari
+  - Arnold-Chiari
+  - Chiari type 1
+  - Chiari type 2
+  - Chiari type I
+  - Chiari 1.5
+  - Chiari III
+  - Chiari II
+  - Chiari 1
+  - Chiari 2
+  - Chiari I
+Schwannoma:
+  canonical_name: Schwannoma
+  target_count: 4
+  variants:
+  - vestibular schwannoma
+  - acoustic neuroma
+  - neurilemmoma
+  - schwannoma
+Cyst of pineal gland:
+  canonical_name: Cyst of pineal gland
+  target_count: 11
+  variants:
+  - cysts within the pineal gland
+  - cyst within the pineal gland
+  - cysts in the pineal gland
+  - cyst in the pineal gland
+  - Cyst of pineal gland
+  - benign pineal cysts
+  - benign pineal cyst
+  - pineal gland cysts
+  - pineal gland cyst
+  - pineal cysts
+  - Pineal cyst
+Hemangioma of vertebral column:
+  canonical_name: Hemangioma of vertebral column
+  target_count: 5
+  variants:
+  - intraosseous hemangioma at a vertebral site
+  - Hemangioma of vertebral column
+  - vertebral body hemangioma
+  - vertebral hemangiomas
+  - vertebral hemangioma
+Rathke's pouch cyst:
+  canonical_name: Rathke's pouch cyst
+  target_count: 23
+  variants:
+  - cleft cyst of Rathke's pouch
+  - mucinous Rathke's cleft cyst
+  - Rathke's cleft cystic lesion
+  - Rathke's pouch cystic lesion
+  - colloid Rathke's cleft cyst
+  - cleft cyst of Rathke pouch
+  - mucinous Rathke cleft cyst
+  - Rathke cleft cystic lesion
+  - Rathke pouch cystic lesion
+  - colloid Rathke cleft cyst
+  - cyst of Rathke's cleft
+  - cyst of Rathke's pouch
+  - cleft cyst of Rathke
+  - cyst of Rathke cleft
+  - cyst of Rathke pouch
+  - Rathke's cleft cysts
+  - Rathke's pouch cysts
+  - Rathke's cleft cyst
+  - Rathke's pouch cyst
+  - Rathke cleft cysts
+  - Rathke pouch cysts
+  - Rathke cleft cyst
+  - Rathke pouch cyst
+Cerebral edema:
+  canonical_name: Cerebral edema
+  target_count: 40
+  variants:
+  - interstitial edema in brain tissue
+  - edematous signal changes
+  - edematous signal change
+  - Cerebral/brain edema
+  - periaqueductal edema
+  - transependymal edema
+  - postoperative edema
+  - infiltrative edema
+  - interstitial edema
+  - perilesional edema
+  - white matter edema
+  - edematous changes
+  - parenchymal edema
+  - peritumoral edema
+  - significant edema
+  - subcortical edema
+  - surrounding edema
+  - cerebellar edema
+  - edematous change
+  - peripheral edema
+  - brainstem edema
+  - cytotoxic edema
+  - extensive edema
+  - perifocal edema
+  - vasogenic edema
+  - cerebral edema
+  - cortical edema
+  - moderate edema
+  - reactive edema
+  - residual edema
+  - diffuse edema
+  - intense edema
+  - massive edema
+  - minimal edema
+  - marked edema
+  - severe edema
+  - brain edema
+  - focal edema
+  - mild edema
+  - edema
+Spinal stenosis:
+  canonical_name: Spinal stenosis
+  target_count: 16
+  variants:
+  - narrowing of the central spinal canal
+  - narrowings of the vertebral canal
+  - narrowing of the vertebral canal
+  - central spinal canal narrowings
+  - central spinal canal narrowing
+  - narrowings of the spinal canal
+  - narrowing of the spinal canal
+  - vertebral canal narrowings
+  - vertebral canal narrowing
+  - spinal canal narrowings
+  - central canal stenoses
+  - central canal stenosis
+  - spinal canal narrowing
+  - Spinal canal stenosis
+  - spinal stenoses
+  - Spinal stenosis
+Chronic mastoiditis:
+  canonical_name: Chronic mastoiditis
+  target_count: 3
+  variants:
+  - acute-on-chronic mastoiditis
+  - chronic otomastoiditis
+  - Chronic mastoiditis
+Cerebellar degeneration:
+  canonical_name: Cerebellar degeneration
+  target_count: 5
+  variants:
+  - prominence of cerebellar folia secondary to atrophy
+  - cerebellar degeneration
+  - cerebellar volume loss
+  - Cerebellar atrophy
+  - vermian atrophy
+Mega cisterna magna:
+  canonical_name: Mega cisterna magna
+  target_count: 2
+  variants:
+  - mega cisterna magna
+  - megacisterna magna
+Structure of cave of septum pellucidum:
+  canonical_name: Structure of cave of septum pellucidum
+  target_count: 6
+  variants:
+  - Structure of cave of septum pellucidum
+  - cavum septum pellucidum et vergae
+  - cavum septi pellucidi et vergae
+  - cavum septum pellucidum
+  - cavum septi pellucidi
+  - CSP
+Hyperostosis of skull:
+  canonical_name: Hyperostosis of skull
+  target_count: 16
+  variants:
+  - hyperostotic thickening of cranial bone
+  - diffuse cranial bone thickening
+  - diffuse thickening of the skull
+  - hyperosteosis frontalis interna
+  - cranium is diffusely thickened
+  - hyperostosis frontalis interna
+  - frontal internal hyperostosis
+  - internal frontal hyperostosis
+  - Skull/calvarial hyperostosis
+  - cranium diffusely thickened
+  - diffusely thickened cranium
+  - diffusely thickened skull
+  - diffuse skull thickening
+  - calvarial hyperostosis
+  - Hyperostosis of skull
+  - skull hyperostosis
+Watershed infarct:
+  canonical_name: Watershed infarct
+  target_count: 10
+  variants:
+  - internal/cortical watershed infarcts
+  - Watershed infarct/infarction
+  - cortical watershed infarcts
+  - internal watershed infarcts
+  - border-zone infarction
+  - border zone infarcts
+  - watershed infarction
+  - borderzone infarcts
+  - Watershed infarcts
+  - Watershed infarct
+Choroid plexus cyst:
+  canonical_name: Choroid plexus cyst
+  target_count: 4
+  variants:
+  - cysts of the choroid plexus
+  - cyst of the choroid plexus
+  - Choroid plexus cysts
+  - choroid plexus cyst
+Foraminal Spinal Stenosis:
+  canonical_name: Foraminal Spinal Stenosis
+  target_count: 13
+  variants:
+  - foraminal narrowing at a spinal level
+  - neural foraminal narrowing
+  - Foraminal Spinal Stenosis
+  - neural foraminal stenoses
+  - Neural foraminal stenosis
+  - neuroforaminal narrowings
+  - neuroforaminal narrowing
+  - neuroforaminal stenoses
+  - neuroforaminal stenosis
+  - foraminal narrowings
+  - foraminal narrowing
+  - foraminal stenoses
+  - foraminal stenosis
+Glioma:
+  canonical_name: Glioma
+  target_count: 14
+  variants:
+  - glioblastoma multiforme
+  - diffuse midline glioma
+  - recurrent glioblastoma
+  - recurrent astrocytoma
+  - residual glioblastoma
+  - residual astrocytoma
+  - oligodendroglioma
+  - recurrent glioma
+  - residual glioma
+  - glioblastoma
+  - astrocytoma
+  - ependymoma
+  - glioma
+  - GBM
+Pituitary adenoma:
+  canonical_name: Pituitary adenoma
+  target_count: 26
+  variants:
+  - pituitary neuroendocrine tumor (PitNET)
+  - macroadenoma of the pituitary gland
+  - microadenoma of the pituitary gland
+  - pituitary neuroendocrine tumors
+  - adenoma of the pituitary gland
+  - pituitary neuroendocrine tumor
+  - adenohypophyseal macroadenoma
+  - adenohypophyseal microadenoma
+  - macroadenoma of the pituitary
+  - microadenoma of the pituitary
+  - pituitary adenoma (PitNET)
+  - macroadenoma of pituitary
+  - microadenoma of pituitary
+  - adenohypophyseal adenoma
+  - adenoma of the pituitary
+  - hypophyseal macroadenoma
+  - hypophyseal microadenoma
+  - pituitary macroadenomas
+  - pituitary microadenomas
+  - pituitary macroadenoma
+  - pituitary microadenoma
+  - adenoma of pituitary
+  - hypophyseal adenoma
+  - pituitary adenomas
+  - Pituitary adenoma
+  - PitNET

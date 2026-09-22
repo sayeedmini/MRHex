@@ -1,0 +1,70 @@
+schema_version: 1
+mapping_id: baseline_assertion_to_mrrate_v1
+status: FROZEN
+description: >
+  Frozen mapping from clinical NLP assertion states to official MR-RATE decision codes.
+  This mapping applies uniformly across all three rule-based baselines (NegEx, pyConTextNLP, medspaCy).
+  It directly adheres to the approved MR-RATE codebook and global clinical rules.
+codebook_reference:
+  codebook_file: configs/final_pathology_codebook.yaml
+  rules_file: configs/final_deterministic_rules_v2.yaml
+  rules_section: policy.global_clinical_rules
+
+assertion_mappings:
+  AFFIRMED_CURRENT:
+    code: S
+    name: Supported
+    definition: Definite current target pathology or accepted lexical variant present in report.
+    codebook_policy: >
+      Definite current X or an accepted equivalent in the correct anatomy = S.
+    precedence_rank: 1
+
+  UNCERTAIN:
+    code: UC
+    name: Uncertain
+    definition: Target pathology mentioned with uncertainty, hedging, or differential suspicion.
+    codebook_policy: >
+      Likely/probable/favored/possible/suggestive of/may represent/cannot exclude = UC.
+    precedence_rank: 2
+
+  HISTORICAL:
+    code: H
+    name: Historical
+    definition: Target pathology mentioned as past medical history, resolved, or resected without current active presence.
+    codebook_policy: >
+      Past/resolved X without present X = H.
+    precedence_rank: 3
+
+  NEGATED:
+    code: C
+    name: Contradicted
+    definition: Target pathology explicitly negated or ruled out.
+    codebook_policy: >
+      Explicit negation covering the target anatomy/pathology = C.
+    precedence_rank: 4
+
+  TARGET_NOT_FOUND:
+    code: U
+    name: Unsupported
+    definition: Target pathology not mentioned anywhere in report text.
+    codebook_policy: >
+      Target not stated / complete findings silent = U.
+    precedence_rank: 5
+
+  UNRESOLVABLE:
+    code: NEI
+    name: Not Enough Information
+    definition: Conflicting assertions that cannot be resolved deterministically, or unparseable input.
+    codebook_policy: >
+      Unresolved contradiction or unresolvable ambiguous scope = NEI.
+    precedence_rank: 6
+
+document_aggregation_precedence:
+  rule: >
+    When multiple mentions of the same target pathology appear within a single clinical report:
+    1. If any mention is AFFIRMED_CURRENT, the document decision is S (Definite present takes precedence over uncertain/history).
+    2. Else if any mention is UNCERTAIN, the document decision is UC (Current uncertain takes precedence over history alone).
+    3. Else if any mention is HISTORICAL, the document decision is H.
+    4. Else if all mentions are NEGATED, the document decision is C.
+    5. If the target is never detected, the decision is U.
+    6. If mutually incompatible conflicting evidence cannot be prioritized, decision is NEI.

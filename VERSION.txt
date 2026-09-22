@@ -1,0 +1,20 @@
+MRHex v1.0.0
+
+Deterministic standalone six-state MRI report assertion classification pipeline.
+
+Tag:
+mrhex-v1.0.0
+
+Freeze commit:
+e73fdb457b221db6cb9e8baf5fe7b8181907ff8a
+
+Output states:
+
+S   = Supported
+U   = Unsupported
+C   = Contradicted
+UC  = Uncertain
+H   = Historical
+NEI = Not Enough Information
+
+This package reproduces the frozen held-out validation benchmark.

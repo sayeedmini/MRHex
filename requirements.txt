@@ -1,0 +1,10 @@
+# Recommended reproduction environment: Python 3.11
+# Minimum execution environment for MRHex v1.0.0 and Baseline Reproduction
+
+numpy==1.26.4
+PyYAML==6.0.3
+spacy==3.7.5
+medspacy==1.3.1
+pyConTextNLP==0.7.0.1
+networkx==3.6.1
+loguru==0.7.3
