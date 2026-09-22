@@ -26,7 +26,7 @@ from mrhex.config import load_config
 
 def run_mrhex(input_path: Path, output_path: Path) -> None:
     print("=================================================================")
-    print("           MRHex v1.0.0 Standalone Prediction Runner             ")
+    print("                MRHex v1.0.0 Prediction Runner                  ")
     print("=================================================================")
     print(f"Input file:  {input_path}")
     print(f"Output file: {output_path}")
@@ -52,33 +52,6 @@ def run_mrhex(input_path: Path, output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
 
-    out_records = []
-    for idx, row in enumerate(rows):
-        cid = row.get("case_id", f"case_{idx+1}")
-        target = row["target_pathology"]
-        report_text = row["report"]
-
-        res = classify(report_text, target, case_id=cid, lookup=lookup)
-
-        state = res["state"]
-        raw_reason = res.get("reason", "")
-        if isinstance(raw_reason, list):
-            reason_str = ";".join(str(r) for r in raw_reason)
-        else:
-            reason_str = str(raw_reason)
-
-        out_records.append({
-            "case_id": cid,
-            "target_pathology": target,
-            "prediction": state,
-            "resolution_source": res.get("resolution_source", ""),
-            "fallback_rule_id": res.get("fallback_rule_id", ""),
-            "reason": reason_str,
-        })
-
-    elapsed = time.time() - t0
-    print(f"Inference completed in {elapsed:.2f}s ({total_cases/elapsed:.1f} cases/sec).")
-
     fieldnames = [
         "case_id",
         "target_pathology",
@@ -90,8 +63,37 @@ def run_mrhex(input_path: Path, output_path: Path) -> None:
     with output_path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(out_records)
 
+        for idx, row in enumerate(rows):
+            cid = row.get("case_id", f"case_{idx+1}")
+            target = row["target_pathology"]
+            report_text = row["report"]
+
+            res = classify(report_text, target, case_id=cid, lookup=lookup)
+
+            state = res["state"]
+            raw_reason = res.get("reason", "")
+            if isinstance(raw_reason, list):
+                reason_str = ";".join(str(r) for r in raw_reason)
+            else:
+                reason_str = str(raw_reason)
+
+            writer.writerow({
+                "case_id": cid,
+                "target_pathology": target,
+                "prediction": state,
+                "resolution_source": res.get("resolution_source", ""),
+                "fallback_rule_id": res.get("fallback_rule_id", ""),
+                "reason": reason_str,
+            })
+
+            if (idx + 1) % 10000 == 0 or (idx + 1) == total_cases:
+                f.flush()
+                elapsed = time.time() - t0
+                print(f"Processed {idx+1}/{total_cases} cases ({elapsed:.1f}s, {(idx+1)/elapsed:.1f} cases/sec)...", flush=True)
+
+    elapsed = time.time() - t0
+    print(f"Inference completed in {elapsed:.2f}s ({total_cases/elapsed:.1f} cases/sec).")
     print(f"Predictions written to: {output_path}")
 
 

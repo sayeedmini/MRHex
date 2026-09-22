@@ -270,6 +270,5 @@ def load_config(
     ov = Path(overlay_path) if overlay_path is not None else _DEFAULT_OVERLAY_PATH
     return load_d1_lookup(cb, br, ov)
 
-# Aliases for backward compatibility
-load_d2_lookup = load_config
+# Alias for backward compatibility
 load_lookup = load_config

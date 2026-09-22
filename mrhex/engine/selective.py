@@ -1,6 +1,6 @@
-"""Deterministic D2 Classifier.
+"""MRHex Core Rule Classifier.
 
-Extends the deterministic pipeline for D2 development while leaving frozen D1 100% untouched.
+Executes the MRHex core rule layer.
 Applies audited, pathology-specific rules for:
 1. Gliosis
 2. Arachnoid cyst
@@ -27,12 +27,12 @@ from mrhex.engine.assertion.temporality import (
     CLINICAL_INDICATION_CUES, DELIMITER_RE
 )
 
-SYSTEM_ID = "deterministic_d2_cumulative"
-VERSION = "0.31.0-d2-dev"
+SYSTEM_ID = "mrhex_core"
+VERSION = "1.0.0"
 
 
 def _adjust_gliosis_assertion(eu, clause_text: str, target_in_clause: int, target_end_in_clause: int, text: str):
-    """Audited D2 assertion adjustment for Gliosis."""
+    """Audited core assertion adjustment for Gliosis."""
     prefix = clause_text[:target_in_clause]
     suffix = clause_text[target_end_in_clause:]
     matched = eu.matched_term.lower()
@@ -79,7 +79,7 @@ def _adjust_gliosis_assertion(eu, clause_text: str, target_in_clause: int, targe
 
 
 def _adjust_arachnoid_assertion(eu, clause_text: str, target_in_clause: int, target_end_in_clause: int, text: str):
-    """Audited D2 assertion adjustment for Arachnoid cyst."""
+    """Audited core assertion adjustment for Arachnoid cyst."""
     prefix = clause_text[:target_in_clause]
     suffix = clause_text[target_end_in_clause:]
 
@@ -102,7 +102,7 @@ def _adjust_arachnoid_assertion(eu, clause_text: str, target_in_clause: int, tar
 
 
 def _adjust_meningioma_assertion(eu, clause_text: str, target_in_clause: int, target_end_in_clause: int, text: str):
-    """Audited D2 assertion adjustment for Intracranial meningioma."""
+    """Audited core assertion adjustment for Intracranial meningioma."""
     prefix = clause_text[:target_in_clause]
     suffix = clause_text[target_end_in_clause:]
     clause_and_sent = clause_text + " " + eu.sentence_text
@@ -145,7 +145,7 @@ def _adjust_meningioma_assertion(eu, clause_text: str, target_in_clause: int, ta
 
 
 def _adjust_demyelinating_assertion(eu, clause_text: str, target_in_clause: int, target_end_in_clause: int, text: str):
-    """Audited D2 assertion adjustment for Demyelinating disease of central nervous system."""
+    """Audited core assertion adjustment for Demyelinating disease of central nervous system."""
     prefix = clause_text[:target_in_clause]
     suffix = clause_text[target_end_in_clause:]
     clause_and_sent = clause_text + " " + eu.sentence_text
@@ -198,14 +198,14 @@ def _adjust_demyelinating_assertion(eu, clause_text: str, target_in_clause: int,
                 eu.reason_codes.append(ReasonCode.ASSERT_HEDGED)
 
 
-def classify_deterministic_d2(
+def classify_core_rules(
     report: object,
     entry: Mapping[str, Any],
     *,
     case_id: str = "",
     source_mode: str = "full_report",
 ) -> dict[str, Any]:
-    """Classify one case under D2 development rules."""
+    """Classify one case under MRHex core rules."""
     # First run base classification
     base_out = classify_deterministic_v2(
         report,
@@ -216,20 +216,20 @@ def classify_deterministic_d2(
     
     target_pathology = str(entry.get("label", entry.get("canonical_name", "")))
     
-    # Active D2 development pathologies
-    active_d2_pathologies = (
+    # Active core rule pathologies
+    active_core_pathologies = (
         "Gliosis",
         "Arachnoid cyst",
         "Intracranial meningioma",
         "Demyelinating disease of central nervous system",
     )
-    if target_pathology not in active_d2_pathologies:
+    if target_pathology not in active_core_pathologies:
         base_out["system"] = SYSTEM_ID
         base_out["version"] = VERSION
-        base_out["d2_active_label"] = bool(entry.get("_d1_active", False))
+        base_out["core_active_label"] = bool(entry.get("_d1_active", False))
         return base_out
 
-    # Re-evaluate evidence units if target is an active D2 pathology
+    # Re-evaluate evidence units if target is an active core pathology
     text = "" if report is None else str(report)
     from mrhex.engine.retrieval.matcher import extract_evidence
     evidence_units = extract_evidence(text, entry, target_pathology, source_mode=source_mode)
@@ -237,7 +237,7 @@ def classify_deterministic_d2(
     if not evidence_units:
         base_out["system"] = SYSTEM_ID
         base_out["version"] = VERSION
-        base_out["d2_active_label"] = True
+        base_out["core_active_label"] = True
         return base_out
 
     from mrhex.engine.segmentation.sentences import sentence_for_offset
@@ -321,7 +321,7 @@ def classify_deterministic_d2(
             eu.certainty = certainty
             eu.reason_codes.extend(hedge_reasons)
 
-        # APPLY D2 ADJUSTMENTS
+        # APPLY CORE ADJUSTMENTS
         if target_pathology == "Gliosis":
             _adjust_gliosis_assertion(eu, clause_text, target_in_clause, target_end_in_clause, text)
         elif target_pathology == "Arachnoid cyst":
@@ -424,5 +424,6 @@ def classify_deterministic_d2(
     out = to_runner_dict(result)
     out["system"] = SYSTEM_ID
     out["version"] = VERSION
-    out["d2_active_label"] = True
+    out["core_active_label"] = True
     return out
+

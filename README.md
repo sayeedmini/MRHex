@@ -1,6 +1,6 @@
-# MRHex v1.0.0 — Standalone Clinical Report Assertion Classifier & Validation Benchmark
+# MRHex v1.0.0 — Clinical Report Assertion Classifier & Validation Benchmark
 
-A clean, standalone, fully reproducible distribution for the frozen **MRHex v1.0.0** clinical report assertion classification pipeline and baseline comparison on the sealed held-out validation dataset.
+A clean, fully reproducible distribution for the frozen **MRHex v1.0.0** clinical report assertion classification pipeline and baseline comparison on the sealed held-out validation dataset.
 
 ---
 
@@ -59,7 +59,7 @@ INSTALLATION VERIFICATION PASSED
 ============================================
 ```
 
-### Standalone Prediction
+### Prediction Execution
 
 To run MRHex inference on the validation input (or any CSV containing `report` and `target_pathology`):
 
@@ -92,7 +92,7 @@ MRHex_v1.0.0_Validation_Package/
 ├── README.md                          # Package documentation
 ├── VERSION.txt                        # Release version & commit metadata
 ├── requirements.txt                   # Dependency specification (Python 3.11 recommended)
-├── run_mrhex.py                       # Standalone MRHex prediction runner
+├── run_mrhex.py                       # MRHex prediction runner
 ├── run_validation.py                  # Full held-out validation pipeline runner
 ├── verify_installation.py             # Package installation verification & smoke tests
 ├── PACKAGE_MANIFEST.json              # File manifest with SHA256 checksums
@@ -150,21 +150,22 @@ MRHex_v1.0.0_Validation_Package/
 
 MRHex supports 32 official MR-RATE target pathologies.
 
-The inherited selective-rule configuration contains 31 active labels.
+The core rule configuration contains 31 active labels.
 
 The remaining target:
 `Metastatic malignant neoplasm to brain`
 
-is handled by the standalone/fallback rule layer.
+is handled by the deterministic fallback rule layer.
 
 Therefore the complete MRHex system supports all 32 target pathologies.
 
-### Internal compatibility identifiers
+### Two-Layer Deterministic Architecture
 
-Some internal rule-engine identifiers retain historical D1/D2 development
-names to preserve exact MRHex v1.0.0 behavior and reproducibility. These
-identifiers are implementation details and do not represent separate
-distributed models.
+MRHex operates strictly as a two-layer deterministic architecture:
+1. **Core rule layer**: High-confidence deterministic rules (`CORE_RULE`).
+2. **Deterministic fallback rule layer**: Resolves routed cases into exact assertion states (`FALLBACK_RULE`).
+
+All 32 official target pathologies are fully supported without any external LLM or API dependencies.
 
 ---
 

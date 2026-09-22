@@ -1,6 +1,6 @@
-"""Deterministic Fallback Resolver for D2-STANDALONE.
+"""MRHex Deterministic Fallback Resolver.
 
-Resolves routed cases (ROUTE_TO_LLM from selective D2) into exactly one
+Resolves routed cases into exactly one
 MR-RATE state: S, U, C, UC, H, or NEI.
 
 Strictly deterministic: zero API, LLM, or external model calls.
@@ -135,13 +135,13 @@ SPECIALIZED_FALLBACK_PATHOLOGIES = (
 )
 
 
-def _evaluate_pathology_specific_standalone_fallback(
+def _evaluate_pathology_specific_fallback(
     target_pathology: str,
     text: str,
     *,
     case_id: str = "",
 ) -> dict[str, Any] | None:
-    """Evaluate standalone candidate rules for optimized pathologies."""
+    """Evaluate fallback candidate rules for optimized pathologies."""
     if target_pathology == "Arachnoid cyst":
         return evaluate_arachnoid_cyst_standalone(text, case_id=case_id)
     if target_pathology == "Chronic mastoiditis":
@@ -333,12 +333,13 @@ def extract_and_analyze_units_for_candidate27(
 def resolve_deterministic_fallback(
     report: object,
     entry: Mapping[str, Any],
-    d2_res: Mapping[str, Any],
+    core_res: Mapping[str, Any] | None = None,
     *,
     case_id: str = "",
     source_mode: str = "full_report",
+    d2_res: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Execute the deterministic fallback resolver on a routed D2 case.
+    """Execute the deterministic fallback resolver on a routed core case.
 
     Implements Steps A through G of the deterministic fallback hierarchy:
       Step A: Assess report sufficiency (empty/unusable -> NEI)
@@ -351,12 +352,17 @@ def resolve_deterministic_fallback(
 
     Returns:
       Dictionary containing:
+        - state: Exactly one of S, U, C, UC, H, NEI
         - standalone_state: Exactly one of S, U, C, UC, H, NEI
         - fallback_rule_id: Deterministic fallback rule ID
         - reason_code: Primary reason code string
         - reason_codes: List of all reason codes
         - evidence_spans: Formatted evidence spans
     """
+    if core_res is None:
+        core_res = d2_res
+    assert core_res is not None, "core_res is required"
+
     text = "" if report is None else str(report)
     clean_text = text.strip()
     target_pathology = str(entry.get("label", entry.get("canonical_name", "")))
@@ -366,6 +372,7 @@ def resolve_deterministic_fallback(
     # -------------------------------------------------------------------------
     if not clean_text:
         return {
+            "state": EvidenceState.NEI.value,
             "standalone_state": EvidenceState.NEI.value,
             "fallback_rule_id": "FALLBACK_A_EMPTY_REPORT",
             "reason_code": ReasonCode.LIMITED_EXAM_OR_COVERAGE.value,
@@ -376,6 +383,7 @@ def resolve_deterministic_fallback(
     # Severe explicit technical limitation rendering exam uninterpretable
     if any(p.search(clean_text) for p in SEVERE_LIMITATION_PATTERNS):
         return {
+            "state": EvidenceState.NEI.value,
             "standalone_state": EvidenceState.NEI.value,
             "fallback_rule_id": "FALLBACK_A_SEVERE_LIMITATION",
             "reason_code": ReasonCode.LIMITED_EXAM_OR_COVERAGE.value,
@@ -408,8 +416,8 @@ def resolve_deterministic_fallback(
                 "sentence_text": eu.sentence_text or "",
             })
     else:
-        # Use existing evidence spans from D2 output
-        raw_spans = d2_res.get("evidence_spans", [])
+        # Use existing evidence spans from core output
+        raw_spans = core_res.get("evidence_spans", [])
         for sp in raw_spans:
             # Reconstruct clause_text / sentence_text if missing
             start = sp.get("start", 0)
@@ -430,6 +438,7 @@ def resolve_deterministic_fallback(
             sec in text.lower() for sec in ["impression:", "findings:", "sonuç:", "bulgular:"]
         ):
             return {
+                "state": EvidenceState.NEI.value,
                 "standalone_state": EvidenceState.NEI.value,
                 "fallback_rule_id": "FALLBACK_A_PARTIAL_LIMITATION_NO_REPORT",
                 "reason_code": ReasonCode.LIMITED_EXAM_OR_COVERAGE.value,
@@ -437,15 +446,18 @@ def resolve_deterministic_fallback(
                 "evidence_spans": [],
             }
 
-        # Check pathology-specific standalone candidate rules for Cerebral atrophy & Gliosis
-        pathology_res = _evaluate_pathology_specific_standalone_fallback(
+        # Check pathology-specific fallback candidate rules for Cerebral atrophy & Gliosis
+        pathology_res = _evaluate_pathology_specific_fallback(
             target_pathology, clean_text, case_id=case_id
         )
         if pathology_res is not None:
+            if "state" not in pathology_res and "standalone_state" in pathology_res:
+                pathology_res["state"] = pathology_res["standalone_state"]
             return pathology_res
 
         # Step F: Adequate report with no target evidence -> U
         return {
+            "state": EvidenceState.U.value,
             "standalone_state": EvidenceState.U.value,
             "fallback_rule_id": "FALLBACK_F_NO_MATCH_U",
             "reason_code": ReasonCode.TARGET_RETRIEVAL_INCOMPLETE.value,
@@ -471,10 +483,12 @@ def resolve_deterministic_fallback(
     # If ONLY clinical spans exist:
     if not radiologic_spans and clinical_spans:
         if target_pathology in SPECIALIZED_FALLBACK_PATHOLOGIES:
-            pathology_res = _evaluate_pathology_specific_standalone_fallback(
+            pathology_res = _evaluate_pathology_specific_fallback(
                 target_pathology, clean_text, case_id=case_id
             )
             if pathology_res is not None:
+                if "state" not in pathology_res and "standalone_state" in pathology_res:
+                    pathology_res["state"] = pathology_res["standalone_state"]
                 return pathology_res
 
         # Check if clinical span is an explicit past medical history or mere indication/question
@@ -559,11 +573,14 @@ def resolve_deterministic_fallback(
                 current_affirmative_spans = []
             else:
                 if target_pathology in ("Empty sella syndrome", "Hyperostosis of skull", "Cerebral edema", *SPECIALIZED_FALLBACK_PATHOLOGIES):
-                    path_res = _evaluate_pathology_specific_standalone_fallback(target_pathology, clean_text, case_id=case_id)
+                    path_res = _evaluate_pathology_specific_fallback(target_pathology, clean_text, case_id=case_id)
                     if path_res is not None:
+                        if "state" not in path_res and "standalone_state" in path_res:
+                            path_res["state"] = path_res["standalone_state"]
                         return path_res
                 # Direct irreconcilable conflict in same target finding -> NEI (Step G)
                 return {
+                    "state": EvidenceState.NEI.value,
                     "standalone_state": EvidenceState.NEI.value,
                     "fallback_rule_id": "FALLBACK_G_UNRESOLVED_CONFLICT_NEI",
                     "reason_code": ReasonCode.SPECIFIC_VS_GLOBAL_CONFLICT.value,
@@ -575,6 +592,7 @@ def resolve_deterministic_fallback(
     # -> normally H because the target is established historically but not currently active.
     if historical_spans and negated_spans and not current_affirmative_spans and not current_uncertain_spans:
         return {
+            "state": EvidenceState.H.value,
             "standalone_state": EvidenceState.H.value,
             "fallback_rule_id": "FALLBACK_D_HISTORICAL_WITH_NO_RECURRENCE_H",
             "reason_code": ReasonCode.HISTORICAL_ONLY.value,
@@ -584,10 +602,12 @@ def resolve_deterministic_fallback(
 
     # Pathologies with specialized affirmative/uncertain/historical disambiguation
     if target_pathology in SPECIALIZED_FALLBACK_PATHOLOGIES:
-        pathology_res = _evaluate_pathology_specific_standalone_fallback(
+        pathology_res = _evaluate_pathology_specific_fallback(
             target_pathology, clean_text, case_id=case_id
         )
         if pathology_res is not None:
+            if "state" not in pathology_res and "standalone_state" in pathology_res:
+                pathology_res["state"] = pathology_res["standalone_state"]
             return pathology_res
 
     # -------------------------------------------------------------------------
@@ -596,6 +616,7 @@ def resolve_deterministic_fallback(
     if current_affirmative_spans:
         # Current positive + historical positive -> S (current evidence establishes present disease)
         return {
+            "state": EvidenceState.S.value,
             "standalone_state": EvidenceState.S.value,
             "fallback_rule_id": "FALLBACK_B_CURRENT_AFFIRMATIVE_S",
             "reason_code": ReasonCode.ASSERT_DIRECT_CURRENT.value,
@@ -609,6 +630,7 @@ def resolve_deterministic_fallback(
     if current_uncertain_spans:
         # Current uncertain + historical positive -> use current status (UC)
         return {
+            "state": EvidenceState.UC.value,
             "standalone_state": EvidenceState.UC.value,
             "fallback_rule_id": "FALLBACK_C_CURRENT_UNCERTAIN_UC",
             "reason_code": ReasonCode.ASSERT_HEDGED.value,
@@ -621,6 +643,7 @@ def resolve_deterministic_fallback(
     # -------------------------------------------------------------------------
     if historical_spans:
         return {
+            "state": EvidenceState.H.value,
             "standalone_state": EvidenceState.H.value,
             "fallback_rule_id": "FALLBACK_D_HISTORICAL_ONLY_H",
             "reason_code": ReasonCode.HISTORICAL_ONLY.value,
@@ -633,6 +656,7 @@ def resolve_deterministic_fallback(
     # -------------------------------------------------------------------------
     if negated_spans:
         return {
+            "state": EvidenceState.C.value,
             "standalone_state": EvidenceState.C.value,
             "fallback_rule_id": "FALLBACK_E_EXPLICIT_CONTRADICTION_C",
             "reason_code": ReasonCode.ASSERT_TARGET_NEGATED.value,
@@ -645,15 +669,18 @@ def resolve_deterministic_fallback(
     # -------------------------------------------------------------------------
     # Check pathology-specific rules for Silent micro-hemorrhage and Glioma before generic ambiguous scope NEI
     if target_pathology in SPECIALIZED_FALLBACK_PATHOLOGIES:
-        pathology_res = _evaluate_pathology_specific_standalone_fallback(
+        pathology_res = _evaluate_pathology_specific_fallback(
             target_pathology, clean_text, case_id=case_id
         )
         if pathology_res is not None:
+            if "state" not in pathology_res and "standalone_state" in pathology_res:
+                pathology_res["state"] = pathology_res["standalone_state"]
             return pathology_res
 
     if ambiguous_spans:
         # Severe ambiguity preventing assignment
         return {
+            "state": EvidenceState.NEI.value,
             "standalone_state": EvidenceState.NEI.value,
             "fallback_rule_id": "FALLBACK_G_AMBIGUOUS_SCOPE_NEI",
             "reason_code": ReasonCode.MALFORMED_OR_COMPLEX_SCOPE.value,
@@ -661,15 +688,18 @@ def resolve_deterministic_fallback(
             "evidence_spans": spans,
         }
 
-    # Check pathology-specific standalone candidate rules for Cerebral atrophy & Gliosis
-    pathology_res = _evaluate_pathology_specific_standalone_fallback(
+    # Check pathology-specific fallback candidate rules for Cerebral atrophy & Gliosis
+    pathology_res = _evaluate_pathology_specific_fallback(
         target_pathology, clean_text, case_id=case_id
     )
     if pathology_res is not None:
+        if "state" not in pathology_res and "standalone_state" in pathology_res:
+            pathology_res["state"] = pathology_res["standalone_state"]
         return pathology_res
 
     # Default fallback for adequate report without affirmative/negative finding
     return {
+        "state": EvidenceState.U.value,
         "standalone_state": EvidenceState.U.value,
         "fallback_rule_id": "FALLBACK_F_DEFAULT_UNSUPPORTED_U",
         "reason_code": ReasonCode.TARGET_RETRIEVAL_INCOMPLETE.value,

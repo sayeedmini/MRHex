@@ -25,9 +25,7 @@ if str(PACKAGE_ROOT) not in sys.path:
     sys.path.insert(0, str(PACKAGE_ROOT))
 
 from mrhex import classify, load_config
-from mrhex.classifier import SYSTEM_ID, VALID_STANDALONE_STATES, VERSION
-
-VALID_STATES = frozenset({"S", "U", "C", "UC", "H", "NEI"})
+from mrhex.classifier import SYSTEM_ID, VALID_STATES, VERSION
 
 
 def fail(msg: str):
@@ -288,7 +286,7 @@ def verify_all():
         source_mode="full_report",
     )
     smoke_state = smoke_res["state"]
-    if smoke_state not in VALID_STANDALONE_STATES:
+    if smoke_state not in VALID_STATES:
         fail(f"Invalid smoke test output state: {smoke_state}")
     print(f"      Smoke test passed: predicted state = '{smoke_state}'.")
 

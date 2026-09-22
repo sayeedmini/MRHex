@@ -9,7 +9,7 @@ Implements accepted standalone rules:
 
 Scope:
   Evaluated ONLY on routed cases during standalone fallback resolution.
-  Does NOT modify selective D2.
+  Preserves core rule invariance.
 """
 from __future__ import annotations
 

@@ -30,7 +30,7 @@ if str(PACKAGE_ROOT) not in sys.path:
 
 # MRHex imports
 from mrhex import classify, load_config
-from mrhex.classifier import SYSTEM_ID, VALID_STANDALONE_STATES, VERSION
+from mrhex.classifier import SYSTEM_ID, VALID_STATES, VERSION
 
 STATES = ["S", "U", "C", "UC", "H", "NEI"]
 STATE_TO_IDX = {s: i for i, s in enumerate(STATES)}
@@ -254,7 +254,7 @@ def run_validation():
             source_mode="full_report",
         )
         st_state = st_out["state"]
-        assert st_state in VALID_STANDALONE_STATES
+        assert st_state in VALID_STATES
         mrhex_preds.append(st_state)
         mrhex_details.append(st_out)
     print(f"            MRHex completed in {time.time() - t0:.2f}s.", flush=True)

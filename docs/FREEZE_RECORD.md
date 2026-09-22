@@ -25,13 +25,19 @@
   * 4/4 Unanimous: 7,534 / 7,905 = 95.307%
   * Exact-3/4: 491 / 702 = 69.943%
 - **Canonical Parity**: 8,937 / 8,937 (0 state diffs, 0 source diffs, 0 rule diffs, 0 reason diffs)
-- **D2_SAFE**:
+- **CORE_RULE** (formerly `D2_SAFE`):
   * 6,655 cases
   * 0 state drift
   * 0 provenance drift
 - **Regression Tests**: 251 passed, 0 failed, 0 skipped
 - **Runtime**: Fully offline, zero external network or socket dependencies
 - **External LLM/API Calls**: 0
+
+---
+
+## Post-Freeze Nomenclature Normalization
+
+> Post-freeze nomenclature normalization changed only internal/public identifiers and provenance labels. Classification logic, rule behavior, predictions, reason codes, and model states were unchanged. Exact prediction parity was verified against the frozen MRHex v1.0.0 implementation.
 
 ---
 

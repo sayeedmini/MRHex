@@ -1,6 +1,6 @@
 MRHex v1.0.0
 
-Deterministic standalone six-state MRI report assertion classification pipeline.
+Deterministic six-state MRI report assertion classification pipeline.
 
 Tag:
 mrhex-v1.0.0
